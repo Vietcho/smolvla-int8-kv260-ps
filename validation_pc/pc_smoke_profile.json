@@ -1,0 +1,5950 @@
+{
+  "status": "PASS",
+  "mode": "W2_KV260_PS_ONLY_FULL_LINEAR_DYNAMIC_INT8",
+  "environment": {
+    "hostname": "Admin-PC",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "torch": "2.10.0+cpu",
+    "quantized_engine": "onednn",
+    "threads": 4,
+    "ram_total_mib": 14703.05078125
+  },
+  "load_timings": {
+    "meta_architecture_seconds": 0.8239152000023751,
+    "non_linear_load_seconds": 0.014018800007761456,
+    "int8_linear_load_seconds": 1.9701060000079451,
+    "processor_load_seconds": 0.4276769999996759,
+    "total_model_load_seconds": 9.868853200008743
+  },
+  "phase_timings": {
+    "build_frame_ms": {
+      "count": 1,
+      "mean_ms": 4.50930000806693,
+      "median_ms": 4.50930000806693,
+      "min_ms": 4.50930000806693,
+      "max_ms": 4.50930000806693,
+      "p95_ms": 4.50930000806693
+    },
+    "preprocess_ms": {
+      "count": 1,
+      "mean_ms": 1.1292999988654628,
+      "median_ms": 1.1292999988654628,
+      "min_ms": 1.1292999988654628,
+      "max_ms": 1.1292999988654628,
+      "p95_ms": 1.1292999988654628
+    },
+    "vla_ms": {
+      "count": 1,
+      "mean_ms": 3842.1432000031928,
+      "median_ms": 3842.1432000031928,
+      "min_ms": 3842.1432000031928,
+      "max_ms": 3842.1432000031928,
+      "p95_ms": 3842.1432000031928
+    },
+    "postprocess_ms": {
+      "count": 1,
+      "mean_ms": 0.09089999366551638,
+      "median_ms": 0.09089999366551638,
+      "min_ms": 0.09089999366551638,
+      "max_ms": 0.09089999366551638,
+      "p95_ms": 0.09089999366551638
+    },
+    "e2e_ms": {
+      "count": 1,
+      "mean_ms": 3847.8727000037907,
+      "median_ms": 3847.8727000037907,
+      "min_ms": 3847.8727000037907,
+      "max_ms": 3847.8727000037907,
+      "p95_ms": 3847.8727000037907
+    }
+  },
+  "memory": {
+    "peak_rss_sampled_mib": 1770.41796875,
+    "sample_interval_seconds": 0.05,
+    "sample_count": 221,
+    "rss_final_mib": 1769.6171875,
+    "peak_wset_mib": 1770.45703125
+  },
+  "accuracy": {
+    "w2_vs_w1_pc_int8": {
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "rmse": 0.0,
+      "relative_l2": 0.0,
+      "cosine_similarity": 1.0,
+      "finite": true
+    },
+    "w2_vs_w0_original": {
+      "max_abs": 0.17291603237390518,
+      "mean_abs": 0.06505993701517582,
+      "rmse": 0.07911547613602903,
+      "relative_l2": 0.11512345202635187,
+      "cosine_similarity": 0.9934933854517761,
+      "finite": true
+    }
+  },
+  "linear_profile": {
+    "instrumented": true,
+    "warning": "Python hook timings include profiler overhead; use ranking, not absolute layer sum.",
+    "groups": {
+      "vision": {
+        "linear_count": 72,
+        "calls": 216,
+        "total_ms": 1146.8344,
+        "macs": 260919263232
+      },
+      "vlm": {
+        "linear_count": 113,
+        "calls": 115,
+        "total_ms": 307.5403,
+        "macs": 40170946560
+      },
+      "action_expert": {
+        "linear_count": 117,
+        "calls": 1161,
+        "total_ms": 916.1993,
+        "macs": 53041054720
+      }
+    },
+    "top_layers": [
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 53.3568,
+        "mean_ms_per_call": 17.7856,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 35.1228,
+        "mean_ms_per_call": 11.7076,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 33.5519,
+        "mean_ms_per_call": 11.183966666666668,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 32.208,
+        "mean_ms_per_call": 10.735999999999999,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 31.9927,
+        "mean_ms_per_call": 10.664233333333334,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      }
+    ],
+    "all_layers": [
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 53.3568,
+        "mean_ms_per_call": 17.7856,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 35.1228,
+        "mean_ms_per_call": 11.7076,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 33.5519,
+        "mean_ms_per_call": 11.183966666666668,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 32.208,
+        "mean_ms_per_call": 10.735999999999999,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 31.9927,
+        "mean_ms_per_call": 10.664233333333334,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 31.9311,
+        "mean_ms_per_call": 10.6437,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 31.079299999999996,
+        "mean_ms_per_call": 10.359766666666665,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 30.136,
+        "mean_ms_per_call": 10.045333333333334,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 29.483,
+        "mean_ms_per_call": 9.827666666666667,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 29.3573,
+        "mean_ms_per_call": 9.785766666666666,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 29.302599999999998,
+        "mean_ms_per_call": 9.767533333333333,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 29.2624,
+        "mean_ms_per_call": 9.754133333333334,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 29.126199999999997,
+        "mean_ms_per_call": 9.708733333333333,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 28.691100000000002,
+        "mean_ms_per_call": 9.5637,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 28.413800000000002,
+        "mean_ms_per_call": 9.471266666666667,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 27.2168,
+        "mean_ms_per_call": 9.072266666666666,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 25.7101,
+        "mean_ms_per_call": 8.570033333333333,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 24.182199999999998,
+        "mean_ms_per_call": 8.060733333333333,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 24.128999999999998,
+        "mean_ms_per_call": 8.043,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.9847,
+        "mean_ms_per_call": 7.9949,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.4136,
+        "mean_ms_per_call": 7.804533333333333,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.mlp.fc2",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.2323,
+        "mean_ms_per_call": 7.7440999999999995,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.2013,
+        "mean_ms_per_call": 7.733766666666667,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.1297,
+        "mean_ms_per_call": 7.7099,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 23.052100000000003,
+        "mean_ms_per_call": 7.684033333333335,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.mlp.fc1",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 22.7663,
+        "mean_ms_per_call": 7.588766666666667,
+        "macs": 7247757312,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          3072
+        ],
+        "weight_numel": 2359296
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.connector.modality_projection.proj",
+        "group": "vlm",
+        "calls": 3,
+        "total_ms": 15.4261,
+        "mean_ms_per_call": 5.142033333333333,
+        "macs": 2264924160,
+        "input_shape": [
+          1,
+          64,
+          12288
+        ],
+        "output_shape": [
+          1,
+          64,
+          960
+        ],
+        "weight_numel": 11796480
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.9171,
+        "mean_ms_per_call": 1.39171,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.493899999999998,
+        "mean_ms_per_call": 1.3493899999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.3107,
+        "mean_ms_per_call": 1.33107,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.2615,
+        "mean_ms_per_call": 1.32615,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.256,
+        "mean_ms_per_call": 1.3256000000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.240099999999998,
+        "mean_ms_per_call": 1.32401,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.166200000000003,
+        "mean_ms_per_call": 1.3166200000000003,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.133999999999999,
+        "mean_ms_per_call": 1.3134,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.124,
+        "mean_ms_per_call": 1.3124,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.1178,
+        "mean_ms_per_call": 1.3117800000000002,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 13.0085,
+        "mean_ms_per_call": 1.30085,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.9631,
+        "mean_ms_per_call": 1.29631,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.828800000000001,
+        "mean_ms_per_call": 1.28288,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.732299999999999,
+        "mean_ms_per_call": 1.2732299999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.649999999999999,
+        "mean_ms_per_call": 1.265,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.408000000000001,
+        "mean_ms_per_call": 1.2408000000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.4009,
+        "mean_ms_per_call": 1.24009,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.388199999999998,
+        "mean_ms_per_call": 1.2388199999999998,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.3752,
+        "mean_ms_per_call": 1.23752,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.3728,
+        "mean_ms_per_call": 1.23728,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.302999999999999,
+        "mean_ms_per_call": 1.2303,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.2087,
+        "mean_ms_per_call": 1.2208700000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.183100000000001,
+        "mean_ms_per_call": 1.2183100000000002,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.130600000000001,
+        "mean_ms_per_call": 1.21306,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.1091,
+        "mean_ms_per_call": 1.21091,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 12.0558,
+        "mean_ms_per_call": 1.2055799999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.982199999999999,
+        "mean_ms_per_call": 1.1982199999999998,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.9451,
+        "mean_ms_per_call": 1.19451,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.9448,
+        "mean_ms_per_call": 1.19448,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.909699999999999,
+        "mean_ms_per_call": 1.1909699999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.900599999999999,
+        "mean_ms_per_call": 1.19006,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.836700000000002,
+        "mean_ms_per_call": 1.1836700000000002,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.6491,
+        "mean_ms_per_call": 1.1649100000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.648200000000001,
+        "mean_ms_per_call": 1.1648200000000002,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.gate_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.6438,
+        "mean_ms_per_call": 1.16438,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.625499999999999,
+        "mean_ms_per_call": 1.16255,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.5345,
+        "mean_ms_per_call": 1.1534499999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.3791,
+        "mean_ms_per_call": 1.13791,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.283100000000001,
+        "mean_ms_per_call": 1.1283100000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.1259,
+        "mean_ms_per_call": 1.11259,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.0717,
+        "mean_ms_per_call": 1.10717,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.up_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.0693,
+        "mean_ms_per_call": 1.10693,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          2048
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 11.0394,
+        "mean_ms_per_call": 1.1039400000000001,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 10.989799999999999,
+        "mean_ms_per_call": 1.0989799999999998,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 10.988399999999999,
+        "mean_ms_per_call": 1.0988399999999998,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.9786,
+        "mean_ms_per_call": 3.6595333333333335,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.921299999999999,
+        "mean_ms_per_call": 3.6404333333333327,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 10.909099999999999,
+        "mean_ms_per_call": 1.0909099999999998,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.6269,
+        "mean_ms_per_call": 3.5422999999999996,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.5854,
+        "mean_ms_per_call": 3.5284666666666666,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 10.456699999999998,
+        "mean_ms_per_call": 1.0456699999999999,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.3368,
+        "mean_ms_per_call": 3.4456,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.down_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 10.2958,
+        "mean_ms_per_call": 1.02958,
+        "macs": 737280000,
+        "input_shape": [
+          1,
+          50,
+          2048
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1474560
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.2342,
+        "mean_ms_per_call": 3.4114,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.2136,
+        "mean_ms_per_call": 3.404533333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 10.059899999999999,
+        "mean_ms_per_call": 3.3532999999999995,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.9036,
+        "mean_ms_per_call": 3.3012,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.731,
+        "mean_ms_per_call": 3.2436666666666665,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.674399999999999,
+        "mean_ms_per_call": 3.2247999999999997,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.3838,
+        "mean_ms_per_call": 3.1279333333333335,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.377,
+        "mean_ms_per_call": 3.125666666666667,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.305800000000001,
+        "mean_ms_per_call": 3.1019333333333337,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.2945,
+        "mean_ms_per_call": 3.0981666666666663,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.0948,
+        "mean_ms_per_call": 3.0315999999999996,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.0712,
+        "mean_ms_per_call": 3.023733333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 9.020299999999999,
+        "mean_ms_per_call": 3.006766666666666,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.989799999999999,
+        "mean_ms_per_call": 2.9965999999999995,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.9713,
+        "mean_ms_per_call": 2.9904333333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.9695,
+        "mean_ms_per_call": 2.9898333333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.7717,
+        "mean_ms_per_call": 2.9238999999999997,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.7627,
+        "mean_ms_per_call": 2.9209,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.action_time_mlp_in",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 8.438500000000001,
+        "mean_ms_per_call": 0.8438500000000001,
+        "macs": 518400000,
+        "input_shape": [
+          1,
+          50,
+          1440
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 1036800
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.3035,
+        "mean_ms_per_call": 2.7678333333333334,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.202,
+        "mean_ms_per_call": 2.734,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.1973,
+        "mean_ms_per_call": 2.7324333333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.1446,
+        "mean_ms_per_call": 2.714866666666667,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.1094,
+        "mean_ms_per_call": 2.7031333333333336,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.0343,
+        "mean_ms_per_call": 2.6781,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.031600000000001,
+        "mean_ms_per_call": 2.6772000000000005,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 8.0152,
+        "mean_ms_per_call": 2.6717333333333335,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9824,
+        "mean_ms_per_call": 2.6608,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9639,
+        "mean_ms_per_call": 2.6546333333333334,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9517,
+        "mean_ms_per_call": 2.6505666666666667,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.out_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9487,
+        "mean_ms_per_call": 2.6495666666666664,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9349,
+        "mean_ms_per_call": 2.6449666666666665,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.9254,
+        "mean_ms_per_call": 2.6418,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.8865,
+        "mean_ms_per_call": 2.628833333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.8331,
+        "mean_ms_per_call": 2.6110333333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.7759,
+        "mean_ms_per_call": 2.5919666666666665,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.7189,
+        "mean_ms_per_call": 0.77189,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.v_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.718,
+        "mean_ms_per_call": 2.5726666666666667,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 7.648700000000001,
+        "mean_ms_per_call": 2.5495666666666668,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.640400000000001,
+        "mean_ms_per_call": 0.7640400000000002,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.4336,
+        "mean_ms_per_call": 0.74336,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.3613,
+        "mean_ms_per_call": 0.73613,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.277000000000001,
+        "mean_ms_per_call": 0.7277000000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.157400000000001,
+        "mean_ms_per_call": 0.71574,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.1472999999999995,
+        "mean_ms_per_call": 0.71473,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.1472,
+        "mean_ms_per_call": 0.71472,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 7.0799,
+        "mean_ms_per_call": 0.70799,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.983899999999999,
+        "mean_ms_per_call": 0.69839,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.9659,
+        "mean_ms_per_call": 0.69659,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.9311,
+        "mean_ms_per_call": 0.69311,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.772800000000001,
+        "mean_ms_per_call": 0.6772800000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.7094000000000005,
+        "mean_ms_per_call": 0.6709400000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.6526000000000005,
+        "mean_ms_per_call": 0.6652600000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.6129999999999995,
+        "mean_ms_per_call": 0.6613,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 6.6084,
+        "mean_ms_per_call": 2.2028,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.6075,
+        "mean_ms_per_call": 0.66075,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.597799999999999,
+        "mean_ms_per_call": 0.6597799999999999,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.o_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.581200000000001,
+        "mean_ms_per_call": 0.65812,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          960
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.q_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 6.5641,
+        "mean_ms_per_call": 2.1880333333333333,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.5143,
+        "mean_ms_per_call": 0.6514300000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.5043,
+        "mean_ms_per_call": 0.65043,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 6.4188,
+        "mean_ms_per_call": 2.1396,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.402699999999999,
+        "mean_ms_per_call": 0.6402699999999999,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.k_proj",
+        "group": "vision",
+        "calls": 3,
+        "total_ms": 6.3248,
+        "mean_ms_per_call": 2.1082666666666667,
+        "macs": 1811939328,
+        "input_shape": [
+          1,
+          1024,
+          768
+        ],
+        "output_shape": [
+          1,
+          1024,
+          768
+        ],
+        "weight_numel": 589824
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.2745999999999995,
+        "mean_ms_per_call": 0.6274599999999999,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.2584,
+        "mean_ms_per_call": 0.62584,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.2487,
+        "mean_ms_per_call": 0.62487,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.113999999999999,
+        "mean_ms_per_call": 0.6113999999999999,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.1114,
+        "mean_ms_per_call": 0.61114,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.081499999999999,
+        "mean_ms_per_call": 0.60815,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 6.0303,
+        "mean_ms_per_call": 0.6030300000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 6.0183,
+        "mean_ms_per_call": 6.0183,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 5.962,
+        "mean_ms_per_call": 0.5962,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.954,
+        "mean_ms_per_call": 5.954,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 5.917300000000001,
+        "mean_ms_per_call": 0.5917300000000001,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.q_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 5.7645,
+        "mean_ms_per_call": 0.57645,
+        "macs": 345600000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          960
+        ],
+        "weight_numel": 691200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.7036,
+        "mean_ms_per_call": 5.7036,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.6981,
+        "mean_ms_per_call": 5.6981,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.5327,
+        "mean_ms_per_call": 5.5327,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.3783,
+        "mean_ms_per_call": 5.3783,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.3677,
+        "mean_ms_per_call": 5.3677,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.343,
+        "mean_ms_per_call": 5.343,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.3324,
+        "mean_ms_per_call": 5.3324,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.2661,
+        "mean_ms_per_call": 5.2661,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.2476,
+        "mean_ms_per_call": 5.2476,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.1999,
+        "mean_ms_per_call": 5.1999,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.1786,
+        "mean_ms_per_call": 5.1786,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.1307,
+        "mean_ms_per_call": 5.1307,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.0718,
+        "mean_ms_per_call": 5.0718,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.0488,
+        "mean_ms_per_call": 5.0488,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.0354,
+        "mean_ms_per_call": 5.0354,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 5.0277,
+        "mean_ms_per_call": 5.0277,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.9672,
+        "mean_ms_per_call": 4.9672,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.9408,
+        "mean_ms_per_call": 4.9408,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.action_time_mlp_out",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 4.917999999999999,
+        "mean_ms_per_call": 0.4917999999999999,
+        "macs": 259200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 518400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.9149,
+        "mean_ms_per_call": 4.9149,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.8914,
+        "mean_ms_per_call": 4.8914,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.8422,
+        "mean_ms_per_call": 4.8422,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.8045,
+        "mean_ms_per_call": 4.8045,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.7961,
+        "mean_ms_per_call": 4.7961,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.5683,
+        "mean_ms_per_call": 4.5683,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.4826,
+        "mean_ms_per_call": 4.4826,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.3323,
+        "mean_ms_per_call": 4.3323,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.2435,
+        "mean_ms_per_call": 4.2435,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 4.0044,
+        "mean_ms_per_call": 4.0044,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.9711,
+        "mean_ms_per_call": 3.9711,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.567,
+        "mean_ms_per_call": 3.567,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.5413,
+        "mean_ms_per_call": 0.35413,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.5347999999999993,
+        "mean_ms_per_call": 0.3534799999999999,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.5322999999999993,
+        "mean_ms_per_call": 0.35322999999999993,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.5255000000000005,
+        "mean_ms_per_call": 0.35255000000000003,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.4979999999999998,
+        "mean_ms_per_call": 0.3498,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.4944,
+        "mean_ms_per_call": 0.34944000000000003,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.3986000000000005,
+        "mean_ms_per_call": 0.33986000000000005,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.3899,
+        "mean_ms_per_call": 0.33899,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.3703,
+        "mean_ms_per_call": 0.33703,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.3367,
+        "mean_ms_per_call": 0.33367,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.3162,
+        "mean_ms_per_call": 0.33161999999999997,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.2855999999999996,
+        "mean_ms_per_call": 0.32855999999999996,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.2809,
+        "mean_ms_per_call": 3.2809,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.2718,
+        "mean_ms_per_call": 3.2718,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.2547,
+        "mean_ms_per_call": 0.32547000000000004,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.2416,
+        "mean_ms_per_call": 0.32416,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.2406,
+        "mean_ms_per_call": 3.2406,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.2196,
+        "mean_ms_per_call": 3.2196,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.2051,
+        "mean_ms_per_call": 0.32050999999999996,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.1887000000000003,
+        "mean_ms_per_call": 0.31887000000000004,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.1766000000000005,
+        "mean_ms_per_call": 0.31766000000000005,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.1387,
+        "mean_ms_per_call": 0.31387,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.1374,
+        "mean_ms_per_call": 3.1374,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.1331999999999995,
+        "mean_ms_per_call": 0.31331999999999993,
+        "macs": 246784000,
+        "input_shape": [
+          1,
+          241,
+          320
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 102400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.1318,
+        "mean_ms_per_call": 3.1318,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.1282,
+        "mean_ms_per_call": 3.1282,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.1217,
+        "mean_ms_per_call": 0.31217,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.0789999999999997,
+        "mean_ms_per_call": 0.30789999999999995,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.0763999999999996,
+        "mean_ms_per_call": 0.30763999999999997,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0659,
+        "mean_ms_per_call": 3.0659,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.0494000000000003,
+        "mean_ms_per_call": 0.30494000000000004,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0382,
+        "mean_ms_per_call": 3.0382,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 3.0338000000000003,
+        "mean_ms_per_call": 0.30338000000000004,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0304,
+        "mean_ms_per_call": 3.0304,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.022,
+        "mean_ms_per_call": 3.022,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0168,
+        "mean_ms_per_call": 3.0168,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0139,
+        "mean_ms_per_call": 3.0139,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.up_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 3.0106,
+        "mean_ms_per_call": 3.0106,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.9999000000000002,
+        "mean_ms_per_call": 0.29999000000000003,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.gate_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.9991,
+        "mean_ms_per_call": 2.9991,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          2560
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.down_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.9856,
+        "mean_ms_per_call": 2.9856,
+        "macs": 592281600,
+        "input_shape": [
+          1,
+          241,
+          2560
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 2457600
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.9839,
+        "mean_ms_per_call": 0.29839000000000004,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.9404000000000003,
+        "mean_ms_per_call": 0.29404,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.8984,
+        "mean_ms_per_call": 0.28984,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.8233,
+        "mean_ms_per_call": 0.28233,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.k_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.7746,
+        "mean_ms_per_call": 0.27746,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.7115,
+        "mean_ms_per_call": 0.27115,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.v_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.6281999999999996,
+        "mean_ms_per_call": 0.26281999999999994,
+        "macs": 115200000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          320
+        ],
+        "weight_numel": 230400
+      },
+      {
+        "name": "model.action_in_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.4897,
+        "mean_ms_per_call": 0.24897,
+        "macs": 11520000,
+        "input_shape": [
+          1,
+          50,
+          32
+        ],
+        "output_shape": [
+          1,
+          50,
+          720
+        ],
+        "weight_numel": 23040
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.4849,
+        "mean_ms_per_call": 2.4849,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.4838,
+        "mean_ms_per_call": 2.4838,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.2169,
+        "mean_ms_per_call": 2.2169,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.2146,
+        "mean_ms_per_call": 2.2146,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.1329,
+        "mean_ms_per_call": 2.1329,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.action_out_proj",
+        "group": "action_expert",
+        "calls": 10,
+        "total_ms": 2.1237999999999997,
+        "mean_ms_per_call": 0.21237999999999996,
+        "macs": 11520000,
+        "input_shape": [
+          1,
+          50,
+          720
+        ],
+        "output_shape": [
+          1,
+          50,
+          32
+        ],
+        "weight_numel": 23040
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.1116,
+        "mean_ms_per_call": 2.1116,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.1104,
+        "mean_ms_per_call": 2.1104,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.1073,
+        "mean_ms_per_call": 2.1073,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0873,
+        "mean_ms_per_call": 2.0873,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0873,
+        "mean_ms_per_call": 2.0873,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0674,
+        "mean_ms_per_call": 2.0674,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0587,
+        "mean_ms_per_call": 2.0587,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0339,
+        "mean_ms_per_call": 2.0339,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0289,
+        "mean_ms_per_call": 2.0289,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 2.0125,
+        "mean_ms_per_call": 2.0125,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.9965,
+        "mean_ms_per_call": 1.9965,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.9887,
+        "mean_ms_per_call": 1.9887,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.9545,
+        "mean_ms_per_call": 1.9545,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.7902,
+        "mean_ms_per_call": 1.7902,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.6044,
+        "mean_ms_per_call": 1.6044,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.4503,
+        "mean_ms_per_call": 1.4503,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.4015,
+        "mean_ms_per_call": 1.4015,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.3897,
+        "mean_ms_per_call": 1.3897,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.3803,
+        "mean_ms_per_call": 1.3803,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.3718,
+        "mean_ms_per_call": 1.3718,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.3615,
+        "mean_ms_per_call": 1.3615,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.3557,
+        "mean_ms_per_call": 1.3557,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.o_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.32,
+        "mean_ms_per_call": 1.32,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.2926,
+        "mean_ms_per_call": 1.2926,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.2737,
+        "mean_ms_per_call": 1.2737,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.2698,
+        "mean_ms_per_call": 1.2698,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.q_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.2595,
+        "mean_ms_per_call": 1.2595,
+        "macs": 222105600,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          960
+        ],
+        "weight_numel": 921600
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.1748,
+        "mean_ms_per_call": 1.1748,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 1.0633,
+        "mean_ms_per_call": 1.0633,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.946,
+        "mean_ms_per_call": 0.946,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.9279,
+        "mean_ms_per_call": 0.9279,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.9252,
+        "mean_ms_per_call": 0.9252,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.9115,
+        "mean_ms_per_call": 0.9115,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8999,
+        "mean_ms_per_call": 0.8999,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8627,
+        "mean_ms_per_call": 0.8627,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8438,
+        "mean_ms_per_call": 0.8438,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8413,
+        "mean_ms_per_call": 0.8413,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8401,
+        "mean_ms_per_call": 0.8401,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8321,
+        "mean_ms_per_call": 0.8321,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8276,
+        "mean_ms_per_call": 0.8276,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8219,
+        "mean_ms_per_call": 0.8219,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8176,
+        "mean_ms_per_call": 0.8176,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8039,
+        "mean_ms_per_call": 0.8039,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8033,
+        "mean_ms_per_call": 0.8033,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.8015,
+        "mean_ms_per_call": 0.8015,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.798,
+        "mean_ms_per_call": 0.798,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.7843,
+        "mean_ms_per_call": 0.7843,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.7737,
+        "mean_ms_per_call": 0.7737,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.7625,
+        "mean_ms_per_call": 0.7625,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.7604,
+        "mean_ms_per_call": 0.7604,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.7364,
+        "mean_ms_per_call": 0.7364,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.state_proj",
+        "group": "action_expert",
+        "calls": 1,
+        "total_ms": 0.6165,
+        "mean_ms_per_call": 0.6165,
+        "macs": 30720,
+        "input_shape": [
+          1,
+          32
+        ],
+        "output_shape": [
+          1,
+          960
+        ],
+        "weight_numel": 30720
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5794,
+        "mean_ms_per_call": 0.5794,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5706,
+        "mean_ms_per_call": 0.5706,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5682,
+        "mean_ms_per_call": 0.5682,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.k_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5671,
+        "mean_ms_per_call": 0.5671,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5334,
+        "mean_ms_per_call": 0.5334,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5302,
+        "mean_ms_per_call": 0.5302,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5269,
+        "mean_ms_per_call": 0.5269,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      },
+      {
+        "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.v_proj",
+        "group": "vlm",
+        "calls": 1,
+        "total_ms": 0.5258,
+        "mean_ms_per_call": 0.5258,
+        "macs": 74035200,
+        "input_shape": [
+          1,
+          241,
+          960
+        ],
+        "output_shape": [
+          1,
+          241,
+          320
+        ],
+        "weight_numel": 307200
+      }
+    ]
+  },
+  "outputs": {
+    "action_chunk_raw": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8_PS\\results\\w2_ps_int8_action_chunk_raw.npy"
+  }
+}

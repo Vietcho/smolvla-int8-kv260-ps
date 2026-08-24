@@ -1,0 +1,142 @@
+{
+  "status": "REVIEW",
+  "mode": "W1_CPU_X86_MIXED_INT8_DYNAMIC",
+  "started_utc": "2026-08-24T08:11:00.976031+00:00",
+  "finished_utc": "2026-08-24T08:11:44.053942+00:00",
+  "run_config": {
+    "threads": 4,
+    "seed": 0,
+    "fp32_control": true,
+    "max_abs_tolerance": 0.15,
+    "mean_abs_tolerance": 0.03
+  },
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.10.0+cpu",
+    "quantized_engine": "onednn",
+    "host": {
+      "hostname": "Admin-PC",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+      "cpu_cores_physical": 4,
+      "cpu_cores_logical": 8,
+      "ram_total_mib": 14703.05078125,
+      "ram_available_mib": 4584.015625,
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 4,
+      "env_omp_num_threads": null,
+      "env_mkl_num_threads": null
+    }
+  },
+  "source_checkpoint": {
+    "path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\source_model",
+    "parameter_count": 450046176,
+    "untouched": true
+  },
+  "fixture": {
+    "path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\inputs\\fixture.npz",
+    "content_sha256": "58fe002daf99c11deeaeb224fe64624ce21cfdf0d5ea1f9376d6496b32bd59d9",
+    "noise_path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\inputs\\w0a_noise.npy",
+    "noise_sha256": "0581817d2139c780d7cad3b280f5098b08616f5ddc6caa433bb5cf8ae3e67dfa",
+    "golden_path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\inputs\\w0a_action_chunk_raw.npy",
+    "golden_sha256": "a32766b6726549ff27451dfbec27c51eee2aacc4898fb5b399919325eb87472f"
+  },
+  "quantization": {
+    "linear_module_count": 303,
+    "linear_weight_numel": 401180416,
+    "linear_weight_fraction": 0.8914205639200898,
+    "artifact": {
+      "path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\artifacts\\smolvla_linear_w8a8_dynamic.safetensors",
+      "size_bytes": 404778320,
+      "portable_tensor_bytes": 404634816,
+      "sha256": "8e2311731bd801440d3552973851484015c807f7d1b3e53ba511e25214e1c6cf"
+    },
+    "load_seconds": 19.341587300004903,
+    "fp32_conversion_seconds": 0.2937952999927802,
+    "quantize_seconds": 12.482968599986634,
+    "export_seconds": 1.2275433000031626
+  },
+  "latency": {
+    "fp32_control": {
+      "build_frame_ms": 1.1383999953977764,
+      "preprocess_ms": 0.7831999973859638,
+      "vla_ms": 4108.203200012213,
+      "e2e_ms": 4110.124800004996
+    },
+    "int8": {
+      "build_frame_ms": 1.9056000019190833,
+      "preprocess_ms": 1.5645999956177548,
+      "vla_ms": 3621.5032000036445,
+      "e2e_ms": 3624.9734000011813
+    }
+  },
+  "memory": {
+    "peak_rss_sampled_mib": 3178.45703125,
+    "sample_interval_seconds": 0.05,
+    "sample_count": 661,
+    "rss_final_mib": 1930.43359375,
+    "peak_wset_mib": 3300.2578125
+  },
+  "accuracy": {
+    "fp32_control_vs_w0_bf16": {
+      "max_abs": 0.009904071688652039,
+      "mean_abs": 0.0032678134615222614,
+      "rmse": 0.0039519975594913,
+      "relative_l2": 0.00575067766344599,
+      "cosine_similarity": 0.9999860083812269,
+      "per_action_dim_max_abs": [
+        0.0052722543478012085,
+        0.009904071688652039,
+        0.005269885063171387,
+        0.009870350360870361,
+        0.005738496780395508,
+        0.007321566343307495
+      ],
+      "finite": true
+    },
+    "int8_vs_w0_bf16": {
+      "max_abs": 0.17291603237390518,
+      "mean_abs": 0.06505993701517582,
+      "rmse": 0.07911547613602903,
+      "relative_l2": 0.11512345202635187,
+      "cosine_similarity": 0.9934933854517761,
+      "per_action_dim_max_abs": [
+        0.1216953843832016,
+        0.08278214186429977,
+        0.14009840786457062,
+        0.0927201509475708,
+        0.09810709953308105,
+        0.17291603237390518
+      ],
+      "finite": true
+    },
+    "int8_vs_fp32_control": {
+      "max_abs": 0.17698770761489868,
+      "mean_abs": 0.0651051938161254,
+      "rmse": 0.07939660786084231,
+      "relative_l2": 0.11579533156776958,
+      "cosine_similarity": 0.9934575296345924,
+      "per_action_dim_max_abs": [
+        0.1238943487405777,
+        0.08566460013389587,
+        0.14160798490047455,
+        0.0954282283782959,
+        0.09701699018478394,
+        0.17698770761489868
+      ],
+      "finite": true
+    },
+    "numerical_pass": false
+  },
+  "outputs": {
+    "int8_raw": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\results\\w1_int8_action_chunk_raw.npy",
+    "int8_postprocessed": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\results\\w1_int8_action_chunk_postprocessed.npy",
+    "fp32_control_raw": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\results\\w1_fp32_control_action_chunk_raw.npy"
+  },
+  "limitations": [
+    "This is mixed INT8, not an all-integer SmolVLA graph.",
+    "Dynamic activation scales are chosen by oneDNN and are not yet frozen for KV260.",
+    "Task success is not evaluated because the base checkpoint is not fine-tuned for SO-101."
+  ]
+}

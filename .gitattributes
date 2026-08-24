@@ -1,0 +1,7 @@
+# GitHub rejects ordinary Git objects larger than 100 MB. Store model weights
+# in Git LFS so clone + git lfs pull retrieves the real checkpoint files.
+package/model/*.safetensors filter=lfs diff=lfs merge=lfs -text
+
+# Keep shell scripts in LF form for Debian on the KV260.
+*.sh text eol=lf
+

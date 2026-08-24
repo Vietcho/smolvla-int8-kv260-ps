@@ -1,0 +1,64 @@
+{
+  "schema_version": "w0-fixture-1",
+  "created_utc": "2026-08-19T02:44:05.476888+00:00",
+  "source": "synthetic_deterministic",
+  "seed": 0,
+  "fixture_content_sha256": "58fe002daf99c11deeaeb224fe64624ce21cfdf0d5ea1f9376d6496b32bd59d9",
+  "fixture_file_sha256": "6c4f0f239ed084e90335598393b933c8c344f0447052eb6e7626226c33949b7c",
+  "task": "Move the robot arm toward the red cube.",
+  "robot_type": "ur5e_webots",
+  "joint_names": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "camera_names": [
+    "camera1",
+    "camera2",
+    "camera3"
+  ],
+  "joint_state_rad": [
+    0.0,
+    -1.2000000476837158,
+    1.399999976158142,
+    -1.75,
+    -1.5707999467849731,
+    0.0
+  ],
+  "arrays": {
+    "observation.state": {
+      "shape": [
+        6
+      ],
+      "dtype": "float32"
+    },
+    "observation.images.camera1": {
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "observation.images.camera2": {
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "observation.images.camera3": {
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8"
+    }
+  },
+  "note": "fixture_content_sha256 là định danh chính thức; nó ổn định giữa các lần ghi file và giữa x86 với aarch64. fixture_file_sha256 sẽ đổi mỗi lần ghi lại vì header zip của .npz có chứa timestamp."
+}

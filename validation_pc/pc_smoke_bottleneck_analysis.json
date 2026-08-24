@@ -1,0 +1,119 @@
+{
+  "warning": "Hook timing is for ranking only. Confirm candidates with PS-only versus PS+PL A/B runs.",
+  "vla_mean_ms": 3842.1432000031928,
+  "assumed_pl_kernel_speedup": 10.0,
+  "group_ranking": [
+    {
+      "group": "vision",
+      "mean_profiled_linear_ms": 1146.8344,
+      "share_of_vla": 0.29848819794094267,
+      "macs_per_inference": 260919263232.0,
+      "ideal_max_system_speedup": 1.4254927672846396,
+      "estimated_system_speedup_at_assumed_pl_factor": 1.3673145232596182
+    },
+    {
+      "group": "action_expert",
+      "mean_profiled_linear_ms": 916.1993,
+      "share_of_vla": 0.23846047695443487,
+      "macs_per_inference": 53041054720.0,
+      "ideal_max_system_speedup": 1.3131294827624687,
+      "estimated_system_speedup_at_assumed_pl_factor": 1.2732599595081728
+    },
+    {
+      "group": "vlm",
+      "mean_profiled_linear_ms": 307.5403,
+      "share_of_vla": 0.08004394526464928,
+      "macs_per_inference": 40170946560.0,
+      "ideal_max_system_speedup": 1.087008444428007,
+      "estimated_system_speedup_at_assumed_pl_factor": 1.0776321348560611
+    }
+  ],
+  "top_layer_candidates": [
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.q_proj",
+      "group": "vision",
+      "mean_total_ms_per_inference": 53.3568,
+      "calls_per_inference": 3.0,
+      "macs_per_inference": 1811939328.0,
+      "input_shape": [
+        1,
+        1024,
+        768
+      ],
+      "output_shape": [
+        1,
+        1024,
+        768
+      ]
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc2",
+      "group": "vision",
+      "mean_total_ms_per_inference": 35.1228,
+      "calls_per_inference": 3.0,
+      "macs_per_inference": 7247757312.0,
+      "input_shape": [
+        1,
+        1024,
+        3072
+      ],
+      "output_shape": [
+        1,
+        1024,
+        768
+      ]
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.k_proj",
+      "group": "vision",
+      "mean_total_ms_per_inference": 33.5519,
+      "calls_per_inference": 3.0,
+      "macs_per_inference": 1811939328.0,
+      "input_shape": [
+        1,
+        1024,
+        768
+      ],
+      "output_shape": [
+        1,
+        1024,
+        768
+      ]
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc2",
+      "group": "vision",
+      "mean_total_ms_per_inference": 32.208,
+      "calls_per_inference": 3.0,
+      "macs_per_inference": 7247757312.0,
+      "input_shape": [
+        1,
+        1024,
+        3072
+      ],
+      "output_shape": [
+        1,
+        1024,
+        768
+      ]
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc1",
+      "group": "vision",
+      "mean_total_ms_per_inference": 31.9927,
+      "calls_per_inference": 3.0,
+      "macs_per_inference": 7247757312.0,
+      "input_shape": [
+        1,
+        1024,
+        768
+      ],
+      "output_shape": [
+        1,
+        1024,
+        3072
+      ]
+    }
+  ],
+  "recommended_first_target": "vision"
+}

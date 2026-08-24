@@ -1,0 +1,13 @@
+numpy
+psutil
+pillow
+safetensors
+einops
+huggingface-hub
+transformers
+torch
+torchvision
+draccus==0.10.0
+deepdiff
+termcolor
+jsonlines

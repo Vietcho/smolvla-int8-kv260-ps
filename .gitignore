@@ -1,0 +1,24 @@
+# Python cache and local virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Local test output
+results/*
+!results/.gitkeep
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local credentials must never be committed
+.env
+.env.*
+*.pem
+*.key
+

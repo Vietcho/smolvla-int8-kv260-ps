@@ -1,0 +1,4887 @@
+{
+  "format_version": 1,
+  "scheme": {
+    "linear_weight": "signed INT8 symmetric per output channel",
+    "linear_activation": "dynamic INT8 per invocation (backend controlled)",
+    "linear_accumulator": "INT32 inside oneDNN qlinear_dynamic",
+    "linear_output": "FP32",
+    "remaining_operators": "FP32",
+    "flow_integration": "FP32"
+  },
+  "backend": {
+    "torch": "2.10.0+cpu",
+    "quantized_engine": "onednn",
+    "supported_engines": [
+      "onednn"
+    ],
+    "cpu_machine": "AMD64"
+  },
+  "source": {
+    "directory": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\source_model",
+    "model_sha256": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb",
+    "untouched": true
+  },
+  "coverage": {
+    "linear_module_count": 303,
+    "linear_weight_numel": 401180416,
+    "linear_bias_numel": 86096,
+    "original_parameter_count": 450046176,
+    "linear_weight_fraction": 0.8914205639200898
+  },
+  "artifact": {
+    "path": "D:\\TAI_LIEU\\DU_AN_XU_LY_TINHIEU\\XU_LY_TIN_HIEU_FPGA\\IP_FPGA\\VLA\\quan_int8\\artifacts\\smolvla_linear_w8a8_dynamic.safetensors",
+    "size_bytes": 404778320,
+    "portable_tensor_bytes": 404634816,
+    "sha256": "8e2311731bd801440d3552973851484015c807f7d1b3e53ba511e25214e1c6cf"
+  },
+  "layers": [
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00032360601471737027,
+      "scale_max": 0.0023897059727460146,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000179993876372464,
+      "scale_max": 0.0015318627702072263,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037530637928284705,
+      "scale_max": 0.0023743873462080956,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000312117044813931,
+      "scale_max": 0.0027267157565802336,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003312653279863298,
+      "scale_max": 0.0024203432258218527,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.0.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003006280749104917,
+      "scale_max": 0.0020680148154497147,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00031594670144841075,
+      "scale_max": 0.0027267157565802336,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00024701288202777505,
+      "scale_max": 0.0010033701546490192,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00021254595776554197,
+      "scale_max": 0.0026194853708148003,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002508425386622548,
+      "scale_max": 0.0016620710957795382,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00027573530678637326,
+      "scale_max": 0.0022824755869805813,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.1.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0033241421915590763,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003580729244276881,
+      "scale_max": 0.0020373775623738766,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00027765013510361314,
+      "scale_max": 0.001102941227145493,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003216911864001304,
+      "scale_max": 0.0017310049152001739,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00027765013510361314,
+      "scale_max": 0.0013020833721384406,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003389246412552893,
+      "scale_max": 0.002113970695063472,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.2.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038488052086904645,
+      "scale_max": 0.0033700980711728334,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00036381740937940776,
+      "scale_max": 0.0018152573611587286,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002719056501518935,
+      "scale_max": 0.0013403799384832382,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00030445773154497147,
+      "scale_max": 0.001118259853683412,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003389246412552893,
+      "scale_max": 0.0011565564200282097,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002929687616415322,
+      "scale_max": 0.0033088235650211573,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.3.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039445466245524585,
+      "scale_max": 0.002895220648497343,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00035615809611044824,
+      "scale_max": 0.001616115216165781,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00031786152976565063,
+      "scale_max": 0.0008923100540414453,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003523284394759685,
+      "scale_max": 0.0011412377934902906,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003293504996690899,
+      "scale_max": 0.0015778186498209834,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002910539333242923,
+      "scale_max": 0.002864583395421505,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.4.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004174326022621244,
+      "scale_max": 0.0030177696608006954,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003791360359173268,
+      "scale_max": 0.0015701593365520239,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003102022164966911,
+      "scale_max": 0.0007774203550070524,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00032360601471737027,
+      "scale_max": 0.0013020833721384406,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00029488358995877206,
+      "scale_max": 0.001294424058869481,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00029488358995877206,
+      "scale_max": 0.003569240216165781,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.5.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000440410542069003,
+      "scale_max": 0.0034620098304003477,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003810508642345667,
+      "scale_max": 0.0016084559028968215,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00030445773154497147,
+      "scale_max": 0.0006625306559726596,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037530637928284705,
+      "scale_max": 0.0011948529863730073,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00033509498462080956,
+      "scale_max": 0.001807598047889769,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00027765013510361314,
+      "scale_max": 0.0027573530096560717,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.6.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045381434028968215,
+      "scale_max": 0.003507965710014105,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003714767226483673,
+      "scale_max": 0.0016467524692416191,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003312653279863298,
+      "scale_max": 0.0009037990239448845,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003389246412552893,
+      "scale_max": 0.0013327206252142787,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00033509498462080956,
+      "scale_max": 0.001248468179255724,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00028722427668981254,
+      "scale_max": 0.0012025122996419668,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.7.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00043275122880004346,
+      "scale_max": 0.0033547794446349144,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041360294562764466,
+      "scale_max": 0.0013786765048280358,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003331801563035697,
+      "scale_max": 0.0006931679090484977,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00033509498462080956,
+      "scale_max": 0.0011642157332971692,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00033700981293804944,
+      "scale_max": 0.0007276348187588155,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00026807599351741374,
+      "scale_max": 0.0011718750465661287,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.8.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037339155096560717,
+      "scale_max": 0.0031250000465661287,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037339155096560717,
+      "scale_max": 0.001233149552717805,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003580729244276881,
+      "scale_max": 0.0010110294679179788,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00028530944837257266,
+      "scale_max": 0.0009803922148421407,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00025467219529673457,
+      "scale_max": 0.001439951010979712,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00022786458430346102,
+      "scale_max": 0.0012561274925246835,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.9.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00027765013510361314,
+      "scale_max": 0.0016084559028968215,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00030828738817945123,
+      "scale_max": 0.0014935662038624287,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000359987752744928,
+      "scale_max": 0.0008310355478897691,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00026807599351741374,
+      "scale_max": 0.0012254902394488454,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002929687616415322,
+      "scale_max": 0.0010952819138765335,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00025467219529673457,
+      "scale_max": 0.0012561274925246835,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.10.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00024892771034501493,
+      "scale_max": 0.0013939951313659549,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.k_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00032743567135185003,
+      "scale_max": 0.001409313757903874,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.v_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003389246412552893,
+      "scale_max": 0.0010416667209938169,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.q_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00029679841827601194,
+      "scale_max": 0.0013174019986763597,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.self_attn.out_proj",
+      "shape": [
+        768,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 589824,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003102022164966911,
+      "scale_max": 0.002159926574677229,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.mlp.fc1",
+      "shape": [
+        3072,
+        768
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 3072,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0002623315085656941,
+      "scale_max": 0.0013556985650211573,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.vision_model.encoder.layers.11.mlp.fc2",
+      "shape": [
+        768,
+        3072
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2359296,
+      "bias_numel": 768,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003312653279863298,
+      "scale_max": 0.003982843365520239,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.connector.modality_projection.proj",
+      "shape": [
+        960,
+        12288
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 11796480,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00042509191553108394,
+      "scale_max": 0.0015165441436693072,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001585477963089943,
+      "scale_max": 0.03602941334247589,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023284314665943384,
+      "scale_max": 0.028799019753932953,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000704656878951937,
+      "scale_max": 0.0034007353242486715,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0007965686381794512,
+      "scale_max": 0.01936274580657482,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022977942135185003,
+      "scale_max": 0.03075980395078659,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0019761030562222004,
+      "scale_max": 0.019485294818878174,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.0.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023590687196701765,
+      "scale_max": 0.0235294122248888,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0008348652045242488,
+      "scale_max": 0.011580882593989372,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023897059727460146,
+      "scale_max": 0.02083333395421505,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001248468179255724,
+      "scale_max": 0.006862745154649019,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0019148284336552024,
+      "scale_max": 0.023039216175675392,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002864583395421505,
+      "scale_max": 0.017892157658934593,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026654412504285574,
+      "scale_max": 0.015012254938483238,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.1.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0029871324077248573,
+      "scale_max": 0.0313725508749485,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001600796589627862,
+      "scale_max": 0.02291666716337204,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023284314665943384,
+      "scale_max": 0.026470588520169258,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017156862886622548,
+      "scale_max": 0.004779411945492029,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017310049152001739,
+      "scale_max": 0.014093137346208096,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0027879902627319098,
+      "scale_max": 0.012806372717022896,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026501226238906384,
+      "scale_max": 0.01194852963089943,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.2.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0030790441669523716,
+      "scale_max": 0.029044117778539658,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017999387346208096,
+      "scale_max": 0.012990196235477924,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002558210864663124,
+      "scale_max": 0.012009804137051105,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001439951010979712,
+      "scale_max": 0.004656862933188677,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0020986520685255527,
+      "scale_max": 0.017524510622024536,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002542892238125205,
+      "scale_max": 0.03431372717022896,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026501226238906384,
+      "scale_max": 0.017034314572811127,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.3.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0031250000465661287,
+      "scale_max": 0.03946078568696976,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013556985650211573,
+      "scale_max": 0.021568628028035164,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022977942135185003,
+      "scale_max": 0.018014706671237946,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0010646446608006954,
+      "scale_max": 0.004779411945492029,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001616115216165781,
+      "scale_max": 0.024264706298708916,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026654412504285574,
+      "scale_max": 0.015379901975393295,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002588848117738962,
+      "scale_max": 0.014154411852359772,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.4.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.003155637299641967,
+      "scale_max": 0.028308823704719543,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017539828550070524,
+      "scale_max": 0.020465686917304993,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002558210864663124,
+      "scale_max": 0.01924019679427147,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002251838333904743,
+      "scale_max": 0.005422794260084629,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017156862886622548,
+      "scale_max": 0.015073529444634914,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026041667442768812,
+      "scale_max": 0.013970588333904743,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026960785035043955,
+      "scale_max": 0.01194852963089943,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.5.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0030637255404144526,
+      "scale_max": 0.025735294446349144,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013403799384832382,
+      "scale_max": 0.015808824449777603,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002251838333904743,
+      "scale_max": 0.013664215803146362,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002221201080828905,
+      "scale_max": 0.006464460864663124,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0019761030562222004,
+      "scale_max": 0.023774510249495506,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002496936358511448,
+      "scale_max": 0.01727941259741783,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0024509804788976908,
+      "scale_max": 0.023774510249495506,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.6.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.003216911805793643,
+      "scale_max": 0.027205882593989372,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0007123161922208965,
+      "scale_max": 0.015931373462080956,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0018995098071172833,
+      "scale_max": 0.012438725680112839,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017999387346208096,
+      "scale_max": 0.006403186358511448,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0020680148154497147,
+      "scale_max": 0.020710784941911697,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0024050245992839336,
+      "scale_max": 0.013357843272387981,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002573529491201043,
+      "scale_max": 0.013909313827753067,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.7.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.003186274552717805,
+      "scale_max": 0.029289215803146362,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013939951313659549,
+      "scale_max": 0.01568627543747425,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0016620710957795382,
+      "scale_max": 0.012377451173961163,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022824755869805813,
+      "scale_max": 0.005330882500857115,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0018382353009656072,
+      "scale_max": 0.027328431606292725,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002190563827753067,
+      "scale_max": 0.015625,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00246629910543561,
+      "scale_max": 0.012500000186264515,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.8.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0027879902627319098,
+      "scale_max": 0.027818627655506134,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0006433823728002608,
+      "scale_max": 0.01403186284005642,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0014629289507865906,
+      "scale_max": 0.01066176500171423,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022824755869805813,
+      "scale_max": 0.00508578447625041,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017846201080828905,
+      "scale_max": 0.03431372717022896,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023131128400564194,
+      "scale_max": 0.012561274692416191,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026194853708148003,
+      "scale_max": 0.026960784569382668,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.9.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.003186274552717805,
+      "scale_max": 0.027818627655506134,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0008923100540414453,
+      "scale_max": 0.016544118523597717,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013633578782901168,
+      "scale_max": 0.01066176500171423,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0018458946142345667,
+      "scale_max": 0.011519608087837696,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026348039973527193,
+      "scale_max": 0.03504902124404907,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0024509804788976908,
+      "scale_max": 0.014460784383118153,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0027420343831181526,
+      "scale_max": 0.01513480395078659,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.10.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0029411765281111,
+      "scale_max": 0.025857843458652496,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0016314338427037,
+      "scale_max": 0.016911765560507774,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013863358180969954,
+      "scale_max": 0.014399509876966476,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002481617731973529,
+      "scale_max": 0.005453431513160467,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002236519707366824,
+      "scale_max": 0.011642157100141048,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0024509804788976908,
+      "scale_max": 0.018137255683541298,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0027573530096560717,
+      "scale_max": 0.020465686917304993,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.11.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0033547794446349144,
+      "scale_max": 0.018382353708148003,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0010952819138765335,
+      "scale_max": 0.02181372605264187,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013174019986763597,
+      "scale_max": 0.010784314014017582,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0020526961889117956,
+      "scale_max": 0.005300245247781277,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002481617731973529,
+      "scale_max": 0.015563725493848324,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022977942135185003,
+      "scale_max": 0.012990196235477924,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0027420343831181526,
+      "scale_max": 0.017401961609721184,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.12.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0030790441669523716,
+      "scale_max": 0.020098039880394936,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0017386642284691334,
+      "scale_max": 0.025122549384832382,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0018918504938483238,
+      "scale_max": 0.008762255311012268,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0023284314665943384,
+      "scale_max": 0.009987745434045792,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0019071691203862429,
+      "scale_max": 0.026715686544775963,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022671569604426622,
+      "scale_max": 0.018382353708148003,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0026807598769664764,
+      "scale_max": 0.03431372717022896,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.13.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002558210864663124,
+      "scale_max": 0.042401961982250214,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0006433823728002608,
+      "scale_max": 0.019485294818878174,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0013097426854074001,
+      "scale_max": 0.015318627469241619,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0022977942135185003,
+      "scale_max": 0.005484068766236305,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001279105432331562,
+      "scale_max": 0.031004901975393295,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002221201080828905,
+      "scale_max": 0.015502450987696648,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002236519707366824,
+      "scale_max": 0.014460784383118153,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.14.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002558210864663124,
+      "scale_max": 0.031617648899555206,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.q_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0012561274925246835,
+      "scale_max": 0.015931373462080956,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.k_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0020373775623738766,
+      "scale_max": 0.01066176500171423,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.v_proj",
+      "shape": [
+        320,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 307200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002527573611587286,
+      "scale_max": 0.005269607994705439,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.self_attn.o_proj",
+      "shape": [
+        960,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 921600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001072303974069655,
+      "scale_max": 0.04534313827753067,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.gate_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.002129289321601391,
+      "scale_max": 0.01764705963432789,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.up_proj",
+      "shape": [
+        2560,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0024050245992839336,
+      "scale_max": 0.018014706671237946,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.model.text_model.layers.15.mlp.down_proj",
+      "shape": [
+        960,
+        2560
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 2457600,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0033394608180969954,
+      "scale_max": 0.024142157286405563,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.vlm.lm_head",
+      "shape": [
+        49280,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 47308800,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0007621017284691334,
+      "scale_max": 0.020588235929608345,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000407858460675925,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038488052086904645,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038679534918628633,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.0.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00047638191608712077,
+      "scale_max": 0.0009903262834995985,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005468972958624363,
+      "scale_max": 0.0010727944318205118,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004193474305793643,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003906250058207661,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039445466245524585,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.1.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037722120760008693,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038296569255180657,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.2.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004480698553379625,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004505272372625768,
+      "scale_max": 0.0009044031612575054,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005333859589882195,
+      "scale_max": 0.001116592320613563,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004212622588966042,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003906250058207661,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.3.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00044424019870348275,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000407858460675925,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004212622588966042,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000407858460675925,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.4.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000445070443674922,
+      "scale_max": 0.0010335013503208756,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005437376676127315,
+      "scale_max": 0.0009546666988171637,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004097732889931649,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.5.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038296569255180657,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003906250058207661,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.6.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00044232537038624287,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000481095805298537,
+      "scale_max": 0.0009358383831568062,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005282805650494993,
+      "scale_max": 0.0008949196198955178,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000407858460675925,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.7.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00044232537038624287,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004193474305793643,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004193474305793643,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.8.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00047041091602295637,
+      "scale_max": 0.00103537377435714,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005379781941883266,
+      "scale_max": 0.0009276230703108013,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00042509191553108394,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004021139757242054,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037530637928284705,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.9.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004193474305793643,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000407858460675925,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004097732889931649,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003810508642345667,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038488052086904645,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.10.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000460144248791039,
+      "scale_max": 0.0010059355990961194,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005203525652177632,
+      "scale_max": 0.000856150989420712,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00041551777394488454,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00038679534918628633,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.11.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00044615502702072263,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039253983413800597,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00039445466245524585,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.12.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00044424019870348275,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.000464270036900416,
+      "scale_max": 0.0014683185145258904,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0005159626598469913,
+      "scale_max": 0.0010916459141299129,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004021139757242054,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.13.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004595588252414018,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.k_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004097732889931649,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.v_proj",
+      "shape": [
+        320,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 230400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00040402880404144526,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004212622588966042,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003906250058207661,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00037339155096560717,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.14.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00045189951197244227,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.q_proj",
+      "shape": [
+        960,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003906250058207661,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.k_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004567063006106764,
+      "scale_max": 0.001115612220019102,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.v_proj",
+      "shape": [
+        320,
+        320
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 102400,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004859875771217048,
+      "scale_max": 0.0009150664554908872,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.self_attn.o_proj",
+      "shape": [
+        720,
+        960
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 691200,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004116881173104048,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.gate_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004001991474069655,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.up_proj",
+      "shape": [
+        2048,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003982843190897256,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.vlm_with_expert.lm_expert.layers.15.mlp.down_proj",
+      "shape": [
+        720,
+        2048
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1474560,
+      "bias_numel": 0,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0004384957137517631,
+      "scale_max": 0.0005208333604969084,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.state_proj",
+      "shape": [
+        960,
+        32
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 30720,
+      "bias_numel": 960,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0011571957729756832,
+      "scale_max": 0.0023236291017383337,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.action_in_proj",
+      "shape": [
+        720,
+        32
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 23040,
+      "bias_numel": 720,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.001308299251832068,
+      "scale_max": 0.001985956681892276,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.action_out_proj",
+      "shape": [
+        32,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 23040,
+      "bias_numel": 32,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.00042255836888216436,
+      "scale_max": 0.0007673986256122589,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.action_time_mlp_in",
+      "shape": [
+        720,
+        1440
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 1036800,
+      "bias_numel": 720,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003020708973053843,
+      "scale_max": 0.0007089728023856878,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    },
+    {
+      "name": "model.action_time_mlp_out",
+      "shape": [
+        720,
+        720
+      ],
+      "source_dtype": "torch.float32",
+      "weight_numel": 518400,
+      "bias_numel": 720,
+      "qscheme": "torch.per_channel_affine",
+      "axis": 0,
+      "scale_min": 0.0003460360167082399,
+      "scale_max": 0.0005556605174206197,
+      "zero_point_min": 0,
+      "zero_point_max": 0
+    }
+  ]
+}
