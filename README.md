@@ -5,6 +5,21 @@ Hướng dẫn đưa toàn bộ gói lên GitHub bằng Git LFS và clone trên 
 
 Thư mục này là gói triển khai PS-only và profiler. Nó nạp trực tiếp 303 Linear INT8, không nạp checkpoint gốc 906 MB rồi mới lượng tử. Norm, Softmax, SiLU, Conv, Embedding và flow integration vẫn FP32.
 
+## Phạm vi chạy độc lập
+
+Để **verify, nạp model, suy luận, benchmark và profile trên KV260 PS**, toàn bộ
+file cần thiết đã nằm trong `quan_int8_PS`. Runner dùng đường dẫn tương đối theo
+vị trí của chính `run_w2_ps_int8.py`, vì vậy không cần thư mục `quan_int8`,
+`third_party`, checkpoint gốc hay các file khác ở thư mục cha.
+
+Các chuỗi đường dẫn Windows còn xuất hiện trong một số JSON chỉ là thông tin
+nguồn gốc của lần tạo artifact; runner không mở các đường dẫn đó.
+
+Ngoại lệ: `prepare_ps_bundle.py` là công cụ **tạo lại** gói trên PC. Chỉ file này
+cần `../quan_int8`, `../third_party/lerobot` và cache checkpoint. Không chạy
+`prepare_ps_bundle.py` trên KV260. Các thư viện hệ thống/Python vẫn phải được cài
+theo `requirements-ps.txt`.
+
 ## 1. Nội dung
 
 ```text
