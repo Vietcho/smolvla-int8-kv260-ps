@@ -14,6 +14,11 @@ của GitHub, vì vậy repository này dùng **Git LFS**. Không bỏ qua bư�
 
    ```text
    https://github.com/Vietcho/smolvla-int8-kv260-ps.git
+   ```
+
+> Các lệnh bên dưới giả sử tài khoản là `Vietcho` và repository đã được tạo với
+> đúng tên `smolvla-int8-kv260-ps`. Nếu tên thực tế khác, phải thay URL trước khi
+> chạy. Không dùng nguyên chữ giữ chỗ như `TEN_GITHUB`.
 
 ## B. Push từ PC Windows
 
@@ -22,12 +27,31 @@ Mở PowerShell tại thư mục dự án VLA và thay URL ví dụ bằng URL t
 ```powershell
 Set-Location "D:\TAI_LIEU\DU_AN_XU_LY_TINHIEU\XU_LY_TIN_HIEU_FPGA\IP_FPGA\VLA\quan_int8_PS"
 
+# Chỉ chạy dòng này nếu Git báo "detected dubious ownership".
+git config --global --add safe.directory "D:/TAI_LIEU/DU_AN_XU_LY_TINHIEU/XU_LY_TIN_HIEU_FPGA/IP_FPGA/VLA/quan_int8_PS"
+
 git lfs install --local
 git status
+git add .
 git commit -m "Add SmolVLA INT8 KV260 PS deployment bundle"
 git remote add origin "https://github.com/Vietcho/smolvla-int8-kv260-ps.git"
 git push -u origin main
 ```
+
+Nếu `git remote add origin` báo `remote origin already exists`, không chạy lại
+`remote add`. Sửa URL đã lưu rồi push:
+
+```powershell
+git remote set-url origin "https://github.com/Vietcho/smolvla-int8-kv260-ps.git"
+git remote -v
+git push -u origin main
+```
+
+Nếu push báo `Repository not found`, kiểm tra cả hai điều kiện:
+
+1. Repository `smolvla-int8-kv260-ps` đã thực sự được tạo trên tài khoản
+   `Vietcho`.
+2. `git remote -v` không còn URL mẫu hoặc sai tên tài khoản/repository.
 
 Khi GitHub yêu cầu xác thực, đăng nhập qua Git Credential Manager hoặc dùng
 Personal Access Token làm mật khẩu. Không ghi token vào file và không gửi token
@@ -57,7 +81,7 @@ sudo apt install -y git git-lfs
 git lfs install
 
 cd /home/ubuntu
-git clone https://github.com/TEN_GITHUB/smolvla-int8-kv260-ps.git quan_int8_PS
+git clone https://github.com/Vietcho/smolvla-int8-kv260-ps.git quan_int8_PS
 cd /home/ubuntu/quan_int8_PS
 git lfs pull
 ```
@@ -79,7 +103,7 @@ keys**, rồi kiểm tra và clone:
 ```bash
 ssh -T git@github.com
 cd /home/ubuntu
-git clone git@github.com:TEN_GITHUB/smolvla-int8-kv260-ps.git quan_int8_PS
+git clone git@github.com:Vietcho/smolvla-int8-kv260-ps.git quan_int8_PS
 cd /home/ubuntu/quan_int8_PS
 git lfs pull
 ```
