@@ -80,9 +80,9 @@ sudo apt update
 sudo apt install -y git git-lfs
 git lfs install
 
-cd /home/ubuntu
+cd ~
 git clone https://github.com/Vietcho/smolvla-int8-kv260-ps.git quan_int8_PS
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 git lfs pull
 ```
 
@@ -102,16 +102,16 @@ keys**, rồi kiểm tra và clone:
 
 ```bash
 ssh -T git@github.com
-cd /home/ubuntu
+cd ~
 git clone git@github.com:Vietcho/smolvla-int8-kv260-ps.git quan_int8_PS
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 git lfs pull
 ```
 
 ## D. Xác nhận tải đủ trọng số
 
 ```bash
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 git lfs ls-files
 ls -lh package/model/*.safetensors
 python3 verify_package.py
@@ -124,19 +124,30 @@ Kích thước mong đợi xấp xỉ:
 
 `verify_package.py` phải báo gói hợp lệ trước khi cài môi trường hoặc benchmark.
 
+Nếu bản clone cũ báo nhiều lỗi `size mismatch` cho file `.py`/`.json`, đó là
+manifest v1 chưa chuẩn hóa CRLF/LF. Cập nhật lên manifest v2 rồi kiểm tra lại;
+không cần clone hoặc tải lại trọng số LFS:
+
+```bash
+cd ~/quan_int8_PS
+git pull --ff-only
+git lfs pull
+python3 verify_package.py
+```
+
 ## E. Cài môi trường và chạy trên PS
 
 Thực hiện tiếp theo đúng `README.md` trong repository. Tóm tắt:
 
 ```bash
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 chmod +x check_ps_environment.sh
 ./check_ps_environment.sh
 
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements-ps.txt
+chmod +x install_ps_dependencies.sh
+./install_ps_dependencies.sh
 
 python run_w2_ps_int8.py --help
 ```
@@ -154,7 +165,39 @@ git push
 Trên KV260:
 
 ```bash
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 git pull
 git lfs pull
+```
+
+## G. Cập nhật profiler và chạy trên KV260
+
+Repository trong thư mục này đã có `origin`. Trước khi commit, xem `git status`
+vì workspace có thể còn thay đổi cục bộ khác. Để chỉ commit phần profiler:
+
+```powershell
+Set-Location "D:\TAI_LIEU\DU_AN_XU_LY_TINHIEU\XU_LY_TIN_HIEU_FPGA\IP_FPGA\VLA\quan_int8_PS"
+git add run_w2_ps_int8.py runtime_profile.py export_profile_csv.py README.md GITHUB_KV260.md
+git diff --cached
+git commit -m "Add SmolVLA block timing and golden comparison"
+git push
+```
+
+Trên KV260:
+
+```bash
+cd ~/quan_int8_PS
+git pull --ff-only
+git lfs pull
+python3 verify_package.py
+source .venv_ps/bin/activate
+python run_w2_ps_int8.py --threads 4 --warmup 1 --iterations 1 \
+  --profile-blocks --top-layers 30 --result-prefix w2_detailed
+python export_profile_csv.py results/w2_detailed_profile.json
+```
+
+Các file trong `results/` bị `.gitignore` bỏ qua. Tải báo cáo về PC bằng SCP:
+
+```powershell
+scp "debian@192.168.0.132:~/quan_int8_PS/results/w2_detailed_*" ".\results\"
 ```

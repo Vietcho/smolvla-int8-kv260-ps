@@ -2,6 +2,16 @@
 # in Git LFS so clone + git lfs pull retrieves the real checkpoint files.
 package/model/*.safetensors filter=lfs diff=lfs merge=lfs -text
 
+# Binary deployment artifacts stay byte-exact. Text files are stored as LF;
+# package_manifest.json records their LF-normalized size and SHA-256 so the
+# verifier behaves identically on Windows and Linux.
+package/** -text
+package/**/*.py text eol=lf
+package/**/*.json text eol=lf
+package/**/*.txt text eol=lf
+package/**/*.md text eol=lf
+package/**/*.mdx text eol=lf
+package/**/*.proto text eol=lf
+
 # Keep shell scripts in LF form for Debian on the KV260.
 *.sh text eol=lf
-

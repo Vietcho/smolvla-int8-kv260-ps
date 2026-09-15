@@ -43,6 +43,9 @@ from torch import nn  # noqa: E402
 from torch.ao.nn.quantized.dynamic import Linear as TorchDynamicLinear  # noqa: E402
 
 import w0_common as common  # noqa: E402
+from runtime_profile import (  # noqa: E402
+    BlockProfiler, file_record, print_golden_table, print_timing_table, timed_call, tree_nbytes,
+)
 
 
 class LinearStub(nn.Module):
@@ -83,6 +86,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--iterations", type=int, default=5)
     parser.add_argument("--top-layers", type=int, default=30)
     parser.add_argument("--skip-layer-profile", action="store_true")
+    parser.add_argument("--profile-blocks", action="store_true", help="Time algorithm blocks; adds overhead.")
     parser.add_argument("--w1-max-abs-tolerance", type=float, default=0.05)
     parser.add_argument("--w1-mean-abs-tolerance", type=float, default=0.01)
     parser.add_argument(
@@ -272,11 +276,17 @@ def main() -> None:
     policy, preprocess, postprocess, load_timings, layer_records = load_policy_direct()
     load_timings["total_model_load_seconds"] = time.perf_counter() - total_mark
 
-    fixture = common.load_fixture(INPUT_DIR / "fixture.npz")
+    storage_reads = []
+    fixture_path = INPUT_DIR / "fixture.npz"
+    fixture, elapsed_ms = timed_call(common.load_fixture, fixture_path)
+    storage_reads.append(file_record(fixture_path, elapsed_ms))
     raw_observation = common.build_raw_observation(fixture)
-    noise = torch.from_numpy(np.load(INPUT_DIR / "w0a_noise.npy", allow_pickle=False)).float()
+    noise_path = INPUT_DIR / "w0a_noise.npy"
+    noise_array, elapsed_ms = timed_call(np.load, noise_path, allow_pickle=False)
+    storage_reads.append(file_record(noise_path, elapsed_ms))
+    noise = torch.from_numpy(noise_array).float()
 
-    def infer_once() -> tuple[torch.Tensor, dict[str, float]]:
+    def infer_once() -> tuple[torch.Tensor, np.ndarray, dict[str, float], dict[str, int]]:
         phases: dict[str, float] = {}
         with torch.inference_mode():
             mark = time.perf_counter()
@@ -290,15 +300,32 @@ def main() -> None:
             chunk = policy.predict_action_chunk(batch, noise=noise)
             phases["vla_ms"] = (time.perf_counter() - mark) * 1000
             mark = time.perf_counter()
-            postprocess(chunk.squeeze(0))
+            post = postprocess(chunk.squeeze(0))
+            post_array = post.detach().cpu().to(torch.float32).numpy()
             phases["postprocess_ms"] = (time.perf_counter() - mark) * 1000
+            mark = time.perf_counter()
+            cpu_chunk = chunk.detach().cpu().to(torch.float32)
+            phases["output_materialize_ms"] = (time.perf_counter() - mark) * 1000
         phases["e2e_ms"] = sum(phases.values())
-        return chunk.detach().cpu().float(), phases
+        boundaries = {
+            "raw_observation_bytes": tree_nbytes(raw_observation),
+            "frame_bytes": tree_nbytes(frame),
+            "preprocessed_batch_bytes": tree_nbytes(batch),
+            "noise_bytes": tree_nbytes(noise),
+            "model_output_bytes": tree_nbytes(chunk),
+            "raw_cpu_output_bytes": tree_nbytes(cpu_chunk),
+            "postprocessed_output_bytes": tree_nbytes(post_array),
+        }
+        return cpu_chunk, post_array, phases, boundaries
 
     print(f"W2 engine={engine}; warmup={args.warmup}; iterations={args.iterations}", flush=True)
     for index in range(args.warmup):
         print(f"Warmup {index + 1}/{args.warmup}", flush=True)
         infer_once()
+
+    block_profiler = BlockProfiler() if args.profile_blocks else None
+    if block_profiler is not None:
+        block_profiler.install_smolvla(policy)
 
     profile: dict[str, dict] = defaultdict(lambda: {"calls": 0, "total_ms": 0.0, "macs": 0})
     hooks = []
@@ -310,9 +337,7 @@ def main() -> None:
                     current._profile_started_ns = time.perf_counter_ns()
                     shape = tuple(inputs[0].shape)
                     tokens = math.prod(shape[:-1]) if len(shape) > 1 else 1
-                    profile[layer_name]["macs"] += (
-                        tokens * current.in_features * current.out_features
-                    )
+                    profile[layer_name]["macs"] += tokens * current.in_features * current.out_features
 
                 def post_hook(current, inputs, output, layer_name=name):
                     elapsed = (time.perf_counter_ns() - current._profile_started_ns) / 1_000_000
@@ -326,13 +351,17 @@ def main() -> None:
 
     phase_samples: dict[str, list[float]] = defaultdict(list)
     final_chunk = None
+    final_post = None
+    final_boundaries = {}
     for index in range(args.iterations):
         print(f"Measure {index + 1}/{args.iterations}", flush=True)
-        final_chunk, phases = infer_once()
+        final_chunk, final_post, phases, final_boundaries = infer_once()
         for name, value in phases.items():
             phase_samples[name].append(value)
     for hook in hooks:
         hook.remove()
+    if block_profiler is not None:
+        block_profiler.remove()
 
     layer_rows = []
     for name, values in profile.items():
@@ -344,35 +373,47 @@ def main() -> None:
                 else "vlm" if ".vlm." in name
                 else "action_expert"
             )
-        layer_rows.append(
-            {
-                "name": name,
-                "group": group,
-                "calls": values["calls"],
-                "total_ms": values["total_ms"],
-                "mean_ms_per_call": values["total_ms"] / values["calls"],
-                "macs": values["macs"],
-                "input_shape": values["input_shape"],
-                "output_shape": values["output_shape"],
-                "weight_numel": record["weight_numel"],
-            }
-        )
+        layer_rows.append({
+            "name": name, "group": group, "calls": values["calls"],
+            "calls_per_inference": values["calls"] / args.iterations,
+            "total_ms": values["total_ms"],
+            "mean_ms_per_call": values["total_ms"] / values["calls"],
+            "mean_ms_per_inference": values["total_ms"] / args.iterations,
+            "macs": values["macs"], "macs_per_inference": values["macs"] / args.iterations,
+            "input_shape": values["input_shape"], "output_shape": values["output_shape"],
+            "weight_numel": record["weight_numel"],
+        })
     layer_rows.sort(key=lambda row: row["total_ms"], reverse=True)
     group_profile = {}
     for group in ("vision", "vlm", "action_expert"):
         selected = [row for row in layer_rows if row["group"] == group]
         group_profile[group] = {
-            "linear_count": len(selected),
-            "calls": sum(row["calls"] for row in selected),
+            "linear_count": len(selected), "calls": sum(row["calls"] for row in selected),
             "total_ms": sum(row["total_ms"] for row in selected),
             "macs": sum(row["macs"] for row in selected),
+            "mean_ms_per_inference": sum(row["total_ms"] for row in selected) / args.iterations,
+            "macs_per_inference": sum(row["macs"] for row in selected) / args.iterations,
         }
 
+    assert final_chunk is not None and final_post is not None
     candidate = final_chunk.numpy()
-    w1_reference = np.load(REFERENCE_DIR / "w1_int8_action_chunk_raw.npy", allow_pickle=False)
-    w0_reference = np.load(INPUT_DIR / "w0a_action_chunk_raw.npy", allow_pickle=False)
-    versus_w1 = error_metrics(candidate, w1_reference)
-    versus_w0 = error_metrics(candidate, w0_reference)
+    reference_paths = {
+        "raw_vs_w1_pc_int8": REFERENCE_DIR / "w1_int8_action_chunk_raw.npy",
+        "raw_vs_w0_original": INPUT_DIR / "w0a_action_chunk_raw.npy",
+        "postprocessed_vs_w1_pc_int8": REFERENCE_DIR / "w1_int8_action_chunk_postprocessed.npy",
+        "postprocessed_vs_w0_original": INPUT_DIR / "w0a_action_chunk_postprocessed.npy",
+    }
+    references = {}
+    for name, path in reference_paths.items():
+        references[name], elapsed_ms = timed_call(np.load, path, allow_pickle=False)
+        storage_reads.append(file_record(path, elapsed_ms))
+    comparisons = {
+        "raw_vs_w1_pc_int8": error_metrics(candidate, references["raw_vs_w1_pc_int8"]),
+        "raw_vs_w0_original": error_metrics(candidate, references["raw_vs_w0_original"]),
+        "postprocessed_vs_w1_pc_int8": error_metrics(final_post, references["postprocessed_vs_w1_pc_int8"]),
+        "postprocessed_vs_w0_original": error_metrics(final_post, references["postprocessed_vs_w0_original"]),
+    }
+    versus_w1 = comparisons["raw_vs_w1_pc_int8"]
     numerical_pass = bool(
         versus_w1["finite"]
         and versus_w1["max_abs"] <= args.w1_max_abs_tolerance
@@ -386,50 +427,72 @@ def main() -> None:
     if not safe_prefix:
         raise ValueError("result-prefix must contain at least one letter or digit")
     output_path = RESULT_DIR / f"{safe_prefix}_action_chunk_raw.npy"
-    np.save(output_path, candidate)
+    post_output_path = RESULT_DIR / f"{safe_prefix}_action_chunk_postprocessed.npy"
+    _, raw_save_ms = timed_call(np.save, output_path, candidate)
+    _, post_save_ms = timed_call(np.save, post_output_path, final_post)
     memory = tracker.stop()
+    block_report = (
+        block_profiler.report(args.iterations)
+        if block_profiler is not None else {"instrumented": False, "blocks": []}
+    )
     report = {
         "status": "PASS" if numerical_pass else "REVIEW",
         "mode": "W2_KV260_PS_ONLY_FULL_LINEAR_DYNAMIC_INT8",
         "environment": {
-            "hostname": platform.node(),
-            "platform": platform.platform(),
-            "machine": platform.machine(),
-            "python": platform.python_version(),
-            "torch": torch.__version__,
-            "quantized_engine": engine,
-            "threads": args.threads,
+            "hostname": platform.node(), "platform": platform.platform(), "machine": platform.machine(),
+            "python": platform.python_version(), "torch": torch.__version__,
+            "quantized_engine": engine, "threads": args.threads,
             "ram_total_mib": psutil.virtual_memory().total / 2**20,
         },
         "load_timings": load_timings,
         "phase_timings": {name: summarize(values) for name, values in phase_samples.items()},
         "memory": memory,
         "accuracy": {
-            "w2_vs_w1_pc_int8": versus_w1,
-            "w2_vs_w0_original": versus_w0,
+            "comparisons": comparisons,
+            "w2_vs_w1_pc_int8": comparisons["raw_vs_w1_pc_int8"],
+            "w2_vs_w0_original": comparisons["raw_vs_w0_original"],
             "w1_max_abs_tolerance": args.w1_max_abs_tolerance,
             "w1_mean_abs_tolerance": args.w1_mean_abs_tolerance,
             "numerical_pass": numerical_pass,
         },
+        "block_profile": block_report,
         "linear_profile": {
             "instrumented": not args.skip_layer_profile,
             "warning": "Python hook timings include profiler overhead; use ranking, not absolute layer sum.",
-            "groups": group_profile,
-            "top_layers": layer_rows[: args.top_layers],
-            "all_layers": layer_rows,
+            "groups": group_profile, "top_layers": layer_rows[:args.top_layers], "all_layers": layer_rows,
         },
-        "outputs": {"action_chunk_raw": str(output_path)},
+        "data_movement": {
+            "scope": "PS storage and CPU-memory tensor boundaries; no PS-PL DMA in this runner",
+            "storage_reads": storage_reads,
+            "tensor_boundaries_last_inference": final_boundaries,
+            "output_writes": [
+                {"path": str(output_path), "bytes": output_path.stat().st_size, "write_ms": raw_save_ms},
+                {"path": str(post_output_path), "bytes": post_output_path.stat().st_size, "write_ms": post_save_ms},
+            ],
+        },
+        "outputs": {"action_chunk_raw": str(output_path), "action_chunk_postprocessed": str(post_output_path)},
     }
-    report_kind = "benchmark" if args.skip_layer_profile else "layer_profile"
+    if args.skip_layer_profile and not args.profile_blocks:
+        report_kind = "benchmark"
+    elif args.profile_blocks:
+        report_kind = "profile"
+    else:
+        report_kind = "layer_profile"
     report_path = RESULT_DIR / f"{safe_prefix}_{report_kind}.json"
     report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
-    print(json.dumps({
-        "status": report["status"],
-        "phase_timings": report["phase_timings"],
-        "accuracy": report["accuracy"],
-        "group_profile": group_profile,
-        "top_layers": layer_rows[: args.top_layers],
-    }, indent=2))
+
+    print_golden_table(comparisons)
+    print_timing_table("SMOLVLA BLOCK PROFILE", block_report["blocks"])
+    print("\n=== PHASE TIMING (mean ms) ===")
+    for name, values in report["phase_timings"].items():
+        print(f"{name:28s} {values['mean_ms']:12.3f}")
+    if not args.skip_layer_profile:
+        print("\n=== INT8 LINEAR GROUP PROFILE (inclusive hook time) ===")
+        for name, values in group_profile.items():
+            print(f"{name:18s} {values['mean_ms_per_inference']:12.3f} ms/infer")
+        print("\n=== TOP INT8 LINEAR LAYERS ===")
+        for row in layer_rows[:args.top_layers]:
+            print(f"{row['total_ms']:12.3f} ms  {row['calls']:5d} calls  {row['name']}")
     print(f"W2_REPORT={report_path}")
 
 

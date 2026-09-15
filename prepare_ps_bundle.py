@@ -18,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 W1 = ROOT / "quan_int8"
 PACKAGE = HERE / "package"
+TEXT_SUFFIXES = {".json", ".md", ".mdx", ".proto", ".py", ".txt"}
 
 
 def sha256(path: Path) -> str:
@@ -26,6 +27,38 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def manifest_record(path: Path) -> dict:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+        hash_mode = "lf-normalized"
+    else:
+        hash_mode = "binary"
+    return {
+        "path": path.relative_to(PACKAGE).as_posix(),
+        "bytes": len(data),
+        "sha256": hashlib.sha256(data).hexdigest(),
+        "hash_mode": hash_mode,
+    }
+
+
+def refresh_existing_manifest() -> None:
+    manifest_path = PACKAGE / "package_manifest.json"
+    package_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    files = sorted(
+        path
+        for path in PACKAGE.rglob("*")
+        if path.is_file()
+        and path != manifest_path
+        and "__pycache__" not in path.parts
+        and path.suffix.lower() != ".pyc"
+    )
+    package_manifest["format_version"] = 2
+    package_manifest["files"] = [manifest_record(path) for path in files]
+    manifest_path.write_text(json.dumps(package_manifest, indent=2), encoding="utf-8")
+    print(f"REFRESHED_MANIFEST={manifest_path}")
 
 
 def copy_file(source: Path, destination: Path) -> None:
@@ -151,7 +184,7 @@ def main() -> None:
 
     files = sorted(path for path in PACKAGE.rglob("*") if path.is_file())
     package_manifest = {
-        "format_version": 1,
+        "format_version": 2,
         "purpose": "W2 KV260 PS-only full SmolVLA Linear INT8 deployment and profiling",
         "quantization": {
             "linear_layers": len(quant_manifest["layers"]),
@@ -167,14 +200,7 @@ def main() -> None:
         "non_linear_tensor_count": non_linear_tensor_count,
         "non_linear_tensor_bytes": non_linear_tensor_bytes,
         "runtime_buffer_count": runtime_buffer_count,
-        "files": [
-            {
-                "path": path.relative_to(PACKAGE).as_posix(),
-                "bytes": path.stat().st_size,
-                "sha256": sha256(path),
-            }
-            for path in files
-        ],
+        "files": [manifest_record(path) for path in files],
     }
     manifest_path = PACKAGE / "package_manifest.json"
     manifest_path.write_text(json.dumps(package_manifest, indent=2), encoding="utf-8")
@@ -185,4 +211,7 @@ def main() -> None:
 if __name__ == "__main__":
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
-    main()
+    if "--refresh-manifest-only" in sys.argv:
+        refresh_existing_manifest()
+    else:
+        main()

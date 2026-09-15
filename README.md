@@ -15,6 +15,10 @@ vị trí của chính `run_w2_ps_int8.py`, vì vậy không cần thư mục `q
 Các chuỗi đường dẫn Windows còn xuất hiện trong một số JSON chỉ là thông tin
 nguồn gốc của lần tạo artifact; runner không mở các đường dẫn đó.
 
+Manifest chuẩn hóa các file văn bản trong `package/` về LF trước khi kiểm tra
+kích thước và SHA-256. Các file nhị phân vẫn được kiểm tra byte tuyệt đối. Vì
+vậy `verify_package.py` cho cùng kết quả trên Windows (CRLF) và Linux (LF).
+
 Ngoại lệ: `prepare_ps_bundle.py` là công cụ **tạo lại** gói trên PC. Chỉ file này
 cần `../quan_int8`, `../third_party/lerobot` và cache checkpoint. Không chạy
 `prepare_ps_bundle.py` trên KV260. Các thư viện hệ thống/Python vẫn phải được cài
@@ -44,15 +48,19 @@ Tổng package dữ liệu khoảng 581,16 MiB. Smoke test đóng gói trên PC 
 Từ PowerShell trên PC, đang ở thư mục gốc dự án:
 
 ```powershell
-scp -r ".\quan_int8_PS" ubuntu@192.168.50.21:/home/ubuntu/
+$kvUser = "debian"
+$kvHost = "192.168.0.132"
+scp -r ".\quan_int8_PS" "${kvUser}@${kvHost}:~/"
 ```
 
-Cũng có thể kéo cả thư mục `quan_int8_PS` vào `/home/ubuntu/` bằng cửa sổ SFTP của MobaXterm. Không chỉ chép riêng file 405 MB vì runner còn cần phần FP32, tokenizer, source và golden vector.
+Cũng có thể kéo cả thư mục `quan_int8_PS` vào thư mục home của tài khoản SSH
+(hiện tại là `/home/debian/`) bằng cửa sổ SFTP của MobaXterm. Không chỉ chép
+riêng file 405 MB vì runner còn cần phần FP32, tokenizer, source và golden vector.
 
 Trên KV260:
 
 ```bash
-cd /home/ubuntu/quan_int8_PS
+cd ~/quan_int8_PS
 bash check_ps_environment.sh | tee ps_environment.txt
 python3 verify_package.py
 free -h
@@ -68,9 +76,14 @@ LeRobot snapshot này yêu cầu Python 3.12. Kiểm tra `python3 --version` tr�
 ```bash
 python3.12 -m venv .venv_ps
 source .venv_ps/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements-ps.txt
+chmod +x install_ps_dependencies.sh
+./install_ps_dependencies.sh
 ```
+
+Script trên gọi `pip install -r requirements-ps.txt` để cài đồng thời toàn bộ dependency lõi của
+snapshot LeRobot và extra SmolVLA cần cho W2. Không cài lần lượt theo từng traceback.
+Tên module `serial` thuộc package `pyserial`; module `av` thuộc package `av` và cả hai
+đã có trong danh sách này.
 
 PyTorch ARM phải báo một backend INT8 khả dụng, ưu tiên `qnnpack`:
 
@@ -177,3 +190,40 @@ Chỉ phần backend GEMM được thay đổi giữa W2 và W3.
 - Kết quả smoke test PC nằm trong `validation_pc/`, không được coi là số đo W2.
 - KV260 ARM: chưa chạy; cần kiểm tra Python/PyTorch/QNNPACK và RAM thực tế.
 - Artifact vẫn là dynamic activation INT8. Static scale chỉ cần khóa trước khi thiết kế giao diện PL bit-exact.
+
+## 8. Profile mới: khối thuật toán, dữ liệu và golden output
+
+Giữ một lượt benchmark sạch để lấy latency thực:
+
+```bash
+python run_w2_ps_int8.py \
+  --threads 4 --warmup 1 --iterations 3 \
+  --skip-layer-profile --result-prefix w2_clean
+```
+
+Chạy lượt profile chi tiết riêng:
+
+```bash
+python run_w2_ps_int8.py \
+  --threads 4 --warmup 1 --iterations 1 \
+  --profile-blocks --top-layers 30 --result-prefix w2_detailed
+```
+
+Lượt chi tiết đo đồng thời các khối SmolVLA và từng Linear INT8. Các khối gồm
+vision encoder + connector, language embedding, prefix, VLM KV prefill, suffix,
+Action Expert ở mỗi bước và 10 bước denoise. Terminal in bốn phép so sánh:
+raw/postprocessed với golden W1 INT8 và golden W0 original.
+
+JSON chứa `phase_timings`, `block_profile`, `linear_profile`, `data_movement`,
+`accuracy` và peak RAM. Timer khối là inclusive và chồng lấn nên không cộng các
+dòng. Byte count là payload logic qua ranh giới tensor trên PS; bản này chưa gọi
+AXI DMA hoặc PL.
+
+Xuất các bảng CSV:
+
+```bash
+python export_profile_csv.py results/w2_detailed_profile.json
+```
+
+Các CSV `_phases`, `_blocks`, `_layers` và `_data_boundaries` có thể mở trực
+tiếp bằng Excel để so sánh original với INT8.

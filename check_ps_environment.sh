@@ -25,7 +25,13 @@ cmake --version 2>/dev/null | head -1 || true
 echo "===== PYTHON PACKAGES ====="
 python3 - <<'PY'
 import importlib
-for name in ("torch", "transformers", "safetensors", "numpy", "psutil", "PIL", "einops"):
+modules = (
+    "torch", "torchvision", "transformers", "diffusers", "datasets",
+    "huggingface_hub", "accelerate", "safetensors", "numpy", "psutil",
+    "PIL", "einops", "cv2", "av", "serial", "gymnasium", "draccus",
+    "deepdiff", "jsonlines", "num2words",
+)
+for name in modules:
     try:
         module = importlib.import_module(name)
         print(name, "OK", getattr(module, "__version__", "unknown"))

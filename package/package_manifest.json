@@ -1,5 +1,5 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "purpose": "W2 KV260 PS-only full SmolVLA Linear INT8 deployment and profiling",
   "quantization": {
     "linear_layers": 303,
@@ -19,1857 +19,2228 @@
     {
       "path": "inputs/fixture.npz",
       "bytes": 590988,
-      "sha256": "6c4f0f239ed084e90335598393b933c8c344f0447052eb6e7626226c33949b7c"
+      "sha256": "6c4f0f239ed084e90335598393b933c8c344f0447052eb6e7626226c33949b7c",
+      "hash_mode": "binary"
     },
     {
       "path": "inputs/fixture_manifest.json",
-      "bytes": 1576,
-      "sha256": "a59b6dd50fbd098fa4584e4e1f5ab4e61aa916e1428e49827f17698292149186"
+      "bytes": 1513,
+      "sha256": "aa8b6987ff53344f42e67086a00bda77885f56993e58c44e1276ee78562c9d43",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "inputs/w0a_action_chunk_postprocessed.npy",
       "bytes": 1328,
-      "sha256": "7e4f358a9b1785fdbf4b48b9636cec0d10d125f0726d11ae09565ccb25bc4b99"
+      "sha256": "7e4f358a9b1785fdbf4b48b9636cec0d10d125f0726d11ae09565ccb25bc4b99",
+      "hash_mode": "binary"
     },
     {
       "path": "inputs/w0a_action_chunk_raw.npy",
       "bytes": 1328,
-      "sha256": "a7ed35078f30f8d7f661b5a1ecb9054a30d8c3f0488d3ddfc8b854fba3cd47f0"
+      "sha256": "a7ed35078f30f8d7f661b5a1ecb9054a30d8c3f0488d3ddfc8b854fba3cd47f0",
+      "hash_mode": "binary"
     },
     {
       "path": "inputs/w0a_noise.npy",
       "bytes": 6528,
-      "sha256": "0b64fd40a00c0251fc70b91accdeb428f3fb8b0a15bbefc836ff9990c35e3031"
+      "sha256": "0b64fd40a00c0251fc70b91accdeb428f3fb8b0a15bbefc836ff9990c35e3031",
+      "hash_mode": "binary"
     },
     {
       "path": "model/config.json",
       "bytes": 2299,
-      "sha256": "650584b56c104720f7a3c91d1ec6bec9e8de8ac11e60c92ba2fa82d93eda147d"
+      "sha256": "650584b56c104720f7a3c91d1ec6bec9e8de8ac11e60c92ba2fa82d93eda147d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/added_tokens.json",
       "bytes": 4739,
-      "sha256": "74135b8664b56088c0006f1c8e848d79a8eba003411f72ebf1dc2ee96227be3a"
+      "sha256": "74135b8664b56088c0006f1c8e848d79a8eba003411f72ebf1dc2ee96227be3a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/chat_template.json",
       "bytes": 430,
-      "sha256": "b585e3598909a5687f9f9d738d35223724dedef256b9b274e1cbfb32b13c74bf"
+      "sha256": "b585e3598909a5687f9f9d738d35223724dedef256b9b274e1cbfb32b13c74bf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/config.json",
       "bytes": 3767,
-      "sha256": "ea6bc1237e96247f6258de3e202e2e62b93d6f386dc47e7b36b5588bf3a15e17"
+      "sha256": "ea6bc1237e96247f6258de3e202e2e62b93d6f386dc47e7b36b5588bf3a15e17",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/generation_config.json",
       "bytes": 136,
-      "sha256": "34835060c9f0f74d1acb456cc72ca32746d3843d9eb5f578f9cbffac1d2eb840"
+      "sha256": "34835060c9f0f74d1acb456cc72ca32746d3843d9eb5f578f9cbffac1d2eb840",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/merges.txt",
       "bytes": 466391,
-      "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"
+      "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/preprocessor_config.json",
       "bytes": 599,
-      "sha256": "149e315d9410368e5491455bb06e0f763426e9e56cca731c13b24404a29b6374"
+      "sha256": "149e315d9410368e5491455bb06e0f763426e9e56cca731c13b24404a29b6374",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/processor_config.json",
       "bytes": 67,
-      "sha256": "f3ad45028447b3562b4752be0d5916d6806c1ef589091a469608dcf0faa1737c"
+      "sha256": "f3ad45028447b3562b4752be0d5916d6806c1ef589091a469608dcf0faa1737c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/special_tokens_map.json",
       "bytes": 868,
-      "sha256": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60"
+      "sha256": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/tokenizer.json",
       "bytes": 3548256,
-      "sha256": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a"
+      "sha256": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/tokenizer_config.json",
       "bytes": 28626,
-      "sha256": "dd9ce2ab89a3dd881bd9378f1a79b943a064b9275a7e1706d5b7b47b68977913"
+      "sha256": "dd9ce2ab89a3dd881bd9378f1a79b943a064b9275a7e1706d5b7b47b68977913",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/hf_smolvlm_config/vocab.json",
       "bytes": 800662,
-      "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+      "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/linear_int8.safetensors",
       "bytes": 404778320,
-      "sha256": "8e2311731bd801440d3552973851484015c807f7d1b3e53ba511e25214e1c6cf"
+      "sha256": "8e2311731bd801440d3552973851484015c807f7d1b3e53ba511e25214e1c6cf",
+      "hash_mode": "binary"
     },
     {
       "path": "model/non_linear_fp32.safetensors",
       "bytes": 195135928,
-      "sha256": "b8060c6b2254de304c338945dabef32c52714d936fdaffbab98341ea6603c5ce"
+      "sha256": "b8060c6b2254de304c338945dabef32c52714d936fdaffbab98341ea6603c5ce",
+      "hash_mode": "binary"
     },
     {
       "path": "model/policy_postprocessor.json",
       "bytes": 660,
-      "sha256": "2b78bb742065288df2ec63b0ee35f97a1f6950171cf2272f7e34b1fe3873b17b"
+      "sha256": "2b78bb742065288df2ec63b0ee35f97a1f6950171cf2272f7e34b1fe3873b17b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
       "bytes": 640,
-      "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+      "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8",
+      "hash_mode": "binary"
     },
     {
       "path": "model/policy_preprocessor.json",
       "bytes": 1872,
-      "sha256": "7683d648280a72f0d51e869fb8dd1596beed90b7f84849330cf1bc26634a4bd6"
+      "sha256": "7683d648280a72f0d51e869fb8dd1596beed90b7f84849330cf1bc26634a4bd6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/policy_preprocessor_step_5_normalizer_processor.safetensors",
       "bytes": 640,
-      "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"
+      "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8",
+      "hash_mode": "binary"
     },
     {
       "path": "model/quantization_manifest.json",
-      "bytes": 138849,
-      "sha256": "bef3b3f1cc75e62d1e39eb051d84840fd0abd5a3848e646af71ab7c2f2a17bf9"
+      "bytes": 133963,
+      "sha256": "30253619284a8d22cedad241ea47e028888866d7eee744c43ec0770ce21578c5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "model/runtime_buffers.safetensors",
       "bytes": 1040,
-      "sha256": "997d537d908c394b9523fe4d46b443441940f021c11abd5e370a35c736b51437"
+      "sha256": "997d537d908c394b9523fe4d46b443441940f021c11abd5e370a35c736b51437",
+      "hash_mode": "binary"
     },
     {
       "path": "reference/w1_int8_action_chunk_postprocessed.npy",
       "bytes": 1328,
-      "sha256": "2feb8af3c86c5f0ce51b9cd6a343eb9bb5dc98d0f47f7fc09048333dde1681cb"
+      "sha256": "2feb8af3c86c5f0ce51b9cd6a343eb9bb5dc98d0f47f7fc09048333dde1681cb",
+      "hash_mode": "binary"
     },
     {
       "path": "reference/w1_int8_action_chunk_raw.npy",
       "bytes": 1328,
-      "sha256": "787609c4a7e7c489f2de674a1d932c90b91e0a18c78e4fd84b23401f66dcab2c"
+      "sha256": "787609c4a7e7c489f2de674a1d932c90b91e0a18c78e4fd84b23401f66dcab2c",
+      "hash_mode": "binary"
     },
     {
       "path": "reference/w1_int8_cpu_bench.json",
-      "bytes": 5340,
-      "sha256": "15191ffc70f25319136b34354437d607aa12c5c0f2a82dcb6100cf222e0550d4"
+      "bytes": 5199,
+      "sha256": "f3633fc8d0cd2fb976d4e44879ee6db6f702ed4a6d3f29809d22549d290a16c0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/__init__.py",
-      "bytes": 7263,
-      "sha256": "e7f40022f269f7c4b5c9388802f451563a5830d9d50d67a49f5c7bb762508353"
+      "bytes": 7063,
+      "sha256": "e9cf424c0656b89d285065a9344efd8149208950047f096f751db50e7d898bd7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/__version__.py",
-      "bytes": 857,
-      "sha256": "a1cb76dbda2549b9bad669c647b49d9ccd03c0a8af9477925c95d516d2a7365c"
+      "bytes": 834,
+      "sha256": "beb2aa5d785c7e7ccbcb910ec4688e2868423458e2a1aac7fd76c1e1a182a470",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/async_inference/configs.py",
-      "bytes": 8076,
-      "sha256": "cc3a84e8b5e058d184d4a9a4132a18e90a2ccd3adb761852c5ac5450cb535c4e"
+      "bytes": 7873,
+      "sha256": "9b3514b3c09727dc1336d9586e68bd2c276c401ed34bffb69f9e7f67f0f7f342",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/async_inference/constants.py",
-      "bytes": 1179,
-      "sha256": "f452d52693f99474e81d40641a22653df586322080eaf1f61d95a1d869615339"
+      "bytes": 1150,
+      "sha256": "6ff4bac2a25eff10bc3e0b97d07c07a515ad70530336fdbacd4fe9a0364b0ee9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/async_inference/helpers.py",
-      "bytes": 10118,
-      "sha256": "b31f4ca34b96394ecff41e0b5b747b702c8134299252d9cd58340e9cd8eeee82"
+      "bytes": 9821,
+      "sha256": "e9d80e4956ad20db1df848151b1f625e25fc5dbd2a1c186378c96901d0eaadb9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/async_inference/policy_server.py",
-      "bytes": 17369,
-      "sha256": "b4afbd0c998391d1cdd7ee374f305212c918e0bf675d11f91bb2bfb5941a2d1b"
+      "bytes": 16928,
+      "sha256": "146cb898e29f55ce95f94195dff05995507f08fda58559dd8c6d6aec82c4d93b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/async_inference/robot_client.py",
-      "bytes": 20936,
-      "sha256": "2487397264f347f65f849e87fa1f47e4527048714d63224b87ac12844623cdde"
+      "bytes": 20419,
+      "sha256": "83bbb0cc1fb50fc3078dd1eba02c1bddad2104ce42b86a70aa79e28fb190d068",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/__init__.py",
-      "bytes": 772,
-      "sha256": "c66dd417fb3a0b0f7f79e898055dc82890a5dca5f6e9a0c11d018a3cc8eb279e"
+      "bytes": 755,
+      "sha256": "8a5747f51f94725107cb973050188dc05780ac6bbb53919779be960553c1be93",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/camera.py",
-      "bytes": 6516,
-      "sha256": "d0107c78112f4de64067e86712280df0e88977eb25c9fd66d4b496b66544a6d3"
+      "bytes": 6332,
+      "sha256": "75e10b3203bcaef522a1c4e4ba479daf5e78c3d7503e96691396215a16c2a718",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/configs.py",
-      "bytes": 2054,
-      "sha256": "24c63f96dc88a7cd5a6cee3946516b12845abd929054a70eb32fa9ed559a3415"
+      "bytes": 1987,
+      "sha256": "0d6b155f6edf76cef332898e6c815c225c855dfb24db8c7afc48201329ba8acb",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/opencv/__init__.py",
-      "bytes": 773,
-      "sha256": "ad31122c9615f5c79cbf94a11bc11fab4b9314d4d0f8c811216a8b5791b31aea"
+      "bytes": 755,
+      "sha256": "bcd30663067446f6c72beea9a9c7fdfda0c26889ba9476f10c0e77855bdfc64a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/opencv/camera_opencv.py",
-      "bytes": 24371,
-      "sha256": "da0b957b537cb868a27c326dae815e973711871ba282227735a16934c9c10c44"
+      "bytes": 23779,
+      "sha256": "01df87f692806b24f8a8002f9fac3ae3a78561d0311e65466b18907392956c2d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/opencv/configuration_opencv.py",
-      "bytes": 3662,
-      "sha256": "1697709b957282204216e922e05d98e12a006450cd892bc9fa5529cf5e865287"
+      "bytes": 3586,
+      "sha256": "2cedce42433f44333b12e21af71efb9efb52e88df7589a5363fb9a632d264dfe",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/reachy2_camera/__init__.py",
-      "bytes": 732,
-      "sha256": "dff838637b7975b6558440bf1f921ad0a3b54f74b5f374bf90cf675582de6ece"
+      "bytes": 716,
+      "sha256": "988265045944851cc9c043eaef551281cfc515234459f0c09a698369293a4df2",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/reachy2_camera/configuration_reachy2_camera.py",
-      "bytes": 3238,
-      "sha256": "c46abd2f0dae8afd7a84e0fee05cdbc359b74c296d145c4c3600e136b82f28c4"
+      "bytes": 3161,
+      "sha256": "f92ef6f67bc20e8de7a39d8ee34206af684060ba484925f861d24417d519eb22",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/reachy2_camera/reachy2_camera.py",
-      "bytes": 9468,
-      "sha256": "59d539062356c7fb86b0e60399c10a04b0904b4ba91ce528a3a0f2875839b637"
+      "bytes": 9223,
+      "sha256": "74a22b931384cf26490b02016434283d8723ccab6abc5fe7fa6d6a6e10f0c2b0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/realsense/__init__.py",
-      "bytes": 733,
-      "sha256": "14859458b1f6c9e669cac5564cf895bac016f540cc0af02c639955efbaf68c94"
+      "bytes": 717,
+      "sha256": "24932dc9ddb774eb3d1ced5a700275a7d3e2e554d68364ce82267a1d30efb432",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/realsense/camera_realsense.py",
-      "bytes": 26124,
-      "sha256": "4de804b603f1599064c153e42ebf1459e47d7a24b626ef5d24bcd7bf99f433e2"
+      "bytes": 25485,
+      "sha256": "7a5aeb609aa451a72a35033ee366a70535c4d56f1f580cca6ce6fcf88ebc41e7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/realsense/configuration_realsense.py",
-      "bytes": 3213,
-      "sha256": "34607ce916217a8e3688edc52e3f6f932003d41a5fa21086fda88a397757e987"
+      "bytes": 3143,
+      "sha256": "115489fc4ee4a9f7def4e6cf07da6b8387659e1ad1af187c4cd5552c924c9429",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/utils.py",
-      "bytes": 2394,
-      "sha256": "18e71d538405b5c5c084a8e78b575337ec295c5116b09308f07c801e73af4ea6"
+      "bytes": 2325,
+      "sha256": "f3918b33757f3708709beb651a77e855291d7f20b6a9be425addb076cf2491f8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/zmq/__init__.py",
-      "bytes": 780,
-      "sha256": "2f164711f1b7eb542b08b3a3fa91c439fe1badc1d1e094e57c5a5ae06a2b073a"
+      "bytes": 760,
+      "sha256": "1b42f41bac5fb6bb1b7a3a2894b1aac785aac33bc4810ca3766cadafb68a81a6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/zmq/camera_zmq.py",
-      "bytes": 13753,
-      "sha256": "be4e746ef2d4e64199b16d3ad58b60384639b3fc2d94404899805b3097ffc97b"
+      "bytes": 13368,
+      "sha256": "0888d11982807c028cd0f16f1d1a213273d36f4db972d0e7d1a60bc24586bd61",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/zmq/configuration_zmq.py",
-      "bytes": 1539,
-      "sha256": "b8316282dc179728b488cecfc52195f732ccb83e1003fb5462b64691ceb78f4a"
+      "bytes": 1495,
+      "sha256": "616e85ae8f9ebd001afe2f640c47721cbbb44713755bb8fbf97e1e93b9c87cd6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/cameras/zmq/image_server.py",
-      "bytes": 6873,
-      "sha256": "4e1b8fcec3a299008758b7f7c1be669c0d11558623a740c209287dea45b7d7e6"
+      "bytes": 6691,
+      "sha256": "07dcc8f811277d73700368321d7611c53a92972ed22a891bd060d3298722bc83",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/default.py",
-      "bytes": 4791,
-      "sha256": "b38aa144c5b43144d0e1a075239aa7a1cc0dcd28fcb4d95ab1c1905efd8b7cbf"
+      "bytes": 4694,
+      "sha256": "529e46f5dfb926eed17c128f9fac739598f677bdbda51138f11389d71073f236",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/eval.py",
-      "bytes": 3241,
-      "sha256": "b8cc2185ccb653c837f98c360f785def1ffea2992c07c0d301c8400f05a98c2f"
+      "bytes": 3166,
+      "sha256": "bcc3efdfd34f3f7bb7e33f43cd3aa97477ef71c5e640e4882efff2fdd5c5a97f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/parser.py",
-      "bytes": 9970,
-      "sha256": "4525ddf5ca923ae000347bc0e84601182595830196e73dab55eed9f886658e44"
+      "bytes": 9732,
+      "sha256": "883716eeac54af1bd6d49d932f0df23a51e7dcfc545001b224596a3a7f4c3b6b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/policies.py",
-      "bytes": 9395,
-      "sha256": "9f3c676f0ba4ca9df4d70137b18ecedcbcd3fd096a9bdd8721d0effb6e8f6e21"
+      "bytes": 9169,
+      "sha256": "38c2de5bfb1d9a729d1f3e3ea97838c99626289350de50a6324c669a85c98e0e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/train.py",
-      "bytes": 9991,
-      "sha256": "beeea66a2d957641b3841e36c98fd9f93211f71aeb717f57a7e1ebf12a45c1f1"
+      "bytes": 9775,
+      "sha256": "9792f3cb5a4dbc772899873fce63ccf7652b37a9432c6d0a9683d39163ac004c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/configs/types.py",
-      "bytes": 1492,
-      "sha256": "ceb6d583dd512386a1ff3208711befc72f3aac69f0c2764a917a765ab1d5ed72"
+      "bytes": 1440,
+      "sha256": "1354e7d24b19d5d4970064104f76d8c85570c204bf2d09e2b4402f93a994ad99",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/data_processing/__init__.py",
-      "bytes": 624,
-      "sha256": "5ad650706290933e4ea650614153ac666ffa9057e011c9ab433b644e0bfe8471"
+      "bytes": 611,
+      "sha256": "aeca598c36a771e076642c45fdf0eeddc08b016d552ad0bfdd5d49ddc6b996ce",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/data_processing/sarm_annotations/__init__.py",
-      "bytes": 624,
-      "sha256": "5ad650706290933e4ea650614153ac666ffa9057e011c9ab433b644e0bfe8471"
+      "bytes": 611,
+      "sha256": "aeca598c36a771e076642c45fdf0eeddc08b016d552ad0bfdd5d49ddc6b996ce",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/data_processing/sarm_annotations/subtask_annotation.py",
-      "bytes": 48437,
-      "sha256": "b2780ab3b43f5e5a0ffe681de670612fbdc0ba35fb82ede48b26176f0bd27fa5"
+      "bytes": 47235,
+      "sha256": "542e7ef92ced2ebd9055945b9e6fadf83eae9ba94bb4583f663cf5861a659ea1",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/aggregate.py",
-      "bytes": 27128,
-      "sha256": "eea10442ed5b3829b1fc1b9623587a778b3e09a61f43ea22c3b490617316a10d"
+      "bytes": 26475,
+      "sha256": "104a17cf725637d8737d2328032444cb32704624a5d534d08a4ec5114c470923",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/backward_compatibility.py",
-      "bytes": 2332,
-      "sha256": "a6e7159e0c06a33cecb0111a319d1bc313121bd25a6cba24694351b0a5f91d88"
+      "bytes": 2276,
+      "sha256": "e6fc804f37f7968b1a7bf8d01a21360c59b89ee8de8ac38415deb8bf339d8caa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/card_template.md",
-      "bytes": 1259,
-      "sha256": "634315afe3802cec168d3e926a71b523f04a1e14d2ad3a4e6df46a3f633d3b78"
+      "bytes": 1224,
+      "sha256": "f237ac3b54c0a87c99248fcc60d10abe4677c0e8775561f91348cd575819b9ff",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/compute_stats.py",
-      "bytes": 23316,
-      "sha256": "9ffc07cbdcea9d7d7c8223062e9a1f1ef3e1a4f878bd4ffede62ba1896c4e9b4"
+      "bytes": 22690,
+      "sha256": "941dd3c6d0f14704e95123c9a9c49270b2b5ea589f712b734adb4ee03b8736b2",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/dataset_tools.py",
-      "bytes": 71242,
-      "sha256": "e8f2cec9f03fe33cada0cb81e9242498d746b314e19310861b2d6b8e9116d44a"
+      "bytes": 69463,
+      "sha256": "04f6cee06f834af52705ffd28bb50101d21046af0680127e1a84549d92685cd5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/factory.py",
-      "bytes": 5403,
-      "sha256": "91c3e73fc7129d0a4fe67a989e9dead4619f47a450a41b2ff822e2b5c9987517"
+      "bytes": 5270,
+      "sha256": "adc786de92b9d79f84f1b950e141fce7ad28d48c885be3b66176a3f6d36c63ef",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/image_writer.py",
-      "bytes": 7528,
-      "sha256": "39ddff5120c92af70a14befbe85d56b8afefd9a53aac78c1ff05038c65f0dbea"
+      "bytes": 7325,
+      "sha256": "2e39a940baa54fef5e09957b1151ebe31bfc74184fe631c74a25bcd2589f43f8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/lerobot_dataset.py",
-      "bytes": 85052,
-      "sha256": "f77ba75e295b288ddec72f045561fe9c0b097b05ffdb4b96db0d0cffa8b64c7e"
+      "bytes": 83152,
+      "sha256": "a690ceff802e37b9bb1ba483c508ccc60248bdedd0a54844e1b49650759aebf6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/online_buffer.py",
-      "bytes": 18057,
-      "sha256": "054fb4ea4909cc81b8b776edb4a99491e8ad18ef6a03fd7ab28e9d3a06e93f39"
+      "bytes": 17675,
+      "sha256": "f60e138d014767e373b16d2c5fe837aee21bd6248bd2f69898064e0313403991",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/pipeline_features.py",
-      "bytes": 5693,
-      "sha256": "a9132441bffc3d7f5bc3aed7201746ed72ca53759c7d651cf8ba3256b6941749"
+      "bytes": 5554,
+      "sha256": "f3857ec658c1de8debc20aa711389dfbc8129a17b3f018f9644acf96b62f099d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/push_dataset_to_hub/utils.py",
-      "bytes": 3147,
-      "sha256": "8a4842d90f22d52868dc7982250b37c865291670d2d0ad5f249683c2ca8b3453"
+      "bytes": 3074,
+      "sha256": "c46e3ba71f434966a79d723f5a696497c057b655fab5bdc47bf4b6100554fb5a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/sampler.py",
-      "bytes": 2495,
-      "sha256": "2fe52a9ffee1019eb7b7934ae29309faea2efff1a0ba0289647dff86d3badce0"
+      "bytes": 2434,
+      "sha256": "0202ce63101050dc8b28f00cf68b9c28bf66d9c5c2f9e05d1e7c9e24d4905d19",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/streaming_dataset.py",
-      "bytes": 23044,
-      "sha256": "2a66c3ebb554da5e6aa2d06ecf899d9a5bf4699cb23e3a55e68fa903769b46ff"
+      "bytes": 22511,
+      "sha256": "7005cb579faabd91473033c5ed5728761f084e49f1d08d42fbb75a1b8d93ec19",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/transforms.py",
-      "bytes": 10251,
-      "sha256": "f0c1ea324f174b2376c102937ccfef62392dc58fa438e0a33f43d7163070a4ad"
+      "bytes": 9991,
+      "sha256": "d5a5dc50ea5a8736d20e5311fd760a69cce2d91b0f45a52309dfc9c69ec7ce78",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/utils.py",
-      "bytes": 51600,
-      "sha256": "558c2ecfb49e3966c43a58803604d3f2904119f0d522832b19d371c810cbad83"
+      "bytes": 50217,
+      "sha256": "84f5262a8c2fdc1f5c96b569d052fc285e0b431efa3aac2a34a0d4c8ee8d3b8e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/v30/augment_dataset_quantile_stats.py",
-      "bytes": 9028,
-      "sha256": "a701fd4a24c9ab75f3ee948805f0190a1055da38b9bb664620bbe01d02994a14"
+      "bytes": 8768,
+      "sha256": "60dc1a50d7cb525e18a05716bc538e1464fed72e72207d4f4bf4213586ee312f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/v30/convert_dataset_v21_to_v30.py",
-      "bytes": 20692,
-      "sha256": "cdc8f59e1aef5190722d0b1afd520bf9845ffca61f5dba4fad13150d33e04733"
+      "bytes": 20117,
+      "sha256": "df0972e15d801094eef045d14647f584ce4f58c0df9de51345bfddcadb66f7ed",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/datasets/video_utils.py",
-      "bytes": 43963,
-      "sha256": "708503c2f20238554b714a9a93f29c7f26db2be79449818a0b024418c896a3b0"
+      "bytes": 42851,
+      "sha256": "90f93dc671edbb21c8ec6f57591f2c961ef64e08ec944abcc37157c579eaf842",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/__init__.py",
-      "bytes": 706,
-      "sha256": "b94e027473b3cc718fd5591adbd5b7654a01b1713a88f63c640445348415b962"
+      "bytes": 691,
+      "sha256": "445d8bbc96fe2a50870e35e966301580d12d2d8fbd69c3eb2c4d9b21140e697e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/configs.py",
-      "bytes": 16074,
-      "sha256": "7935c7f916a6d42fb341fd4a209818d6d56438131a6859e865398b503f36a0a6"
+      "bytes": 15618,
+      "sha256": "dcfe69fab352f1b558c737946926601feee17f309ec968055303d1f584d5c8b9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/factory.py",
-      "bytes": 9321,
-      "sha256": "87365f8925441aace7aea632c3cfd0a02bcdc1bd56f15df690d4e016f7fa25b5"
+      "bytes": 9102,
+      "sha256": "f67a673ec4ddfb428213f65aca83ab05b7962e21bf37071976697fe571d5e0ce",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/libero.py",
-      "bytes": 18517,
-      "sha256": "4f3ae3cea3cd2c2387017f6db6c82768c862dbde3925cccf03b80b539ef30223"
+      "bytes": 18060,
+      "sha256": "02bc214e6b011c7f64b25604c97f1f083a96e151fa239fdc137433b356e542f3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/metaworld.py",
-      "bytes": 11941,
-      "sha256": "f8da9dbce5a208dc0b7a7137f1577b0e4ce59fb5312e7d728b0375f3c951cf5c"
+      "bytes": 11626,
+      "sha256": "94d4c98fc4358d6ead2c7ac386890982a415f214d122248fe81448eff0f2e9dd",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/metaworld_config.json",
-      "bytes": 7835,
-      "sha256": "9fd17c0ed559dae5a0eac572f4e9b7db97db0f6b02f9ac1f378d7151370296ac"
+      "bytes": 7714,
+      "sha256": "29a6eb981413975da05d37f0033b3c51b82fdf8d6350eb863d0c530a2b1c9b94",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/envs/utils.py",
-      "bytes": 14288,
-      "sha256": "53f7b87ff08d427be0eba6198d804ae1ae609d62385e87eb9cd8d6816578e8f0"
+      "bytes": 13932,
+      "sha256": "89a5d704564689fd1024472e68400c1de35cfaa6610413cc542b0ba0f3152e07",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/model/kinematics.py",
-      "bytes": 5237,
-      "sha256": "e130531dc46358f01f82af6034f2f876cd8505f413ac7de0986e2d4dc180749c"
+      "bytes": 5105,
+      "sha256": "356645b7f6c68172055c13642791d5eddcb5df49e4fdea12780e4b1bc01371fe",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/__init__.py",
-      "bytes": 736,
-      "sha256": "f01889ac98ee1c4aa264e71b6f5ed7be2cd6829b19d9bee547f53371ac362a81"
+      "bytes": 715,
+      "sha256": "7c08c186384a43761faadc63d20b9fd0e634ce577697b8cabde77d040c627aaf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/calibration_gui.py",
-      "bytes": 14698,
-      "sha256": "48419df7c62711da5656eb902b32a7c0d6ad1ae97b7f3d5c2c58db27c7b6480d"
+      "bytes": 14295,
+      "sha256": "ab3ec60f69fce544ca7adc8c71b77039d30f48153f1c72a4abe0918f6201cb0b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/damiao/__init__.py",
-      "bytes": 711,
-      "sha256": "5d7fab8ae4da0635daf0e564bb5274575dd4fd2a7fa48352c77c65d46bd626f3"
+      "bytes": 693,
+      "sha256": "f135c5d1bd661d8bea9356ea637f3c333742e6473635cf3a0edfe4f95f80453b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/damiao/damiao.py",
-      "bytes": 33849,
-      "sha256": "1c78cfea8b0c226b3d138a923fe79663f55aeb6941b3099f14a30f06e963ff31"
+      "bytes": 32990,
+      "sha256": "92b919f1bb47e9615df90e7872c58f415a59d66b54fe9a0c54e20da6cd1b6f2b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/damiao/tables.py",
-      "bytes": 5560,
-      "sha256": "72abab45718e7c96cc46af9277292cdd926812492c47b5e18937a63b475c7847"
+      "bytes": 5351,
+      "sha256": "3c2be95b29fe25e2bb4c28384271ecd595e6aa1f15197ea4a1aa97568461089b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/dynamixel/__init__.py",
-      "bytes": 755,
-      "sha256": "0fe40dfcc0743e0c587fe64ec09a457ee84b7f8492e4228f758e19758fa6105b"
+      "bytes": 737,
+      "sha256": "080d8b76d52d7674bf7528b0232777b330d0d88d444be95fb1d318b7c19fedd0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/dynamixel/dynamixel.py",
-      "bytes": 11441,
-      "sha256": "4c4a1f3528353b3552bb3b38f16d8cf8651204badc292094796d75fd3729f5e8"
+      "bytes": 11178,
+      "sha256": "a8db3aae77fabd5d5acc472aae5988467ed5c0244a4c2b1cba000f1d4ddb7635",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/dynamixel/tables.py",
-      "bytes": 6248,
-      "sha256": "b94439b6bfaa763d3db1478afb32faf47fa79b7ba5fe2a743dcced5d4a35fee2"
+      "bytes": 6049,
+      "sha256": "65dfec2f2974411ed71b62dd28baa7ab4d4c1e5d94c60f2d56df4946e81734c1",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/encoding_utils.py",
-      "bytes": 2339,
-      "sha256": "3f14c41258e8440762b59f990cb4799bec810e793d74c4ae4b3b2345ca6bcb35"
+      "bytes": 2272,
+      "sha256": "5285eb2b3f62399e95a2fa4b2fcab631bcad547124e8cc9b6a61525148bc924a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/feetech/__init__.py",
-      "bytes": 751,
-      "sha256": "1426623565c66750b898393e9d07807dde24b0e2074ab4f8b6271a2abe9f4a44"
+      "bytes": 733,
+      "sha256": "17b9e22b45fd71e4e04db7a072f8d32fa0a01de91e906b8b9746a1c83e7bbe8c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/feetech/feetech.py",
-      "bytes": 19515,
-      "sha256": "973c5724c326564e5d692f3b3c8aae57241e4f19e793b85d8ba4e1c1663cbe3f"
+      "bytes": 19061,
+      "sha256": "1dd81201ebd03ad39a6d46a034d99f21583dcefa81e9f099d3dc0a184dce56a8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/feetech/tables.py",
-      "bytes": 7944,
-      "sha256": "3913700df66f7f3d02f4587266427c68f848d86592801b21f3fcf20347dc4d66"
+      "bytes": 7687,
+      "sha256": "71f7f7beb17169781bd26a33b165ed4c5c3df7b9c477d36860f9d6011eb00428",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/motors_bus.py",
-      "bytes": 50166,
-      "sha256": "09fcc4ff5d19782fab99ca52f24dafed5b68934c8a4494e251cce069ba4560ca"
+      "bytes": 48886,
+      "sha256": "63185847018c92dc917858e01b402d13467f69d3970d9357dfe2d7d200a37e1d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/robstride/__init__.py",
-      "bytes": 717,
-      "sha256": "3a524a0864ff1b04f6e7813aea1bf304d360714d1f8a1bd33398dd15c187d261"
+      "bytes": 699,
+      "sha256": "24ce4fd9afb1775c811fd4c0c4178fcb9ec8b361bc9bd10b0e402a4dbfe4341d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/robstride/robstride.py",
-      "bytes": 40900,
-      "sha256": "f4ab47f9fe67ecf4540a8b90daa91c667cbe99205da63d17e24af144637b875d"
+      "bytes": 39897,
+      "sha256": "1bb894e0d3762d20255dc67e186df20e28b95ece32d4f8d136a0dff5a5ab0a36",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/motors/robstride/tables.py",
-      "bytes": 2810,
-      "sha256": "2e9928de474caf582f9ab1a4ba7e06de75e5e067b020f9b4831a6f4d3a59a532"
+      "bytes": 2690,
+      "sha256": "cae6df57ae3516044ed083b0e81b6402fee4c676cc50c9e02552f55b5b47fbb8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/optim/__init__.py",
-      "bytes": 686,
-      "sha256": "6a2eee13f799e4f2e07349be17988212f2ba33ba8c17380d4399d6432d6bcb46"
+      "bytes": 671,
+      "sha256": "4f485904e4eca422d708f5507810d51ae99a614dd41aac98127ed6019b9b3cc5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/optim/factory.py",
-      "bytes": 1821,
-      "sha256": "6220f25920061f52800fe14ec72f9eca16ae1bbb5e5264d03f5b917f1c58cb41"
+      "bytes": 1779,
+      "sha256": "3c655595e9cdb0665bdd711a645281b1d94b3807a892599e10ac5c61295af631",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/optim/optimizers.py",
-      "bytes": 13959,
-      "sha256": "ee416a67db083e276ca7ce03407d0562c801594963a6a7ed50c5ae42d4ed0c29"
+      "bytes": 13601,
+      "sha256": "9bce2b9e5651b9a4f72aecbb8f54ef3a1143021217d261972bd505126e94f97b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/optim/schedulers.py",
-      "bytes": 5746,
-      "sha256": "88d7ffbf3f1d9b1222b2c20b00730c56db680ac61210ab22edd70ecaf6913bb7"
+      "bytes": 5603,
+      "sha256": "47af5671a9d9c79ecdb5101e92e6b9f127331127549497047f691258f10b1020",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/__init__.py",
-      "bytes": 1698,
-      "sha256": "ce1d8dd90c8925d10f203593f4506bf05fa35dcceeda356bf77799ad7e3bc313"
+      "bytes": 1657,
+      "sha256": "dfdb10aa986c259e9ceb13dfa1bde6a4919c5ff0884bee19174afcebdeb4db42",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/act/configuration_act.py",
-      "bytes": 8927,
-      "sha256": "0ae4c4b7b8cc39949206c44358528ac9977335dd875f627c9a146bf13dd8db96"
+      "bytes": 8750,
+      "sha256": "11aa9037f981a957d63632561c795fac243e7898ee9302f7afac2f5d45920f7b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/act/modeling_act.py",
-      "bytes": 35714,
-      "sha256": "6fa3279bc9e9d760cde77919ecb485cce4a753dea5add46ce5c23dd933af8b78"
+      "bytes": 34968,
+      "sha256": "69301fff11cbb8f4ba7bfe473a55ba488c3d2f89c25ecdfe512347a93b4ad04f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/act/processor_act.py",
-      "bytes": 3389,
-      "sha256": "4f798bc8e5161c075f08ccfc896b286dc2f986b6a1d860a0d7b8ecb2c421784e"
+      "bytes": 3304,
+      "sha256": "25ea62c315f8b85a58ee0b8ddea7e488bc87b806eb46307bf2b06ef6b50a86f4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/act/README.md",
       "bytes": 44,
-      "sha256": "31ac5eaed43f5de5729d6893cf2c848aa63f647dbefb4c3baae7236b45f923d8"
+      "sha256": "31ac5eaed43f5de5729d6893cf2c848aa63f647dbefb4c3baae7236b45f923d8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/diffusion/configuration_diffusion.py",
-      "bytes": 13564,
-      "sha256": "11dd8a5c2a7266dd00eb2903726a586c3a7b4f3e92dedea3b82e890cd590a34d"
+      "bytes": 13305,
+      "sha256": "0911972c28b6b8c6187732e926888a9263b87b4bc68d1fa2b39282349188b9ac",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/diffusion/modeling_diffusion.py",
-      "bytes": 34468,
-      "sha256": "c43e5694a36f6cbf8f2ea82690575e1ca180508a2f1bb21f34b51c67a9c186a6"
+      "bytes": 33684,
+      "sha256": "3692491e0306bb505465c4ac76de3cce6e4a0ff5cd900b26b4c4c1e3ab7261a4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/diffusion/processor_diffusion.py",
-      "bytes": 3546,
-      "sha256": "237eb3fe08c27535325fc3d415fb5e452abd2184bedc5d3675d2a86aea36ca39"
+      "bytes": 3454,
+      "sha256": "3a2b156a1997faf7d129b636f062c97d8f64ad1d5c16727491d4f3d2fc9e12a8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/diffusion/README.md",
       "bytes": 50,
-      "sha256": "6f0590a0619341b01dc72b6d61a90fdaa224c51ede9e9a553a8577903c9fadcd"
+      "sha256": "6f0590a0619341b01dc72b6d61a90fdaa224c51ede9e9a553a8577903c9fadcd",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/factory.py",
-      "bytes": 24584,
-      "sha256": "a96c93327bb13a8821355890078ef64e9adbaa49943734a0cc2bac91990516d4"
+      "bytes": 23994,
+      "sha256": "f6e1e0ad79978c9cb4b54bcd57a1fcd28ada711aaff709a2152d23b54a005eaf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/__init__.py",
-      "bytes": 888,
-      "sha256": "873e027521f97fef867be40cd0512ff81388c75316ff6eb2d96804fe4a60c7fb"
+      "bytes": 867,
+      "sha256": "40411dc2b519d34f96cd68bed78817d98f10905778eea58a18a0d539ce2cd79d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/action_head/__init__.py",
-      "bytes": 693,
-      "sha256": "c5bf2715ec0d055ed63c9f053cb2dd49298f959cd37d21912960b4455786d77e"
+      "bytes": 679,
+      "sha256": "dd7d5f5e544e1d2923bf4f1aa548504255938f58a6e74a119356573e6ce9e36e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/action_head/action_encoder.py",
-      "bytes": 1855,
-      "sha256": "7f1cfa2c55856b21fd044bada8a11260df66c6087282b56d7d2c64acb180bd84"
+      "bytes": 1801,
+      "sha256": "5b47ecc30f3e08a66ae29ec33cd63bc0519abb52cb78d86e67004ea9049c13d2",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/action_head/cross_attention_dit.py",
-      "bytes": 14386,
-      "sha256": "a2149426d21d391645863f5ec5cfd04a2026ac1e6e76e4e5a0011a7cbc15a7c4"
+      "bytes": 14016,
+      "sha256": "64628c16af5bfe598c96c320f255af3e77b7d00560726d5a338af43b8d47cd6f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/action_head/flow_matching_action_head.py",
-      "bytes": 17913,
-      "sha256": "487b2c3ada76d4a6246c0d9e5f838bffe0577b1a840dfee6ece74366f3ac607d"
+      "bytes": 17507,
+      "sha256": "1e8aca948f32add81aa0207de178b97a660262658434746174ddcdb3f586422e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/configuration_groot.py",
-      "bytes": 7639,
-      "sha256": "c6a932e3ce66b2fca118b808d7db8195814a79e9c27bbca23d8c439fb694e3df"
+      "bytes": 7437,
+      "sha256": "38c0d335fb0c1e9e52a5f15c6b0056015a493143236a200bf6538e23c1305627",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/eagle2_hg_model/configuration_eagle2_5_vl.py",
-      "bytes": 6009,
-      "sha256": "8ff10ce078dfdeeacce5b405bb6b366b45b9dcf066b803c78a05e9f43c3ff317"
+      "bytes": 5874,
+      "sha256": "cad789f4f795d1e804f1ab4f955bfe9ae71c7bd5f06f188fe739534a2157c7b9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/eagle2_hg_model/image_processing_eagle2_5_vl_fast.py",
-      "bytes": 19824,
-      "sha256": "574725c61696bc5029edbc15d15b17beec8c5735eae8576db8cc48744804934e"
+      "bytes": 19321,
+      "sha256": "774df00e9f79784b1e5bcf4812c26644363efa63a610fdb71825f2d58e4f4204",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/eagle2_hg_model/modeling_eagle2_5_vl.py",
-      "bytes": 17548,
-      "sha256": "f47976deb3a91937edb7ffe3b5050afde4221cb1df51341e1ffbd76a771b11c0"
+      "bytes": 17153,
+      "sha256": "e4d2888795d7f515d18e8e7eb7be0c30736ed0b27a0f725479412a93a3c07005",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/eagle2_hg_model/processing_eagle2_5_vl.py",
-      "bytes": 23873,
-      "sha256": "8675d646bd9c1013d0302347319337e98de51ce00d0a18928cd71c64bb5ae6bf"
+      "bytes": 23355,
+      "sha256": "e8bcd31b81b6458b6e25b05bbc805e9ee3f05c7dd2e674b1d75d12d23d5c3ac8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/groot_n1.py",
-      "bytes": 16511,
-      "sha256": "e71b8bcb8068febcb7ebe21264bd693cdbeaf6c9cf4f2f502b7c8349ee1c4411"
+      "bytes": 16135,
+      "sha256": "04aa7c9beb3f084046c82a9c0feda708ed0a4a4969c449621387fa1f5f27c3ad",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/modeling_groot.py",
-      "bytes": 13664,
-      "sha256": "b066a8b0b644e0cb79b01377c8ab3f2a8c8f0f4e753be6d7ca1946d8a47434a8"
+      "bytes": 13336,
+      "sha256": "766f805bbfbe102705a33652cb53e8d3844725eb144678ec951a61c9a95bcaa3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/processor_groot.py",
-      "bytes": 27618,
-      "sha256": "84a1659dab6ac5531d8448b78b4089641ba61ab17f85af09c9bd1d9418c7c33c"
+      "bytes": 26950,
+      "sha256": "50b8ce64f1acfe61333e899fc8965eaea4d729efddc5dcd3a74c56c862876c22",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/README.md",
       "bytes": 46,
-      "sha256": "ac8a74186b0eaf1e342c706cf09778c77b70bde93a45ad67c97ea3a51474ff26"
+      "sha256": "ac8a74186b0eaf1e342c706cf09778c77b70bde93a45ad67c97ea3a51474ff26",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/groot/utils.py",
-      "bytes": 1679,
-      "sha256": "ee668b112596a4e0eac43f252c14ea408eb06a79e1c333c31cbe143d78563018"
+      "bytes": 1632,
+      "sha256": "42c83608be9a6d174199265af8710d299d28c210dbf681e0b2b63236fa50cc33",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0/__init__.py",
-      "bytes": 885,
-      "sha256": "dfba47b48b4337ae117ca253bbb7ad103ade59a5f222f44da6f70d1c5f60cb8d"
+      "bytes": 864,
+      "sha256": "22eadfdca8b5dee11b8fff07cb8a9093bc9374b85c18c7794e46b00043f4a47b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0/configuration_pi0.py",
-      "bytes": 6667,
-      "sha256": "1d2f083f0d20781b6d2741a68bbf4e9e015a7933f6519c9c905cf805a5f80433"
+      "bytes": 6499,
+      "sha256": "ec9ac485df10f85fb500ad14e8514ad0716e89eda843b8c9e03ab01d01713f8b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0/modeling_pi0.py",
-      "bytes": 55171,
-      "sha256": "cd008e2b470783393ffec104c2b4734c52476bc49fa53b95d1677acb7ed38f92"
+      "bytes": 53847,
+      "sha256": "3e97ebc30c8bfe7177fc83845b5f85869c2cdece99167cf25d966e6bc7f0d4f8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0/processor_pi0.py",
-      "bytes": 6469,
-      "sha256": "a2287e562f1f066feab0c58cea60e9047e40c34e522310ad6e92baaf67eae030"
+      "bytes": 6303,
+      "sha256": "fc8fe6f705820f910738b0e966c10ede259dd1639b50b18a226bf1ef596a1e48",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0/README.md",
-      "bytes": 2521,
-      "sha256": "cc6ab930b4ef22fbbd1b522fd6bf934191866b3b876b8e4997660a4aa1e9dea8"
+      "bytes": 2472,
+      "sha256": "4a810f0f8983ada6ce9209b3f9621b8cb3c6ec019b98d38494ce1b6f01dd43ee",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi05/__init__.py",
-      "bytes": 894,
-      "sha256": "0d9997fc1b14205367d6b254a8a4eb6f53d1949a529d7be91109a2e9f799659e"
+      "bytes": 873,
+      "sha256": "e70e27782532c2f871bf3fd812e43f796c11eb8193ff481dbeb4b2ef4a31b197",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi05/configuration_pi05.py",
-      "bytes": 6743,
-      "sha256": "5727d6d422aefbad1921617660ba1a9d33bac0ed00ff7336b4c8fc3e96fd450e"
+      "bytes": 6574,
+      "sha256": "fcbafbfd7d4b6aa8bf4049de553bf3180e3cf87b5330a2ed27d0bead7fc0d41b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi05/modeling_pi05.py",
-      "bytes": 54306,
-      "sha256": "0e5f6fe60e4314ba5d38aedad31086aa0870a0aa9cffd90c15745fe54ff7c67e"
+      "bytes": 53012,
+      "sha256": "56016f6d840871b46f261990ff5decfdf4cd6759dbc5cb2a4a150bf3ccfb68a2",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi05/processor_pi05.py",
-      "bytes": 6788,
-      "sha256": "35826fcf7bb2b0ed0eda646585f4d7936e0b9e1c47035e091f1c04307f5ff27e"
+      "bytes": 6621,
+      "sha256": "0afe3c49ec4fedfd6a7bf355f5a466d6553bd5d3da32426c2cb5b470a2b1bba3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi05/README.md",
-      "bytes": 2788,
-      "sha256": "b02b9462310cf871574f83746a6b586380dcb10c148abc0de58b8b4f399a7003"
+      "bytes": 2739,
+      "sha256": "c3fecf4b33703379bb0af147622e93aa6323f16d79806d3828c7aaf72b7d5a1c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0_fast/__init__.py",
-      "bytes": 926,
-      "sha256": "1a8ba8345f7b8b2a0aca940397b329f722ed95df4a983e8b56330f39eb89849a"
+      "bytes": 905,
+      "sha256": "92a84e39e2b016b5cba452765d3408047c82beeeed6612b7c474c51a97b80d7e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0_fast/configuration_pi0_fast.py",
-      "bytes": 6454,
-      "sha256": "3744ebca09b08bcbabd628a35685df0ef2847f8d7cadd408eeeab3cd2589fc2b"
+      "bytes": 6292,
+      "sha256": "0065d6d668aea156a4ed5b7f9ba0c8d1f2e8983b30c2320a1be0a6c0429ecc9d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0_fast/modeling_pi0_fast.py",
-      "bytes": 56245,
-      "sha256": "b8fe9ced727549accf9da35936935a638136e39f420a0ff9bb39ace903f4b0cc"
+      "bytes": 54886,
+      "sha256": "d92a4d8d1e71a8b488ea1311eb7627e2327e20a516bcb1980d401c3d20a7f3f1",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi0_fast/processor_pi0_fast.py",
-      "bytes": 7180,
-      "sha256": "bbbd3e8ec8019ed64fa01779d96c70541b5c5bb22be5912b28edecae1f969dfc"
+      "bytes": 7007,
+      "sha256": "0eb9a30ad5c4b9cc361128b680756e52f34c2eab0b26a3d177b790546b718f79",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pi_gemma.py",
-      "bytes": 13808,
-      "sha256": "43beeae8324b0333aeb469bd0613ee68ea8b9391d8360c6aef14b3aae5f7ab25"
+      "bytes": 13445,
+      "sha256": "fe287aa89ad2c826093306a89b6752ec00d19eea52a5f2b4b4d463246e294722",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/pretrained.py",
-      "bytes": 17981,
-      "sha256": "1275eb624d945b705c7806083fc2d9211d35becd4a17b5fa3d1fc2423c64176d"
+      "bytes": 17551,
+      "sha256": "eea3dfbe0e001da467b8e0dd190cb0ea00ea6dc8fc513ae6c91c074733273afa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/action_queue.py",
-      "bytes": 8415,
-      "sha256": "26ecc6c3354ebf2caf3e91b7ddc7e91c320ec826414a4d54412e3b574f6378fe"
+      "bytes": 8196,
+      "sha256": "a3c26e56626dbc7aeae848c5d085ea8aaf11b2da08fcf3eee225e59a16394cae",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/configuration_rtc.py",
-      "bytes": 1933,
-      "sha256": "d3c82ec932187a63a1883f56e389ddda2dbe9c5dee0566c19ea5243ecc4ea25d"
+      "bytes": 1878,
+      "sha256": "a292ce9b9afef4e06bb978554d250357af65d25742cfa848370f0ef3b5c1fe48",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/debug_tracker.py",
-      "bytes": 9659,
-      "sha256": "ae2478e9096aece93345396a8751a49443c1372c94a7f191f67914518ca74de4"
+      "bytes": 9426,
+      "sha256": "8463c4adceb9629c5ce580d5969a593091c936de779c02773a9a0b2563621921",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/debug_visualizer.py",
-      "bytes": 4227,
-      "sha256": "47d89c1d8fd89eb950546ab2484a2c5ab4d3ed4059a5cc8658a6ac36c01077e0"
+      "bytes": 4114,
+      "sha256": "06d9ca5c9ce6ed61dc7ac772e91a56513445ab4e6be27e239ef8a252480f1b5c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/latency_tracker.py",
-      "bytes": 2389,
-      "sha256": "b019812e6133163838b0a7f4d3fbee0c7c1a4f13a208c8a8f80283b1b0132e30"
+      "bytes": 2317,
+      "sha256": "34ec377bc004a7e585a2cfb2eaf898169bf7eb9bb2ec25f34615266ae1f40f42",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/modeling_rtc.py",
-      "bytes": 11462,
-      "sha256": "707032a8182fc36db610776695157a434cfe41ab262c48264b3d3fda6b33dadd"
+      "bytes": 11165,
+      "sha256": "9de19b2548daf2233dfba8f8a74e06b98659598d50d2c54c002df359bb8e61a5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/rtc/README.md",
-      "bytes": 1246,
-      "sha256": "8e488f9607717ca211f4e7463ffe066a67d372ea9af9f9348e69182035b0d5fe"
+      "bytes": 1208,
+      "sha256": "5a00a77a749a9bf9d0b6d2bd2f21005f159cbdb136db042165223fc0d1311a18",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/configuration_sac.py",
-      "bytes": 8781,
-      "sha256": "5e5737b8c7657fc847caabfe857069c5a1d55ff9562268766d97f2236fa718b8"
+      "bytes": 8538,
+      "sha256": "50228a1e7bda86672dec1fa225122a8cb980f2b0853b35f072b42caa5ca2f4a4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/modeling_sac.py",
-      "bytes": 42054,
-      "sha256": "04419b5538dc317850e9b0d93656642432ad41382838889fba5f5d8207737185"
+      "bytes": 40990,
+      "sha256": "17645d83180cd510366db583d4f1cb50958a9fd78481dfbfcf88d6e6ef853ef7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/processor_sac.py",
-      "bytes": 3382,
-      "sha256": "651ca1320dc46ead2f93cd4f58c2e939caeac8ad26712de9a3a1de20595af498"
+      "bytes": 3290,
+      "sha256": "6380100cc2d549a145cc6daedad29b271e80d51d08cfd142f63591131d36d0c6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/reward_model/configuration_classifier.py",
-      "bytes": 2999,
-      "sha256": "942cb53439c9a68988f1d78aa67b8584a589d0b0c471d5b3862aec6212bdaa59"
+      "bytes": 2922,
+      "sha256": "09ee69d732aa64f09dcc5f94d24768c465b0811aba441c9376a54addf0b0af83",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/reward_model/modeling_classifier.py",
-      "bytes": 11674,
-      "sha256": "e65cbb1c302194f55e31a9dba9ec1c225aad7a195e5a858a9df6ce596997f49b"
+      "bytes": 11366,
+      "sha256": "3c6d676f510adab7f1193829b8d6d2494102434242ce7d2d14edd379a455000a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sac/reward_model/processor_classifier.py",
-      "bytes": 3111,
-      "sha256": "133685c9a8b24f2ac082c1de1b0cc881793f84f966e9e548dd6215e9097e014d"
+      "bytes": 3029,
+      "sha256": "c988c66b56834ee69bd14eacb6a584fe920af07b4b086c6a47eed77191f86e86",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/compute_rabc_weights.py",
-      "bytes": 35567,
-      "sha256": "48dd5a60e2989322afbe0fdeb3b8bfddc5f1f5d24f1cb152e6d3c92faa946584"
+      "bytes": 34697,
+      "sha256": "d4029783a051deaa3e3806eb4bc3101153e224aba4d2ffb333abc348958783f0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/configuration_sarm.py",
-      "bytes": 9929,
-      "sha256": "80ea7e2a69afc4975384bb5a95b98a4dba994e15861a16ed8ecd851d81079b33"
+      "bytes": 9680,
+      "sha256": "312bf67cc2afaf5615a04899244682527629f8b82a3e5c7279b40426a33ff16d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/modeling_sarm.py",
-      "bytes": 32064,
-      "sha256": "ee077897c574308c76741cb876a0d2bb56f91e6d205d06c4f7f70f24d2eae562"
+      "bytes": 31270,
+      "sha256": "9f26fad4a40cf61fe017bd1c96fe085ab03a1d37647031cde4571406674fc620",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/processor_sarm.py",
-      "bytes": 21746,
-      "sha256": "2d8adaa747c8f2f76403b87eae819d5ac7fa10f76c47ebaaabdd71b37460ad24"
+      "bytes": 21230,
+      "sha256": "71b8d32a5cfe532fd52ea87836d1cab165fc7f5ebd18af70422164e06101bc2b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/README.md",
-      "bytes": 363,
-      "sha256": "6bfa3ab6b9fa6aee52d7a7a6ea2fbe9a3ef5606da3016b412629ea041ce23808"
+      "bytes": 349,
+      "sha256": "052d6d7e045bdad8aa2f575ed774da388a4032a6ac85ade7154a23df733e0ef5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/sarm/sarm_utils.py",
-      "bytes": 11586,
-      "sha256": "5cea065d7b244070355a113936b2be7cf3a7eacbea835c724f38ebc0de72be82"
+      "bytes": 11291,
+      "sha256": "529c74f5f97506b5dbcf29cd70ec43c43c2c3f2d7797f6ec324ac2dd914e704d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/smolvla/configuration_smolvla.py",
-      "bytes": 6199,
-      "sha256": "74757b89857a5cd661d77aa8d23ef6fa9b4d83e8cb7e7064a6572ef6fe7c84de"
+      "bytes": 6037,
+      "sha256": "6c55f3dea30a3c9571ecaa3dccf599dab9240a6eaa658b3fbc507273778b49aa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/smolvla/modeling_smolvla.py",
-      "bytes": 36983,
-      "sha256": "6cf63dcc7a9f1af80a7f8771e0be0d85782e8ce87908a935a1652b296cbf50d4"
+      "bytes": 36080,
+      "sha256": "6f8ab2d97dbc13807381f3759ba2a5d511f6121e55f0c53de1ffb9c0c8317887",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/smolvla/processor_smolvla.py",
-      "bytes": 5535,
-      "sha256": "762bfad2f828a3687c979c4d57a7aea70087d2c5709e7eca3fc42030adaaa6e7"
+      "bytes": 5394,
+      "sha256": "eeb3714ca4b926d7f4d72c63ce5877497705108736eaf53cdc7362d8dfef2644",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/smolvla/README.md",
       "bytes": 48,
-      "sha256": "9aa0666e77cd7de3612c06c2f74a226e114921a1bc5bf367ecb36a0c32f37e98"
+      "sha256": "9aa0666e77cd7de3612c06c2f74a226e114921a1bc5bf367ecb36a0c32f37e98",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/smolvla/smolvlm_with_expert.py",
-      "bytes": 23517,
-      "sha256": "0b31921471cd0b82a095bc3cf41ec39ff58e8c29d31a4b6ba467e9ebcbe52355"
+      "bytes": 22968,
+      "sha256": "b70356145870c7da1e92a2195ee4626f7e9f9387576c6bed5ba2bfefae2a38d9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/tdmpc/configuration_tdmpc.py",
-      "bytes": 10994,
-      "sha256": "aade4fb2effe0b93c552814ebd63083225672fda71856c98b929d08afad72a81"
+      "bytes": 10786,
+      "sha256": "a6519d59351cfea64453b74ead9846c22bb80fea4ecec3dcec81f5d63c173ac0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/tdmpc/modeling_tdmpc.py",
-      "bytes": 38413,
-      "sha256": "4c4a8ff876b351d4f6a235e18f60ed18247c92eba4d18410aa4a2ae3ea5d8700"
+      "bytes": 37583,
+      "sha256": "e9bbbe85110994e4311e6e2af8c668ff15008766f688447ad1cd633a4072c8d9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/tdmpc/processor_tdmpc.py",
-      "bytes": 3405,
-      "sha256": "d11d51164edb31749a8afe883495f14cc8153b4be4b9322a44d02678f3f050c9"
+      "bytes": 3315,
+      "sha256": "0cfecbade4d78fd075e3c54911836a6d52ec88bb27c43c2c635984e2cea41b22",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/tdmpc/README.md",
       "bytes": 46,
-      "sha256": "036b10e393c121f06080ed67fe68741ff83ea3ee1488c60f3d8d279db0863076"
+      "sha256": "036b10e393c121f06080ed67fe68741ff83ea3ee1488c60f3d8d279db0863076",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/utils.py",
-      "bytes": 10485,
-      "sha256": "430d769905d45ac9855f4476f04132673515da3d78aa4e136bb99ac3fedadfa7"
+      "bytes": 10236,
+      "sha256": "cd512e8d484d6c35da8654cc26f63f142a77a27115fd2649773efa2c1f04388d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/vqbet/configuration_vqbet.py",
-      "bytes": 9186,
-      "sha256": "60c4e481372652d7145059cc3b32e0b83994e539562d4529bd59a71a8244058f"
+      "bytes": 8997,
+      "sha256": "c32f9c394c65344153f233d45fe359f3088e69af0fbd7a7f16fef2daecad6393",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/vqbet/modeling_vqbet.py",
-      "bytes": 46005,
-      "sha256": "1450c951e097d4690fd6a192b47668b4fd119f8ceb50d18f9a4313deb95cacd6"
+      "bytes": 45101,
+      "sha256": "b586b8a35fb38ae2164560f12ba90c7cebd78ecf9c6e52f019e7038a18c8fb5b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/vqbet/processor_vqbet.py",
-      "bytes": 3564,
-      "sha256": "f6ea6ca72c36c1386e092958dc2b4cd75d962ecb40b46cc609bf15ec5f09d806"
+      "bytes": 3473,
+      "sha256": "3e0b1686f63b968c21c506c3b0d8e2e8047dc0f5c9c40384116c5be62fe1a38d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/vqbet/README.md",
       "bytes": 46,
-      "sha256": "923d0de3dc70661616f6240a8430588b07aa4b3ec2a1e746b03f63e91cc53f32"
+      "sha256": "923d0de3dc70661616f6240a8430588b07aa4b3ec2a1e746b03f63e91cc53f32",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/vqbet/vqbet_utils.py",
-      "bytes": 54906,
-      "sha256": "218995152b98b8b6a0d6ed65a0f8fa828251534680b99aabade68e01957a7824"
+      "bytes": 53456,
+      "sha256": "2e9a5c39dca48a3e8e3bf2e48fe4e42a1bb3bd175fef201897c03637ae39c708",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/__init__.py",
-      "bytes": 803,
-      "sha256": "a2ceb0eae43019c2e5b28270551f1ff7066047874bc1830935298183295b53f1"
+      "bytes": 784,
+      "sha256": "9f780e34d2e553bd967882b1e2f2765df3a4ae65b50b857ec09006e85c82589f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/configuration_wall_x.py",
-      "bytes": 6813,
-      "sha256": "9c16b2f94efab0bfa1699170a25b4e21d6851cbeaa60c1181dcf5567ccd8d09f"
+      "bytes": 6647,
+      "sha256": "3e2c0da3f0b62f3852aef9371dbcf4d61f80a6bf0faac1c8b65b9e84632844fa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/constant.py",
-      "bytes": 1209,
-      "sha256": "266761888ee4af10fd893f10fad2251f9b05bc09a7019f5d657b7756fbd8dda3"
+      "bytes": 1168,
+      "sha256": "3e9968c6c544f9408b299d57a547cd3a5696a7fe27fce9061b1287c831c96529",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/modeling_wall_x.py",
-      "bytes": 91692,
-      "sha256": "8c4d0ab21fb5c0dd29a0d5cd9e6020dd69ea4f14b5634cfd8908f7ad4ae02f56"
+      "bytes": 89674,
+      "sha256": "c83251aecb45c047afa8775b8d3d645e8092e40ee24f3141fcf35cf116432b55",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/processor_wall_x.py",
-      "bytes": 4998,
-      "sha256": "39f10ca3cb883a1608269b70c2d149198334dad4c8afb34606ddf98d5c3ed956"
+      "bytes": 4865,
+      "sha256": "9f7717d334a5831b5c5c5a214af5e3a94e21531c9480923c5e3aa75ac6569e39",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/qwen_model/configuration_qwen2_5_vl.py",
-      "bytes": 12568,
-      "sha256": "12e26ea860abdb8c0b77906d441cfeaa21c8843f6de87aba40a252f916e0e398"
+      "bytes": 12318,
+      "sha256": "aa0f656423b7a4d21141983d7d862bb0574d7b8334bcb3535152ca2798df37ec",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/qwen_model/qwen2_5_vl_moe.py",
-      "bytes": 133331,
-      "sha256": "bae1d385ee1c5782fbd4a3fe028a8347cbf72d9de3e07591e3957207b68e9482"
+      "bytes": 130514,
+      "sha256": "ab9dd4849c5e38ce64999b3d8661274d9184dcf617b94a686cc7237ca79e9c70",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/README.md",
       "bytes": 48,
-      "sha256": "05492e65b689aa9cfd27cb533dc074a44628895ff0b5b86ab493a1f2b4d5708d"
+      "sha256": "05492e65b689aa9cfd27cb533dc074a44628895ff0b5b86ab493a1f2b4d5708d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/wall_x/utils.py",
-      "bytes": 23976,
-      "sha256": "0061d25bee0b8a9136caea27f9ddb3c86149dfecb774099504c2013e0d93ec63"
+      "bytes": 23345,
+      "sha256": "3d301679394de68462c67230c5f449deead2c4ac5a59edcb053527b941e04001",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/__init__.py",
-      "bytes": 199,
-      "sha256": "b3b118b5acad4136dade5691f387e8c59ed7866d775190bc9bedb35e34c79d1f"
+      "bytes": 193,
+      "sha256": "d55239023813d56be288c49063241cd0f390bb0c7ad46f14975ecfe4606d37dd",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/action_hub.py",
-      "bytes": 21015,
-      "sha256": "cb6a455b74ad41bd3147786fdb34c203bf6beebe50e845d9c02f0165a23f7315"
+      "bytes": 20427,
+      "sha256": "86357301855bf28a27e2e7a8a0f6b79264a915786a94a2232b152cff586cf9bf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/configuration_florence2.py",
-      "bytes": 16216,
-      "sha256": "9d940a185589d66fc31038eea87a4a60a06327404f5915c0d70ab036e08fc92a"
+      "bytes": 15861,
+      "sha256": "084556d98df891ba4f71b6c4a8672689f0cfe54d527f675dfc9b55c7d5d2b386",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/configuration_xvla.py",
-      "bytes": 8434,
-      "sha256": "6a3ae5239430d71c2595b843a8b32aabc741bedc1e69d77090d2e6c0740e7afe"
+      "bytes": 8231,
+      "sha256": "8cbce94ddb34bf43609e2f8a0f8a7b0d2efb40348f36ae0001684d44f7a2d8a5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/modeling_florence2.py",
-      "bytes": 126722,
-      "sha256": "ecb9f5f88227b7418db7bdede196fc83f3179a048007ee6cbc4306cda971a545"
+      "bytes": 123960,
+      "sha256": "767c0a3a99080f1cbf3e8544b52dec7dd1c73933fb1cb062c7c149232b11e9ba",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/modeling_xvla.py",
-      "bytes": 22159,
-      "sha256": "a77fb123d304e9530f7dce9671b239e61e76616c83a896eacdb73c6447d85067"
+      "bytes": 21611,
+      "sha256": "d8fc952243f764a33157be2518fddd38ebc071d53fa66a5f9dea8d775f787dbf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/processor_xvla.py",
-      "bytes": 20905,
-      "sha256": "0c48a1c545497160bf56704b1b3a0baf2c4e25499a337223c22fa5e4f6a65fb7"
+      "bytes": 20349,
+      "sha256": "a701e1707afe5384ccc1be5cf8dd903a0f2232fb6ec4b5f860af663117ec6f7c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/soft_transformer.py",
-      "bytes": 14658,
-      "sha256": "91f0c820d3624779414eb0535e751094cc32526d7ecc092d20ebd534b19d8492"
+      "bytes": 14243,
+      "sha256": "92da48b75f7ba14583fe2be89f9eb15157361252084ae18643e279648db817cc",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/policies/xvla/utils.py",
-      "bytes": 4251,
-      "sha256": "9ac2d7f2eb67ba7ae1e83d0210527bf0139f968e99f8dfb4bda233e3598faf29"
+      "bytes": 4113,
+      "sha256": "4693b9b0e1db410d05d730d17c2268d91534a887218b5c863a28f26ee3c6bf0e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/__init__.py",
-      "bytes": 4375,
-      "sha256": "22a4888253d3849a91e987a4258ffc6ae764b9865e131a597caa27520a27a685"
+      "bytes": 4242,
+      "sha256": "a83594d79eb54532e6b0f0d945f422f88a26ce0db23b29cf803f24bf80048b2c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/batch_processor.py",
-      "bytes": 9709,
-      "sha256": "222dbe8d1bff0df86b149dfc1bd1f0acd4ed625b4803bbfd1c1ca1fc97bdc288"
+      "bytes": 9455,
+      "sha256": "305843a6bf98ddda243422b577ea10cbe105be71d08c5611a8aed3b2bb27d832",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/converters.py",
-      "bytes": 14358,
-      "sha256": "0ac13ad0d5ce4d2ba79812e9884cfcb8fbc06c76ee4a8511294cf4a1ebf1bf71"
+      "bytes": 13942,
+      "sha256": "2b97131f34c4881e93e7b864091637fac8ce1642a6620ed9330e84372e113640",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/core.py",
-      "bytes": 1786,
-      "sha256": "7395d3cae031adb83adc6f16ea03d3f4d198c74bad73138fef62f6054e438e9b"
+      "bytes": 1730,
+      "sha256": "d9f5484cc0ca35a1a55d960451ba3aeee2ef1ea4acc1ff931634859b0e924d3f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/delta_action_processor.py",
-      "bytes": 5804,
-      "sha256": "8f9f8ebf87acf43f4de75199ead2622b27389fb92176ac7b1aaed68cdc697497"
+      "bytes": 5661,
+      "sha256": "20618218cc5e409f37bade516ea83d702ae00abe50a4e7bcaaa8b13ce2fc7ac6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/device_processor.py",
-      "bytes": 7592,
-      "sha256": "897a24770b003849ac230160f59dc2b979544ddb5b2be995a35708625d6e08e6"
+      "bytes": 7398,
+      "sha256": "be81c88d9e7ea304ec49a42ea80557feb08b252bec82eb3c9eb8faf148397d33",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/env_processor.py",
-      "bytes": 8503,
-      "sha256": "49b0f23b14e228840ea1e575fd497dc0bbbbabdb6e920efc7e71bdc4d9f717a2"
+      "bytes": 8275,
+      "sha256": "6d6622d69835f0c3c73dd8700d9b9e9af9e50fc4bebaaf3e87322a09d480ba36",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/factory.py",
-      "bytes": 2546,
-      "sha256": "5b32c94a4e97944fb70abf1754fc7d21f56635fab774ca596f2f880f3422250b"
+      "bytes": 2484,
+      "sha256": "23bd0d47e9baeeeea61b4c622388e844a1039fbf7cb8b2367f6e0975d3bf87fb",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/gym_action_processor.py",
-      "bytes": 4329,
-      "sha256": "a904acab5d77fd88ab62b56e639ec1a9a45e161cb4a849ccb5e0e9a0d4d744b1"
+      "bytes": 4224,
+      "sha256": "f8e1e8d8ce44b411f2f371b3baceaaa7f933bbe39680c9fd942895d75fb9bf22",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/hil_processor.py",
-      "bytes": 23978,
-      "sha256": "9001cccdebf7061a2618e692095f118c9e6da8f512eb3ef2ba3cec0971e129bb"
+      "bytes": 23347,
+      "sha256": "fd019663ac727a0b9e50398ac8e779c39ca53feade079fb8073b42928eafc721",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/migrate_policy_normalization.py",
-      "bytes": 31924,
-      "sha256": "c968d79dca3f82329c23c255408c583008a748ffd109e32eb72ab9d2e01587da"
+      "bytes": 31155,
+      "sha256": "11c39295c54467617f90624048be8074ece9fbd023e0ba9e39cad9773f0547c7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/normalize_processor.py",
-      "bytes": 24698,
-      "sha256": "436ce64e68f20f9a3502e07df93cbd6da9a44094462c73f5e234d4069aadae65"
+      "bytes": 24138,
+      "sha256": "5b610f5be7d3bcf371d52e3ccca433846c9ef49adca84ba5ef3c54ad8809338e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/observation_processor.py",
-      "bytes": 8275,
-      "sha256": "a5ba10c25f78bdfa6ec705b54dbbba392e245c2e7609c15928b7ddfb9817c344"
+      "bytes": 8069,
+      "sha256": "7b3735a82f5c8bc52c119a1480107c3cba5afd612b0ff5c5e55731c27fee9eb3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/pipeline.py",
-      "bytes": 73601,
-      "sha256": "dfac2770d1effc70570e640a471607a8a2a6fbe889bab44a3cfa2d37a9f07c21"
+      "bytes": 71885,
+      "sha256": "12790c269b531e9e08436c9db75050794663d7ce2f828b524287904552d39d2e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/policy_robot_bridge.py",
-      "bytes": 2713,
-      "sha256": "c9c86af4f80d1c86927b3e48adaeea768b2329cba568a1662d2ed481857cb3d5"
+      "bytes": 2644,
+      "sha256": "8d00ad845d184570d3071f45ccf3bebfde61412713f7b6d4d94b193f25d094d9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/rename_processor.py",
-      "bytes": 3824,
-      "sha256": "324b65a683882000385e42bc18bd01a884b186a842cc141e5189310fb08de538"
+      "bytes": 3731,
+      "sha256": "11c4a25620260fc281cdeef50968280c7d4fcfe549cd272edf638763dcc4eca4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/processor/tokenizer_processor.py",
-      "bytes": 23830,
-      "sha256": "e0e54d21c97dd68c26bc51383cc97c998a2925cb2dfa4fb27911f755063736c4"
+      "bytes": 23254,
+      "sha256": "f7b8b40530e47a71cc01ee077d478b9fadc804d9fdcab89b8fb2ce92f175f3e3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/actor.py",
-      "bytes": 27359,
-      "sha256": "9070279be309e4e14e7760a8308d6325c6b690137e462561d6d6983f24724233"
+      "bytes": 26621,
+      "sha256": "099b99de479b04666d545f0a6dabf9f7cc9f10cce24e32e11a69829aaad58145",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/buffer.py",
-      "bytes": 35546,
-      "sha256": "a108a5e6483ec11f375df201878ed14cd499abcf5244de6f0e15a63548b71ff1"
+      "bytes": 34712,
+      "sha256": "7d33968f96f8240b9cfb1e359bd97cac472afde58fe87fd9c3452f98012f01c7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/crop_dataset_roi.py",
-      "bytes": 12008,
-      "sha256": "665123393f78345a315ee51764db985a862c4c1894f65d2235f3c63018c09177"
+      "bytes": 11682,
+      "sha256": "10b16c2abf9ad3e32f1e9157ac22bb81f4002db29ab579f3dc523ee3d7ea5b82",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/eval_policy.py",
-      "bytes": 2404,
-      "sha256": "9aaaeda86a9a1b5ff2324e085220625fc69731f2a8252e5a749ff53f7c1ad961"
+      "bytes": 2329,
+      "sha256": "c559fffa395d8af484fdfa06ffc865e63814aec23fc80e7ceb5d9d3481327380",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/gym_manipulator.py",
-      "bytes": 29756,
-      "sha256": "f1ab09f11f2cbfd416f90180046cc7c86949ae562ababee2d62880f9f66471a8"
+      "bytes": 28966,
+      "sha256": "0c8bca5bd17b4b45ab33689c5ff3a82d23ff64279bd8182626ac077f610f7382",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/joint_observations_processor.py",
-      "bytes": 8142,
-      "sha256": "e34e9b7a2b7f3c9f89507babb0675d666765e336d994540f264d944506302261"
+      "bytes": 7931,
+      "sha256": "a345b28ad97ff14ee540640cf5b41627ed06769cc76f6f4496d6a050fecc202a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/learner.py",
-      "bytes": 46211,
-      "sha256": "4e45cbe5cd391901651b78a4cc0821588279288269750763341f16b41a8faa1e"
+      "bytes": 45011,
+      "sha256": "2c63b34ffe0f8f71b780287632df029a96cf5f06d49436a84c5aaf1c08daefa6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/learner_service.py",
-      "bytes": 4428,
-      "sha256": "b552428fc56503a3968ef0112d65f823d2f80253ffb6f0be57e273ed45ccae1e"
+      "bytes": 4311,
+      "sha256": "491b0bd9e2da92b5c93d7341d2daee3ff6c2f047085e5372f6477f5ccd3f8e23",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/process.py",
-      "bytes": 3243,
-      "sha256": "57a3981994d1c814049f66be43f9e08c593f02f8791ee7fc2acf1401b1222914"
+      "bytes": 3160,
+      "sha256": "6108e142cfbed7602b3d4d5edf16e83df464fd42ef71237b367e55569cf70a5c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/queue.py",
-      "bytes": 1717,
-      "sha256": "7b6d1294e761c0c76e8f510b8fbc4747dc97e0d7b741c7ffe4af0b11c449b28c"
+      "bytes": 1665,
+      "sha256": "fbfc76286938c6b3e707f78a69875f5fbd29ad09378af393303ded3bb40fb20a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/rl/wandb_utils.py",
-      "bytes": 8554,
-      "sha256": "9c0b33ba9571afaa177c1446431b2f37af08d31d6e523a28a6b05f316000f7bc"
+      "bytes": 8351,
+      "sha256": "ca5aecaea55b52e5e3019427385741a77c16d9ee8f0286613263390cb16c1c31",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/__init__.py",
-      "bytes": 753,
-      "sha256": "b79ba0604952b949b38bf0918c6205a6e5e9d23aad32351723b9f797548b9d24"
+      "bytes": 734,
+      "sha256": "809dfb9fa15249bf33fa3d400d1e776450e59300829c9b1841a841ccf31fbc17",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_openarm_follower/__init__.py",
-      "bytes": 830,
-      "sha256": "195da4479402c30cd1b151f945a50425461af7bf22b4068a3437df45b0d3b47e"
+      "bytes": 810,
+      "sha256": "2645f2e7bb06d30fc9f472a2cbb85fe5bb4e595086ad66110d27f5512c1b8c5d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_openarm_follower/bi_openarm_follower.py",
-      "bytes": 7169,
-      "sha256": "6edc960961a8473735d1c028f891e7e4408f03a287a465c2124be2b8d42120c6"
+      "bytes": 6989,
+      "sha256": "3f06fc6f6f69c087bc95f28da59bb7a0f5a650307bd38871a754c1d8ddb51f7d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_openarm_follower/config_bi_openarm_follower.py",
-      "bytes": 1073,
-      "sha256": "f58c0a610f762c9a96a1ac6bfa27e782aa78b93c5d6dee2df08cc9640d38409e"
+      "bytes": 1043,
+      "sha256": "2f397757ce6f6f0ad4f4166b8bcddfcbf9942a3864208b5d359bad3949ada09f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_so_follower/__init__.py",
-      "bytes": 748,
-      "sha256": "b86430b07aef605befd6e0518a87c314e1c9c6ea2443f2ff1ee5c77df45c23b1"
+      "bytes": 730,
+      "sha256": "39fb2620f85c45aacbf6c472adfa2f2ca57173e1df1159d71d9a62334ba7a6a7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_so_follower/bi_so_follower.py",
-      "bytes": 5961,
-      "sha256": "d8c0546239b0fd1ca78b43ecb32eca7d8a271d5e6ca107d5517533d2c9d143df"
+      "bytes": 5803,
+      "sha256": "e005bbd27759572b6a4834c8902803bebb7bcdadb6a1ab87069263c5c2e0fd3b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/bi_so_follower/config_bi_so_follower.py",
-      "bytes": 1026,
-      "sha256": "e66a42c56a963bee25a02681d70f1cdac66c3d20fdc12b9fa8b732f2208ff3ec"
+      "bytes": 996,
+      "sha256": "c8d6bd49f916233c5f51090f90e0acff153d3f6581e85177745b2367d3245b68",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/config.py",
-      "bytes": 1502,
-      "sha256": "c7f545fb694b6336a86d6a1dbfae33c438d528208795f26e8da459f80def8bdf"
+      "bytes": 1462,
+      "sha256": "65f420e72414df8717d4d2d0788d7e3584d7420f616e39b0d07af2098a877094",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/earthrover_mini_plus/__init__.py",
-      "bytes": 842,
-      "sha256": "1a2f2ca06cc6615b6b84ebe2b6a4291cad7a211d87c50ac1f561dc52117cdef0"
+      "bytes": 822,
+      "sha256": "5d8d6aaa64e48a99bad94c6d739f0917929bc60633b70d57f54b2ab4e24f52ac",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/earthrover_mini_plus/config_earthrover_mini_plus.py",
-      "bytes": 1268,
-      "sha256": "2c12676b0912c2daada1f9356bf044f2186f2653ce3b2cb8fbc0bd0efe9e33ec"
+      "bytes": 1233,
+      "sha256": "31fc0be35ec4e94c3f96135ac8757ccb1bb22062eb8bdc4fa3d16f6f5c11e68e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/earthrover_mini_plus/earthrover_mini_plus.mdx",
       "bytes": 48,
-      "sha256": "ba04c9296fe412d6901b884cbcc1f4a57ed0e39b89148545a4739c2a443830eb"
+      "sha256": "ba04c9296fe412d6901b884cbcc1f4a57ed0e39b89148545a4739c2a443830eb",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/earthrover_mini_plus/robot_earthrover_mini_plus.py",
-      "bytes": 17915,
-      "sha256": "e48a4f5fa5b060c2324ef3647e187052bcafd54166e4c55d3d20f8bfeeb45fd4"
+      "bytes": 17446,
+      "sha256": "01c756be49b2fbf02cf2d624dba7f75b8c0964f5fe06a1ed2f57bc25eb37eaaf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/hope_jr/__init__.py",
-      "bytes": 788,
-      "sha256": "68aab972d9180955801514e98153fd9991650ffcaf9bc02489d306f671360cd4"
+      "bytes": 769,
+      "sha256": "e89db6b32acbf2edb7a936cf906a0e29be4150e2ad7a3be324be8e05bb0ec6e4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/hope_jr/config_hope_jr.py",
-      "bytes": 1841,
-      "sha256": "d1596df6215f4feea48297ef895e65b7efc788b34a00a9e5f6b7a10396a2a96e"
+      "bytes": 1790,
+      "sha256": "2667fb096d4614bde2a090925f640423db178e4edd6b7f339a3187a7530f2310",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/hope_jr/hope_jr.mdx",
       "bytes": 35,
-      "sha256": "1eb7f29681816d75eb8481837b197ffd3397d3b3defb1c1ee2cb6015d4f233f9"
+      "sha256": "1eb7f29681816d75eb8481837b197ffd3397d3b3defb1c1ee2cb6015d4f233f9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/hope_jr/hope_jr_arm.py",
-      "bytes": 6673,
-      "sha256": "a68e9ebfcc27b71eee91655e00291c50cb5c49641be373102edaeddc79d3ae63"
+      "bytes": 6504,
+      "sha256": "43d1cbd102ffed86f00f9340288b3281b84bee662f3c5c74d1f0fb49b4ae0b79",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/hope_jr/hope_jr_hand.py",
-      "bytes": 7188,
-      "sha256": "ba31ac289d7ebaa810b0a73a09475f083df75d9cbf5c79581cfb39c5e2e79a1a"
+      "bytes": 6996,
+      "sha256": "a59a944317b0236e9e294e664efb4f490b36127964ea435337a6bfa30bec67cf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/koch_follower/__init__.py",
-      "bytes": 746,
-      "sha256": "b12cc0132f3b9e67149cfcfd7f11f1dfefa284e43113ef8c3a3dafa23c5b47ec"
+      "bytes": 728,
+      "sha256": "388106434f9b1554b9943422ae413127d0b4e81b934d99cd0ede32384046fe67",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/koch_follower/config_koch_follower.py",
-      "bytes": 1497,
-      "sha256": "2e65aaf999faea2296e3bc589b1d0e9ba19dcda1297e6040de386f1074dec79a"
+      "bytes": 1458,
+      "sha256": "cf0fee4174c7a52527bd54ac696c48989d3856cb27a48049d18eca6393b880b0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/koch_follower/koch.mdx",
       "bytes": 32,
-      "sha256": "4ee1b6cf6f2db0344c31d144f416c35702a7468c5479dd3755de5b091a02c75d"
+      "sha256": "4ee1b6cf6f2db0344c31d144f416c35702a7468c5479dd3755de5b091a02c75d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/koch_follower/koch_follower.py",
-      "bytes": 10446,
-      "sha256": "1306d41cc8d6c8380a6fc43267682a49a4b895a10e622e504d95556075ce6302"
+      "bytes": 10210,
+      "sha256": "52cb0d307de8208909370be8651c60909bffd8de74adcd677ab43a06ed48fbb0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/__init__.py",
-      "bytes": 781,
-      "sha256": "ec232b40a04e62222759e9a0d0db0fb393bed9e351743312cb0f424d403ae6dc"
+      "bytes": 762,
+      "sha256": "8f54519fae5e757bf367c327d02f23974fe12723b24e1e9eeb85b40a985c8812",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/config_lekiwi.py",
-      "bytes": 3256,
-      "sha256": "798f1a75bf1458ad4ae661e6123de678bcd18c3fc897d0783db4cdee4109125b"
+      "bytes": 3160,
+      "sha256": "1539fafbd4894169d26f0303c1e1b78dd7fcb967935092aae267b0b0cd32b040",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/lekiwi.mdx",
       "bytes": 34,
-      "sha256": "a9de676d07b3ccab99a4cde3444469a6d7b2bc623fa03fa55a640012a5849380"
+      "sha256": "a9de676d07b3ccab99a4cde3444469a6d7b2bc623fa03fa55a640012a5849380",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/lekiwi.py",
-      "bytes": 16982,
-      "sha256": "f103b43d3c5af5dafc0f55da2cd50eb2cef417b3562c09ceb7b4acd11dd1dc78"
+      "bytes": 16565,
+      "sha256": "fa7e1ad3a695b2f910edcb2ed550da3a5d96a496a622e20407582d2e6f4a0041",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/lekiwi_client.py",
-      "bytes": 12307,
-      "sha256": "d562e7158507b55a8458b0f4d679d7c20b039b283abbbe7417ec1d09c214f28d"
+      "bytes": 11972,
+      "sha256": "51d22d91529019cc5e3a1be8dbb03b272a665526299d507ca47a2502cae37496",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/lekiwi/lekiwi_host.py",
-      "bytes": 4790,
-      "sha256": "923804af776467d0c1bb6d1cc2eba276a4eb1b81bebb04028936606a919be151"
+      "bytes": 4654,
+      "sha256": "c4d6a3d00ea35b9e2154f9a213ec49b329dffc7b4c0c3491b8371177cd2209af",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/omx_follower/__init__.py",
-      "bytes": 867,
-      "sha256": "ded6a25ce65843a3177a5cf67dd2df7f6d2c4b6e3b61a316eb279d6edb54ee4e"
+      "bytes": 846,
+      "sha256": "fdfaa6ea6c598cc7a83ca910211ecdbcec6325d4c1de43ca53ce4cda10d493e3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/omx_follower/config_omx_follower.py",
-      "bytes": 1495,
-      "sha256": "0a674b2bb5a4e1a12baa31acc820c4b44dfbdc5e116377beb9f8fa7fc5f40374"
+      "bytes": 1456,
+      "sha256": "784763a0ce77aa357983918c7b69490c8053ae4a6a0d559c81f186e71f15f9aa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/omx_follower/omx_follower.py",
-      "bytes": 9443,
-      "sha256": "ced1b96a8b53433f8c384220d6919428076cdd6d96545fe45294fa707d836dde"
+      "bytes": 9224,
+      "sha256": "12235b383b54ba51cbd1744b8e572ca685f380278b35ed9b94826f5a9bed2931",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/openarm_follower/__init__.py",
-      "bytes": 872,
-      "sha256": "c1efc8de93ad352340c9ebbff1c7f1c32d3fdebaa58c5e049e4574dbd0e8dba7"
+      "bytes": 852,
+      "sha256": "b06311aa94e353413db7fdee1e2cae290ecc53ea42e95aad50ba86fdb82f50d6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/openarm_follower/config_openarm_follower.py",
-      "bytes": 4903,
-      "sha256": "50af89cbf93f9902ecb88587a0dd140ffd54009f45443f9b1dad10a46baec5ad"
+      "bytes": 4781,
+      "sha256": "5c10479aa82177594f3f9c00eee4d92e9b05748c11249e2515f83ebe460572ad",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/openarm_follower/openarm_follower.py",
-      "bytes": 13067,
-      "sha256": "da8cf1118c47619dcef6b3d1e80836c350c2bb5e56d377c840639b19e874a1ef"
+      "bytes": 12724,
+      "sha256": "d317afd613b82df916c79815209fd9de0b7cf20265aa5aab37adb088918f63c7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/reachy2/__init__.py",
-      "bytes": 886,
-      "sha256": "37a3dc577cf4eac388071084bcff1e19d41b13aa2d64bd8499d2cd713e7a3a1a"
+      "bytes": 861,
+      "sha256": "b6e4622e9216ec243cdf568bd65afb792996610877ad92387c4e2cd2dcb32a7f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/reachy2/configuration_reachy2.py",
-      "bytes": 4574,
-      "sha256": "f9aa4380d09d2ff999e291f2e759bf8b5941aaa1d7df23ecc63fbca0809348d6"
+      "bytes": 4457,
+      "sha256": "4cbe415e46c8f758bcc92b869b1affd17d68f0151e6feca7ceddfe625e38505f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/reachy2/robot_reachy2.py",
-      "bytes": 8270,
-      "sha256": "990b5d3a426113fd67c2d0c825d2160da639226b87e9a8b9cc2f3ba1821f5f5d"
+      "bytes": 8035,
+      "sha256": "5ead84341a0aa45e8f1f9e1d342deef75b82d9dc77d4b111e6d4f3a1c0b1f013",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/robot.py",
-      "bytes": 7942,
-      "sha256": "b1eba222c0ce3226490d798b2b44baf96f7bbfa2fbdb7a23b16afb547a192298"
+      "bytes": 7731,
+      "sha256": "d212206036fe3ef7a0befe95b53be52785199fcbd8d99e3350fa0514a0cbf648",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/__init__.py",
-      "bytes": 859,
-      "sha256": "567761d74276926febbf8a4e28a22723f269cb9a5c986cbe884f67163f8fda37"
+      "bytes": 836,
+      "sha256": "71e85ab1303c4c02817b2318cdbf9f9a7a06bd7dab5c39ffdd50ed2557827129",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/config_so_follower.py",
-      "bytes": 1800,
-      "sha256": "9c3787ae8ae2948a564bb5a397f653a4446d9c4262d6876854c1392cda05f9a0"
+      "bytes": 1747,
+      "sha256": "f68219e486a94107c83b607b96af5c856f0c95dac7481b08dcc8c0c1dc629bd5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/robot_kinematic_processor.py",
-      "bytes": 25192,
-      "sha256": "c084ba9d7feb7b6a8c4cb94b3f2aef4fa1a160813190cb7d0d36b01cafa70ef8"
+      "bytes": 24581,
+      "sha256": "41e525d75839a2b247505c9a0002228e1afad6017edc813cbcbaebe48f230400",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/so100.md",
       "bytes": 33,
-      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e"
+      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/so101.md",
       "bytes": 33,
-      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249"
+      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/so_follower/so_follower.py",
-      "bytes": 9727,
-      "sha256": "057e31379acbee18e4a44b301f080d3ed2e6cc288c9456f4577ef01004f8a7b3"
+      "bytes": 9494,
+      "sha256": "fbc7db2a7d8b425d6619340f41c6c4128b9c74ff65afb5bb9eeefd546a1c47dd",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/__init__.py",
-      "bytes": 780,
-      "sha256": "89871b3dd14d5e9289c87c4f99a5694dc229d681c1eb41407cefdfbdab4cbafb"
+      "bytes": 760,
+      "sha256": "c3a8c99dfb8d76b4a6df09c3cb33c2bbc02dc219a41d1bb655ff214f985b149b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/config_unitree_g1.py",
-      "bytes": 2745,
-      "sha256": "911ae4556b1f08d70e4b40bdf22f109d600d3c8e2b0327d1223d9a58488bb35c"
+      "bytes": 2672,
+      "sha256": "910cf80d52c06ae7c5c669189ea6cb09d2a618043c14bec440515e9c829b691c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/g1_kinematics.py",
-      "bytes": 11250,
-      "sha256": "d93cbcc6c62c11e72605ac4c5ada652d886c0170359a93c23cdac0234a7b6edf"
+      "bytes": 10963,
+      "sha256": "45eec371accf7ccb1a14ce80a19c22727b680bf94ddbffcb549b1787d9a2d52c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/g1_utils.py",
-      "bytes": 3449,
-      "sha256": "4765b5cb2297e846d0d74e4580e6e494c48c3a18e0f727a2f9208647567f2bce"
+      "bytes": 3331,
+      "sha256": "df2ddb5792f7bd717bbacb36113e46eb5edfe1b1766a2547b41979b8833bfacc",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/gr00t_locomotion.py",
-      "bytes": 7783,
-      "sha256": "7c0b1722325bfd6f8a4cf9d73209089d5f96608e7bcb5ddb51ea9f413ae2d802"
+      "bytes": 7578,
+      "sha256": "da0a18cced020315953df5dd5b6ea630784144f73764c8bcb5fe2ef21dc61e77",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/holosoma_locomotion.py",
-      "bytes": 7593,
-      "sha256": "3dcc0a76c04b4a64a09044f30c78beeee51bbdc6107f1ec40ef6aa62a43e9147"
+      "bytes": 7379,
+      "sha256": "c833ba830961326dbd5a9cf439f9cec5c0838476d5575f1989afb7819e04ed29",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/run_g1_server.py",
-      "bytes": 8729,
-      "sha256": "5715072f004605ad6fb897c13ebdfd90407a9b3a8b5216b1d9e162bfd6d04e67"
+      "bytes": 8486,
+      "sha256": "bde797e0ac7454f2b7ad869306b75ad23def4640589d20b4a11128cc7d32f066",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/unitree_g1.py",
-      "bytes": 22968,
-      "sha256": "f90f3746654f8c628c0dc57daa08a310f0a521d9a427632e6921feaad96f4d5b"
+      "bytes": 22399,
+      "sha256": "de9c83357cf1ebd974a7a76bc907542ee03a144091b265cdde356ee040e6f463",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/unitree_g1/unitree_sdk2_socket.py",
-      "bytes": 6390,
-      "sha256": "d10c67e73fc75adc9193ea3d810587dc8018b367a6baba62465153d6b2fd89de"
+      "bytes": 6215,
+      "sha256": "121cd5dbc26a5ebaaccb1775c17f276dbcf1b32425c11fb920360efcd41d3e8b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/robots/utils.py",
-      "bytes": 4334,
-      "sha256": "1b2626deaabba4f417d8897da129dd2603a5733d3d2b6a6979f570e9db9e6146"
+      "bytes": 4216,
+      "sha256": "a311bbb641b1f75dd6509df3d2305497858acaa8d8169e3344297290e3fecbf9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_calibrate.py",
-      "bytes": 2738,
-      "sha256": "545303164d96d352ff3a44748539775aaf6e1a4a17d4b4b74c035b2d855cd3ac"
+      "bytes": 2635,
+      "sha256": "c2f9081853b75b64e2ee6ae8322f6f9cf86e8f4008518987e27e6ee553cafda5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_dataset_viz.py",
-      "bytes": 10622,
-      "sha256": "3977f87bc2efc33449365f10080efd80315abcdcfa83cbf14e9dfe6554c6617a"
+      "bytes": 10319,
+      "sha256": "b0e22f25c38139a4f606c4db1ccd95864514008f30cfc801b70b79b6ee409491",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_edit_dataset.py",
-      "bytes": 23043,
-      "sha256": "41f00435aa5c5b9535a6fe005d3613fd8119b6f7e0b77a4f338ee45787d8cd03"
+      "bytes": 22431,
+      "sha256": "cc6880c2ce4ccd589ed5b73bca5cbb997d4443efdc7e7a1239c623f4d9ac7ab9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_eval.py",
-      "bytes": 32895,
-      "sha256": "ff947de62dc4cdc2fa35c5b3c2bdd62881137be4942df11fa8732db67461160d"
+      "bytes": 32082,
+      "sha256": "cb0e1c2d891b93b41cb7b97921188fe2fd20ea6fa05675b87835b06c648ecce7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_find_cameras.py",
-      "bytes": 11726,
-      "sha256": "7df2577054502ac301e5a321ee54718b1d3386272be8f34237eb248c065473be"
+      "bytes": 11407,
+      "sha256": "98a82292465c4be91927ddec1c30bd7d72eab9c7f8b2a7def1dc5fce4ca256d4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_find_joint_limits.py",
-      "bytes": 6958,
-      "sha256": "6572f65ff1c9cea55f77a7d2457ba7847f5ceb344807d1de22549390f7633f96"
+      "bytes": 6736,
+      "sha256": "ea783a97541c7190df03bf43c29233d56f1db8243596fc55a25d7870905061ab",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_find_port.py",
-      "bytes": 2186,
-      "sha256": "a7d38edac1b04b93b0382d0da638c036ab21d76aefdcd1e2bad7bc12e4f02c80"
+      "bytes": 2117,
+      "sha256": "a64de40270cdb6e48847af7898016a84f970914b3d1eb220854ff13b4349c907",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_imgtransform_viz.py",
-      "bytes": 5092,
-      "sha256": "cdbb5699b10a1730f8a6bd634ee74340e0bfea02f4b5005f1da2bc54c3c8b9a1"
+      "bytes": 4958,
+      "sha256": "1ef746c7853dba94ff8a871397c376506c3ed49f0eb9fb884ae73354677785b7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_info.py",
-      "bytes": 4123,
-      "sha256": "7eabd2dcd0a0565c1f19e563a79ad22f27a17f7027095fbdaf13cbef0ea07086"
+      "bytes": 3997,
+      "sha256": "0c2750f6d98bfadd23a9200f138461285f91e4f27a305754159d1e9517552b6d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_record.py",
-      "bytes": 26450,
-      "sha256": "b09e28cc518bf3bcb33b338ffeec606171c6b2499f28732262593ff6abe83aad"
+      "bytes": 25840,
+      "sha256": "ff57cdd0b73b3f384d48ba96746d8dd647e5a07466ea6a288f06eef869865fb3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_replay.py",
-      "bytes": 4212,
-      "sha256": "7ff3179b6088237f2231f7d6215f461b9e9e2220dbb364f2b3c540d36eb8ea8c"
+      "bytes": 4071,
+      "sha256": "f95bbe88dce6f9625f730dc3357e8b7b9e725e42373edb5e5802b64f600d806c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_setup_can.py",
-      "bytes": 11608,
-      "sha256": "d43e2193ba39c195ac18e1894679e3a55f2a2716de7ac2f2ffe32ed847f3f2ac"
+      "bytes": 11247,
+      "sha256": "3106ab86df6525c9256fa5aff0fd269b257ca13915049fad7c0b67edf0949231",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_setup_motors.py",
-      "bytes": 2254,
-      "sha256": "c94341cca4f0e44e293db320f8d513dde5b3e3a82ddf7ae50fb3f69a84d56c71"
+      "bytes": 2160,
+      "sha256": "f9be02464d5d57175e6d0e33165b6e17121e87ca0d1344843cd5da030d71e7a4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_teleoperate.py",
-      "bytes": 9250,
-      "sha256": "f3bf1573d2200b9788b426727310ab4b97e1dc01c83dcf57b5847caf36ddd5f6"
+      "bytes": 8996,
+      "sha256": "add62efdfea0e7a43c41456ee4386d3bb871bc0a5e75713421a3a32b9ea3f4f9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_train.py",
-      "bytes": 22800,
-      "sha256": "30dd7d55a6c53546f0bd2dda287e06235a3f102edc6388fcbf19204d011cd93c"
+      "bytes": 22245,
+      "sha256": "f7e15090158b479fefec2d9f0fc4a020679604212b4baa70dfc17db12ff193e6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/scripts/lerobot_train_tokenizer.py",
-      "bytes": 23048,
-      "sha256": "c37ac49a4fd96206ac833afeb81b050cb1a43c90b57724b937a76e2b54480ed9"
+      "bytes": 22444,
+      "sha256": "ae34f1d53171107bf4ca6390bed984755458ecae72a0067afe9fcca041938cd7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/__init__.py",
-      "bytes": 795,
-      "sha256": "a91e46c8f481450a29ae9b85bc63dee6aebeb447f98f7657514eea755e226543"
+      "bytes": 776,
+      "sha256": "cc563d12d06c98307f071f7de8c0e0e1d190c4c0666749ca99f6c9283ae8d97d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_openarm_leader/__init__.py",
-      "bytes": 818,
-      "sha256": "b0594d1664da9d932031457677b7e94d409f876f04e720b7d08ca1c518b72f63"
+      "bytes": 798,
+      "sha256": "970919ed4dce135bfa3ca5a2151254f1b2a5e085e598a53b66228f43097dbecf",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_openarm_leader/bi_openarm_leader.py",
-      "bytes": 5035,
-      "sha256": "fd9bb59a6308ce29876df2bf35aa8834258be4857557f2b9cdbf2a1b5f783afa"
+      "bytes": 4900,
+      "sha256": "20c11e9586a088afd64688785a635df3953d118a73be3bcf5336fa7652db6bc3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_openarm_leader/config_bi_openarm_leader.py",
-      "bytes": 1089,
-      "sha256": "b1f75ac726f36c641a365594cfb274f71cf060fec7665f28b3800c554e6d8707"
+      "bytes": 1059,
+      "sha256": "1c344634e60857680a6a0e556c1a9c29824f131a60da6f232378a3e60c83d306",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_so_leader/__init__.py",
-      "bytes": 707,
-      "sha256": "2c73a8f70b70de0023236122a5980f80e40c0359afcb871f84a810cc1446510d"
+      "bytes": 690,
+      "sha256": "2a9be923dd486045f8f5cdadb94228a679120cb7869a254c83e1e626de8c38f8",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_so_leader/bi_so_leader.py",
-      "bytes": 3925,
-      "sha256": "98172a93b4f12ac69180902a96b2173a7548d284304738cc94bf9b4981d8e6f1"
+      "bytes": 3808,
+      "sha256": "2d52756debd0f95fc8b279c978f27c81e6c8f3be4a2446d2dca917eab1b10e11",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/bi_so_leader/config_bi_so_leader.py",
-      "bytes": 1047,
-      "sha256": "d2d3076fbda60122174507e21768e20cc31ef0f0e0f010a81070c841d264c92b"
+      "bytes": 1017,
+      "sha256": "bf0b821b33050b164c2588355ff9490a8a1931646777b331ea65329979ed80fa",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/config.py",
-      "bytes": 1094,
-      "sha256": "1bb6e13bb8bd009003eb1484e9730b7553ae52d8d68f57846127c7a287c7ae15"
+      "bytes": 1063,
+      "sha256": "cc9bacc17230e4c0d1532ee4c998a9d2aa4d6ec374f4606e7f447f1e3c94ba28",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/gamepad/__init__.py",
-      "bytes": 751,
-      "sha256": "780209639f67b409267481980ba0bc5b7a62b477c5d920aebc0fbb717a715720"
+      "bytes": 733,
+      "sha256": "500e9c84a0cc28a9920d01270cb3378f12c4667b99056e8bb1261dbf1d0f4c7f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/gamepad/configuration_gamepad.py",
-      "bytes": 873,
-      "sha256": "4f19f329cde59c1a598c6746304cd8a811a785ba6751550d0f58d909707391de"
+      "bytes": 848,
+      "sha256": "a7d9b9faa048e816ddbffb83cd79507eb19008de95949a7b1134b42fe7dd6655",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/gamepad/gamepad_utils.py",
-      "bytes": 17411,
-      "sha256": "6f0eefe42a336d7586951c138e910a26921e5233a8a8c583df021264f6596740"
+      "bytes": 16951,
+      "sha256": "38a121a67ff423ea5f0b9ec3d13a1ac3fb38fa1c7207daced807fd83d5e4220c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/gamepad/teleop_gamepad.py",
-      "bytes": 6092,
-      "sha256": "9d94b333304fa574d488917280e623e805d6b2b4e9bee4e3857cc83e75a6aa52"
+      "bytes": 5906,
+      "sha256": "ba3281e6d3bbedba13ae23e2130a233b633ca998c30d1bc21586762534e46c42",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/homunculus/__init__.py",
-      "bytes": 882,
-      "sha256": "77552ccc6b174e30a177a5e51f34e87d059f313abfe0363e1d6bcc0da88be2c9"
+      "bytes": 862,
+      "sha256": "228da9986c2221e6a0ff5ae74fb01102331ac9fa3770edec8e7e3b7e2df1962c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/homunculus/config_homunculus.py",
-      "bytes": 1283,
-      "sha256": "4213e4f746350f9583a55417d72fce6738edb9f8cc4eb2735d9f6a95927ddd18"
+      "bytes": 1245,
+      "sha256": "4d73d21d5d1fc6ec80ece3e0a05b2319ee07a7de48bb5b2e42e45b963db72f8e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/homunculus/homunculus_arm.py",
-      "bytes": 12090,
-      "sha256": "b8e1ecec299032ab0989a1270a168bf666fee1c20100c2b00e32734830c875c7"
+      "bytes": 11777,
+      "sha256": "2671f64d377342cab10fbff87f46514f7cec4208fe1685ffdf1c33cd8bcd1f91",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/homunculus/homunculus_glove.py",
-      "bytes": 13309,
-      "sha256": "e8c19ddcdf279b31f51cd5481853f393e70f38f7973b2de83d160304e56797e5"
+      "bytes": 12968,
+      "sha256": "9c33c52a4412f471f7e2dfbc7206e0b0dcf606b1d72022cb54d252eacac935bc",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/homunculus/joints_translation.py",
-      "bytes": 2928,
-      "sha256": "162e463ab42b7f9285967ab793d20d95ccc37ac593938974c739659769f05826"
+      "bytes": 2865,
+      "sha256": "727e1a242f1c913b337090fe1ccca146a93abdbbe3aa0130ed76a073affab13b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/keyboard/__init__.py",
-      "bytes": 1089,
-      "sha256": "5a46d221c45dcf1f8b7f1e1def90291115ae4043d03c2544a905f89d9ae87d70"
+      "bytes": 1058,
+      "sha256": "1a83c9d7194110f8252dc6475efb3872b4d2f6db847e223b08f0b0c3dd5a8fb4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/keyboard/configuration_keyboard.py",
-      "bytes": 2558,
-      "sha256": "e6f819e7afdc80f44a8b651c2617adae768d4bd468aaf2cde78ce329276346c1"
+      "bytes": 2490,
+      "sha256": "0a178bf8d9226ed7421123df8e18f2055f60abe262a78a54a9f766b703794ad0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/keyboard/teleop_keyboard.py",
-      "bytes": 15129,
-      "sha256": "032c879fd97c31e3fa50dee21762083a849fd3dc11205cba94327c86f82e26d6"
+      "bytes": 14697,
+      "sha256": "1342e5fa5307842846c53c8abe2f15a8ab28a51684f9b4062f83eb8557e2796e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/koch_leader/__init__.py",
-      "bytes": 738,
-      "sha256": "c735d01377a8324243a659e4d287f426c63b1c950f29a1e7e3bac3659e9be3d0"
+      "bytes": 720,
+      "sha256": "015b250b5661ffc3a5a25abfbeb5b3e9f1aa8a0d399004c92dc8c714c50216ec",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/koch_leader/config_koch_leader.py",
-      "bytes": 1117,
-      "sha256": "a636b9b8d00f53669d1524dd7cf7dac6a397ebe0816e165eb458488546eaa9b2"
+      "bytes": 1087,
+      "sha256": "56c35642f5b7910d1e8865be003f4285111f4c061329e82518451e13d6648fad",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/koch_leader/koch_leader.py",
-      "bytes": 7875,
-      "sha256": "d00b676484bc85bdcdac46d4e2bd3a6549487a8502c513037a0ddde28cf7de12"
+      "bytes": 7697,
+      "sha256": "c897c5cdbc3c91b41e96d68d022da4d7a509a18ec47933461b31ac929b4e28a0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/omx_leader/__init__.py",
-      "bytes": 734,
-      "sha256": "67981031450d53f4fd6e0624f760b5f86b522da712ed1ad925666af86f5f135f"
+      "bytes": 716,
+      "sha256": "57302a5e34096658a8493f8aaa393b1dd8b52a1e6355e09099910c2ec2a7b2db",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/omx_leader/config_omx_leader.py",
-      "bytes": 1115,
-      "sha256": "2ff1cf58c24f5c0ef0accfb275105e6ee1074be883da0661a4ad47dd3f690cb4"
+      "bytes": 1085,
+      "sha256": "cb1d8d4b776955edbb0370d5b9297014922b059f683a6d3d3988b27cff0e5f8d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/omx_leader/omx_leader.py",
-      "bytes": 7120,
-      "sha256": "dc2a8d1caea1f8b1ee629696f77ba64b34c39512de3cc364fdbc23e0fb494689"
+      "bytes": 6953,
+      "sha256": "ae844d3ee5f26bcdd033f09e2ee42daf2ce4d50923cd573aadc6515bf29ccf16",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_leader/__init__.py",
-      "bytes": 856,
-      "sha256": "0d12b5d5e88d55b63b2a042074d0d658eac8d345b77e1bb705564a1d74d4dc9a"
+      "bytes": 836,
+      "sha256": "1dda47ccb128b52e1e8efe4bdbdbafa55036fce87d4a7bd313049783566f8088",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_leader/config_openarm_leader.py",
-      "bytes": 3268,
-      "sha256": "993e6735e606cd5f5d73ecc555bd2b65cbd51daff9b470b6e96ce2e25eaf2c20"
+      "bytes": 3193,
+      "sha256": "06add51a6ccee7459a98c8fd0c23cc033f448f4e59d3cda32af452e6abfd3d28",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_leader/openarm_leader.py",
-      "bytes": 8150,
-      "sha256": "69c4a318359a9fe835311f77e4dff1cd7b0ed2b1ed56c5b1b54afdd21e6ea8cb"
+      "bytes": 7928,
+      "sha256": "cf57c16cb5080a2a60030fd38e279d0eccc1280dc2ac75a44647130658f3b5e6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_mini/__init__.py",
-      "bytes": 792,
-      "sha256": "2a6fa0596c265999430124223bf976541c7e44156138a57a48ffcd64049b8834"
+      "bytes": 772,
+      "sha256": "ad7a1c2d0bd30b9957dca1e4088c92c5093c335479cf3188564a59e1c23b051b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_mini/config_openarm_mini.py",
-      "bytes": 1043,
-      "sha256": "61ee5013d3bd4d62f5f60c076504502a0ee459015270652b9ff7df206de3d1c6"
+      "bytes": 1013,
+      "sha256": "55824c2f77512b574a20675407fb83c806f111daf3ca14edce17e0b5e05f8436",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/openarm_mini/openarm_mini.py",
-      "bytes": 11730,
-      "sha256": "55645be465a9e1c5fcd6115151518c133ac93a84fd1bde415a3732607990e303"
+      "bytes": 11434,
+      "sha256": "7930455c51176a86a22ddce38b86d6981e45d3beba6df48530a62e3bc32fb59c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/phone/__init__.py",
-      "bytes": 723,
-      "sha256": "01fb18a2317fc960bb1b3a3411046458d3acda3206262d15003c58f3b75b5e0b"
+      "bytes": 705,
+      "sha256": "23a407adc5e11b5a207f6fdb39bb6cec5328874899dab1e940cf2f8cbcc57433",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/phone/config_phone.py",
-      "bytes": 1112,
-      "sha256": "f0579880b1c507bb4f2e99e21c0496dc7ef62241cff72145d37ea0dcc428dccd"
+      "bytes": 1076,
+      "sha256": "bcd93f16fb3ec07cc202970ecb467fee924251111e50630764da9a30690755ca",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/phone/phone_processor.py",
-      "bytes": 4463,
-      "sha256": "4641ef780b50c0cfeed6be637d30e211839898146fa64b27ea481744880e36a6"
+      "bytes": 4353,
+      "sha256": "902889219a41701d415fcfedb60010d150b9f0e770a23c386d363091bc7ad6c5",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/phone/teleop_phone.py",
-      "bytes": 16195,
-      "sha256": "cd301baac1dc5cc4d1c8849d6f626170e8e5f289a8b67d14bcb63f0c0bbff420"
+      "bytes": 15780,
+      "sha256": "da6f3f77e89aec2487074dcd4ded839f661abb1aaca2c38033db8ce2f78d0f3f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/reachy2_teleoperator/__init__.py",
-      "bytes": 913,
-      "sha256": "def9a756bfc5b2ebb65d2325fed6463bddf668366ea295db5a8caa98de3bec50"
+      "bytes": 888,
+      "sha256": "d39a261698ae19ecf1e575d7a7e09bae4b472eff3a898e7da00a4af11682d075",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/reachy2_teleoperator/config_reachy2_teleoperator.py",
-      "bytes": 1818,
-      "sha256": "50d821676a7fd71b729dae2d4e5042fc95903fe6cf82f5e7a85004fbbd868b1f"
+      "bytes": 1767,
+      "sha256": "71d44f6f816f90f6bc29f0a26f313f2cb5e0962c71c2dd94cfe81b432b3b4ea3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/reachy2_teleoperator/reachy2_teleoperator.py",
-      "bytes": 5828,
-      "sha256": "a59ba8b65eac21a8870fa0771d31ee17d4208219fe1bd79719438051bfde01c2"
+      "bytes": 5652,
+      "sha256": "0193d3ec56cc3f51fe614b63e199aaf20e4261e11bcaa5d5d1ba63ecf3276633",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/so_leader/__init__.py",
-      "bytes": 842,
-      "sha256": "02d4cb80feb83f80e7dbf22ad464187982304f538d99cf707209ff171bef09c5"
+      "bytes": 819,
+      "sha256": "18397673df13313383f282c0e00f4dcfb70a83137bb854b637162b092dfb442c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/so_leader/config_so_leader.py",
-      "bytes": 1246,
-      "sha256": "797628e949551b4a00937ac843d9deab068fd19793e32f02ea93853de0871019"
+      "bytes": 1205,
+      "sha256": "1c027fa8b82db9be76cf1dec8f3f332d3c08b1d3fe40ca763d0b36013b17f80e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/so_leader/so100.md",
       "bytes": 33,
-      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e"
+      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/so_leader/so101.md",
       "bytes": 33,
-      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249"
+      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/so_leader/so_leader.py",
-      "bytes": 6126,
-      "sha256": "f6f5e8039708e55950998745393648571c6a3423990e9ad0c8f5bcd2a0ceda7b"
+      "bytes": 5967,
+      "sha256": "e9360ebfd935ae9e6c28ac89fb7a4678b9e09dcc4683d95709dbee7d20854d24",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/teleoperator.py",
-      "bytes": 7660,
-      "sha256": "4860ccd495ac68d8490077df130f12d1e91d4fe81bf8295b7ed729ce44970013"
+      "bytes": 7452,
+      "sha256": "cd4e8c25f8f3efafec3611ea367fe4247dfdb2dc0cf2f14cc7fa9db892aa0c0b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/__init__.py",
-      "bytes": 1176,
-      "sha256": "309bb5beb2f1b5e95953d0faa62d749a260df80605107404eb9fe3b71e0f699f"
+      "bytes": 1145,
+      "sha256": "edfde2ff369826f365d18e3ba8b8d8360d5fe97cef482549affde8dc1e73e6a0",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/config_unitree_g1.py",
-      "bytes": 1333,
-      "sha256": "fbfe7c77b79714a9eded43a42b0dd69bb2ab5cc482c4d2720a18ac6c193ea609"
+      "bytes": 1296,
+      "sha256": "2ea32b66123e59b9a689165844a209b582b782b6e41f37ffcc022174b73c9f86",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/exo_calib.py",
-      "bytes": 18743,
-      "sha256": "2bcb9ccb64c955288413b8df052cbcd55eebf2b694639a74ec54c2dc3f087d97"
+      "bytes": 18297,
+      "sha256": "380c97baf392b3204797cb5469b06157c09c4a0c959c057c22dfd5b7d268d0d6",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/exo_ik.py",
-      "bytes": 12781,
-      "sha256": "00a05a307e92dc9202b7f48eb82017ab29e5ae79682eaa8ae26c69d98f0baae6"
+      "bytes": 12428,
+      "sha256": "4ce27f64f1cea399b5eaa3bcb2ebd3f9dff3fede50894ac074086ded6a90e588",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/exo_serial.py",
-      "bytes": 4077,
-      "sha256": "3cce61d1caf2ca46555736f6e425e4a0b576fa66f42ecfc76a4d2675aacd35dc"
+      "bytes": 3953,
+      "sha256": "fe019e6dc36d3b1ffe14dcd7cc342ff4335ddf0c42f345af52823bc19f270231",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/unitree_g1/unitree_g1.py",
-      "bytes": 12655,
-      "sha256": "8ac88e5fd90cbfcf9d1031d094610431ee4faca02201785d716f1c3dd887039e"
+      "bytes": 12323,
+      "sha256": "39efa531a694ed0cd72c0898efa9e0fcc1528a15b5d059aa348c850592e7b0d9",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/teleoperators/utils.py",
-      "bytes": 3689,
-      "sha256": "b75f0ff290cb5da0f97539b74f278fd3d92f64118575578fb720f37692099ecd"
+      "bytes": 3583,
+      "sha256": "4054118148dd2035a7c20aadff07aa1d7f1a5ff0f61685ab7bdd85b7d1380ac7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/templates/lerobot_modelcard_template.md",
-      "bytes": 5033,
-      "sha256": "58b4b7fdf5dadf6dce8a925a1c72c38612efc3d9014e8bd0f0ae91928a2efaf5"
+      "bytes": 4942,
+      "sha256": "75166fb078b80394e70ce03099769d4a19186a1ceac238fff874ec477958640f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/transport/services.proto",
-      "bytes": 2805,
-      "sha256": "e36b9ed2e62e29c339e5446121dd867c17e1c5ecc9f1c23421d2683e426b1f6b"
+      "bytes": 2718,
+      "sha256": "a3c2c3aee953851f779f052815e7da2c398b2cbe367a47ec3b80cbad902aaef7",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/transport/services_pb2.py",
-      "bytes": 3765,
-      "sha256": "a12405974a79f90e881888771c1810b8f8100632f2790c61d729406307ed4418"
+      "bytes": 3712,
+      "sha256": "06efc0dd44bb4a1e532612d6f7994176214028802ecbfd96e9d79376da74657c",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/transport/services_pb2_grpc.py",
-      "bytes": 18173,
-      "sha256": "98a37e17aaf8c6a2cc6573f094b6f78fc82c980fcd8deb2cab974e22b9d9ab90"
+      "bytes": 17731,
+      "sha256": "3b1cde1f24d00b536e113074385a1bd2f0948d0e8ce2c5cb543ca4debbb377ba",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/transport/utils.py",
-      "bytes": 6761,
-      "sha256": "506247f454bb74fbb7605e935142670303d03b66da63042b2f2444d1a7a33580"
+      "bytes": 6572,
+      "sha256": "2e438e199d85c7b4176e11397cf581c7de9f434dff84d2d0d2d2bd7b5988c202",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/constants.py",
-      "bytes": 3399,
-      "sha256": "893bdfd532a46cce61fef00e38b971a3b858a64adb07717116a7623b1c9fce5e"
+      "bytes": 3308,
+      "sha256": "a9dba3dc6f7db6e77b10c8bbf250ed670111425b9468f43bb51a5d0270d99458",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/control_utils.py",
-      "bytes": 9598,
-      "sha256": "b6db44ab77e4b56f2e0336c06e567eeaa7b263c8ea713f7125710495f06f4962"
+      "bytes": 9363,
+      "sha256": "6855fe8956e6553e426bbd043c05c56d205cd0d05c835fd83b19a8c1ad1c1660",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/decorators.py",
-      "bytes": 1413,
-      "sha256": "1a1d22b7fd1e74fe53a71c41e0326ebbc158401c99832de2616fc23c27bd19ae"
+      "bytes": 1372,
+      "sha256": "4f92457a9a9e87d84b935b0b072869e92cde6be1c372f82ce485a07e7a853de2",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/errors.py",
-      "bytes": 1238,
-      "sha256": "f6a90ad226f48ecc5618621b4d3e18ca60fc0b6ee5d78da6522b9a6a54f57f62"
+      "bytes": 1206,
+      "sha256": "5bab3b68cbbc88a764daaa103c488a08dcf2d61ef5274931fa3d6013d2a2ec4a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/hub.py",
-      "bytes": 9235,
-      "sha256": "c12e523b8f57270712a39817831f04fb4966e29a278f4104a31035ed2ee5b18b"
+      "bytes": 9032,
+      "sha256": "1981583e520bc73e221491459694d58ad1c1370537bf280968493b31c8e2c51f",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/import_utils.py",
-      "bytes": 7381,
-      "sha256": "0c7342dece22771d21d46b5c09383c885d42d81a6026ccc6ea759195b14cf8b3"
+      "bytes": 7207,
+      "sha256": "e18703fc04659c6dc95c4170c20fb7b05c258f4e3df370db7a3361f3ef409dce",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/io_utils.py",
-      "bytes": 4476,
-      "sha256": "b481ac37e023f2f6d2b7ca1b7297ae344f7fef26afd58b4555e3fcbb4a944106"
+      "bytes": 4367,
+      "sha256": "ff20af22e98148d4a89d9c2789f0bdedaf759e45eb7d94ae04a0d647d43bab82",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/logging_utils.py",
-      "bytes": 5717,
-      "sha256": "3bfa01fee95aa2d5e65f4e2e75a81e0e31a48feb97cae71f4eefbc297b946c72"
+      "bytes": 5548,
+      "sha256": "809716075fbbffb4f528c38665c51b4b0308ba9cfaaed42f21a4da7d440e5e29",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/rabc.py",
-      "bytes": 11089,
-      "sha256": "faa953af56608a411f6f3a36b13de95c5ba78fe99eb82fc3eab5666fa5b1e70d"
+      "bytes": 10801,
+      "sha256": "29a3ad1364e6cf16995934ed9136571f79f564b85e7aa1e4eac477e50087301a",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/random_utils.py",
-      "bytes": 7489,
-      "sha256": "e6ea5300cd6fefd40bf306f16dcf8953611cc4fa548114351a29a5fe9df368a1"
+      "bytes": 7291,
+      "sha256": "3f3b373ad8ae7dd240c13eddc10c226836e31bd68bf0cd1765132599e482a17d",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/robot_utils.py",
-      "bytes": 2423,
-      "sha256": "5069b99724ed599185ac6055d637628a186bb78e899f6e361bc6a307cd23b923"
+      "bytes": 2368,
+      "sha256": "879bbee3825a9df374a71fd78a622ed8099a0a6a2f364a143be9a3c23b726bb3",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/rotation.py",
-      "bytes": 9529,
-      "sha256": "c14a6f863ad58cdbe4fc0844428ba9ec75e2fed969769ba07da39425184dbb26"
+      "bytes": 9259,
+      "sha256": "1b4c52538ec4ec06060145e5ff750ab3cf0d102291a982eeae2f927656bc14cd",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/train_utils.py",
-      "bytes": 7045,
-      "sha256": "8b1e7aa8013165602dad14ef02160de37cebdda7b168a56f32bc94bbfe5266cd"
+      "bytes": 6876,
+      "sha256": "ed0f839e6caf51ff6f79a1c8f750eb1a144f83c40a92366a5d32da0921e5b82b",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/transition.py",
-      "bytes": 3460,
-      "sha256": "5d9c6a93b849c92d36a8710386a7f39d0ade3dbddbc15cc14fe0f52dd8ec057f"
+      "bytes": 3373,
+      "sha256": "6b17122c4244ba2a91ab49c6fa0f73c36270c5c84940dd9bd7517ae95ba345cb",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/utils.py",
-      "bytes": 13142,
-      "sha256": "3952b136351725549a4a9259aa19338c7698fd842768639f27eea36d25ba36dc"
+      "bytes": 12732,
+      "sha256": "6d15ea2af3a80ae419af3d42d4264ff07bb769147b021a99f1a46cd51b728ac4",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/lerobot/utils/visualization_utils.py",
-      "bytes": 4638,
-      "sha256": "d62ea4c2577e9bfbd42ba67e4e763bae05a268341f012dc0ecb11971ebdf8396"
+      "bytes": 4526,
+      "sha256": "604597817f66b9a405de9f8ba407c83e3af0e4f1da6f2c986626c70257c04906",
+      "hash_mode": "lf-normalized"
     },
     {
       "path": "source/w0_common.py",
       "bytes": 20250,
-      "sha256": "bec109c93189224ebe7d4105b62c82666a5fcccd6c917575bad0c3edf5023e02"
+      "sha256": "bec109c93189224ebe7d4105b62c82666a5fcccd6c917575bad0c3edf5023e02",
+      "hash_mode": "lf-normalized"
     }
   ]
 }
