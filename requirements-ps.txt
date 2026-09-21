@@ -1,9 +1,10 @@
 # SmolVLA/LeRobot 0.5 runtime for KV260 PS (Linux aarch64, Python 3.12).
 # Keep this file synchronized with third_party/lerobot/pyproject.toml.
 
-# PyTorch runtime. On KV260, pip must resolve Linux aarch64 wheels.
-torch>=2.2.1,<2.11.0
-torchvision>=0.21.0,<0.26.0
+# KV260 Cortex-A53 is ARMv8.0. PyTorch 2.10 ARM64 raises SIGILL because its
+# wheel uses ARMv8.1 LSE instructions. Keep this tested CPU-only pair pinned.
+torch==2.9.1
+torchvision==0.24.1
 
 # Hugging Face and SmolVLA.
 transformers==5.3.0

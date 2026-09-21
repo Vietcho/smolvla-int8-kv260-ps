@@ -81,6 +81,15 @@ class Int8DynamicLinearCompat(nn.Module):
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="W2 KV260 PS-only SmolVLA INT8 profiler")
+    parser.add_argument(
+        "--engine",
+        choices=("auto", "qnnpack", "onednn", "xnnpack", "fbgemm"),
+        default="auto",
+        help=(
+            "Quantized backend. 'auto' prefers QNNPACK on ARM; pass 'onednn' "
+            "for an explicit backend comparison."
+        ),
+    )
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--warmup", type=int, default=1)
     parser.add_argument("--iterations", type=int, default=5)
@@ -98,8 +107,15 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def choose_quantized_engine() -> str:
+def choose_quantized_engine(requested: str = "auto") -> str:
     supported = list(torch.backends.quantized.supported_engines)
+    if requested != "auto":
+        if requested not in supported:
+            raise RuntimeError(
+                f"Requested INT8 backend {requested!r} is unavailable; supported={supported}"
+            )
+        torch.backends.quantized.engine = requested
+        return requested
     for candidate in ("qnnpack", "xnnpack", "onednn", "fbgemm"):
         if candidate in supported:
             torch.backends.quantized.engine = candidate
@@ -263,7 +279,7 @@ def main() -> None:
     args = parse_arguments()
     if args.iterations < 1 or args.warmup < 0:
         raise ValueError("iterations must be >=1 and warmup must be >=0")
-    engine = choose_quantized_engine()
+    engine = choose_quantized_engine(args.engine)
     torch.set_num_threads(args.threads)
     try:
         torch.set_num_interop_threads(args.threads)
@@ -441,7 +457,7 @@ def main() -> None:
         "environment": {
             "hostname": platform.node(), "platform": platform.platform(), "machine": platform.machine(),
             "python": platform.python_version(), "torch": torch.__version__,
-            "quantized_engine": engine, "threads": args.threads,
+            "quantized_engine": engine, "requested_engine": args.engine, "threads": args.threads,
             "ram_total_mib": psutil.virtual_memory().total / 2**20,
         },
         "load_timings": load_timings,
